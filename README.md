@@ -11,7 +11,8 @@ Better Speculative Decoding, with novel experimental scenes
 Fine-grained uTask abstraction, control flow on GPU side, with more expansive compile optimization
 
 2023/11/22--2023/11/28:
-- [ ] [ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems](https://arxiv.org/pdf/2311.09476.pdf)  
+- [x] [ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems](https://arxiv.org/pdf/2311.09476.pdf): arxiv, by Stanford    
+Automated Evaluation Framework trains a LLM-based judge with self-generated datapoints to check RAG systems, bolstering with rediction-powered inference (PPI)   
 - [ ] [SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills](https://arxiv.org/abs/2308.16369)
 - [ ] [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models](https://dl.acm.org/doi/abs/10.1145/3567955.3567959): Google, accepted in ASPLOS'23
 
@@ -68,6 +69,15 @@ But my summary must not be informative enough, and I am looking forward to your 
 **Perhaps someone should write a detailed survey.**  
 
 **Periodically check the "cited by" of the papers with ⭐ will be helpful.**  
+
+### Interesting *NEW* Frameworks in Parallel Decoding 
+
+[Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads](https://sites.google.com/view/medusa-llm)  
+prior paper: [Blockwise Parallel Decoding for Deep Autoregressive Models](https://arxiv.org/abs/1811.03115)
+
+[Break the Sequential Dependency of LLM Inference Using Lookahead Decoding](https://lmsys.org/blog/2023-11-21-lookahead-decoding/): by lookahead decoding  
+
+Both frameworks use parallel decoding, and waiting for a more detailed check.  
 
 ### Parallelism
 
