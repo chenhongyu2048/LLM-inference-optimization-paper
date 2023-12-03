@@ -15,9 +15,14 @@ Fine-grained uTask abstraction, control flow on GPU side, with more expansive co
 Automated Evaluation Framework trains a LLM-based judge with self-generated datapoints to check RAG systems, bolstering with rediction-powered inference (PPI)   
 
 2023/11/30--2023/12/06:
+- [x] [SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills](https://arxiv.org/abs/2308.16369): bu MSRIndia  
+Interesting idea of piggybacking, accurately found the issue of too many requests in decode phase in ORCA and the related performance bottleneck  
+- [x] [Improving GPU Throughput through ParallelExecution Using Tensor Cores and CUDA Cores](https://ieeexplore.ieee.org/document/9912002): accepted by ISVLSI'22
+Parallel execution of GPU CUDA cores and Tensor cores, but this paper only use simulation and the achieved performance is limited  
+- [x] [Orca: A Distributed Serving System for Transformer-Based Generative Models](https://www.usenix.org/conference/osdi22/presentation/yu): accepted in OSDI'23  
+Dynamic batch processing without redundant computing
 - [ ] [EINNET: Optimizing Tensor Programs with Derivation-Based Transformations](https://www.usenix.org/conference/osdi23/presentation/zheng): under guidence of Zhihao JIA & Jidong ZHAI, accepted in OSDI'23  
-- [ ] [SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills](https://arxiv.org/abs/2308.16369)
-- [ ] [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models](https://dl.acm.org/doi/abs/10.1145/3567955.3567959): Google, accepted in ASPLOS'23
+*Temporarily suspended*, I just read the intro. Maybe I need some prior knowledge such as TVM, Pet, et.al.
 
 # Summary of some awesome works for optimizing  LLM inference    
 
@@ -27,7 +32,8 @@ This summary will including three parts:
 3. some important **works** in the different research interests
 
 ## Repositories
-For example, [LLMSys-PaperList](https://github.com/AmberLJC/LLMSys-PaperList) contains many excellent articles, and is keeping updating (which I believe is the most important for a paperlist).  
+For example, [LLMSys-PaperList](https://github.com/AmberLJC/LLMSys-PaperList) contains many excellent articles, and is keeping updating (which I believe is the most important for a paperlist).   
+[Awesome-LLM-Inference](https://github.com/DefTruth/Awesome-LLM-Inference) is also worth reading.    
 
 Besides, [awesome-AI-system](https://github.com/lambda7xx/awesome-AI-system) works also very well. And you can find other repositories in its content.  
 
@@ -143,17 +149,20 @@ Low-precision for memory and computing efficiency.
 - [ ] [FineQuant: Unlocking Efficiency with Fine-Grained Weight-Only Quantization for LLMs](https://arxiv.org/abs/2308.09723)
 - [ ] [QUIK: Towards End-to-End 4-Bit Inference on Generative Large Language Models](https://arxiv.org/abs/2310.09259)  
 - [ ] [Understanding the Impact of Post-Training Quantization on Large Language Models](https://arxiv.org/abs/2309.05210): tech report will help  
+- [ ] ⭐ [LLM-FP4: 4-Bit Floating-Point Quantized Transformers](https://arxiv.org/abs/2310.16836): by HKUST, accepted in EMNLP'23
+- [ ] ⭐ [Enabling Fast 2-bit LLM on GPUs: Memory Alignment, Sparse Outlier, and Asynchronous Dequantization](https://arxiv.org/pdf/2311.16442.pdf): by SJTU, accepted in DAC'24
+- [ ] [INT4 Wight + FP8 KV-Cache: optimization for LLM inference](https://zhuanlan.zhihu.com/p/653735572): INT4 Wight + FP8 KV-Cache + Dynamic batching
 
 ### Batch Processing
 
 Perhaps the most important way for improving the throughput in LLM inference.  
 This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/blog/2023/05/13/transformer-batching/) helps me a lot at the beginning.  
 
-- [x] ⭐ [Orca: A Distributed Serving System for Transformer-Based Generative Models](https://www.usenix.org/conference/osdi22/presentation/yu): dynamil batch processing without redundant computing, accepted in OSDI'23  
+- [x] ⭐ [Orca: A Distributed Serving System for Transformer-Based Generative Models](https://www.usenix.org/conference/osdi22/presentation/yu): dynamic batch processing without redundant computing, accepted in OSDI'23  
 - [x] [Fast Distributed Inference Serving for Large Language Models](https://arxiv.org/abs/2305.05920): considering Job Completion Time(JCT) in LLM serving, paper under guidance of Xin JIN  
 - [ ] [Response Length Perception and Sequence Scheduling: An LLM-Empowered LLM Inference Pipeline](https://arxiv.org/abs/2305.13144): schedule based on response length prediction by LLM, paper under guidance of Yang YOU  
 - [ ] [S3: Increasing GPU Utilization during Generative Inference for Higher Throughput](https://arxiv.org/abs/2306.06000): idea similar to above, by Harvard University  
-- [ ] [SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills](https://arxiv.org/abs/2308.16369): blocking the prefill phase and reduce pipeline bubbles, by MSRIndia  
+- [x] [SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills](https://arxiv.org/abs/2308.16369): blocking the prefill phase and reduce pipeline bubbles, by MSRIndia  
 - [ ] [Flover: A Temporal Fusion Framework for Efficient Autoregressive Model Parallel Inference](https://arxiv.org/abs/2305.13484): accepted by HiPC'23  
 - [ ] [Handling heavy-tailed input of transformer inference on GPUs](https://dl.acm.org/doi/10.1145/3524059.3532372): accepted by ICS'22  
 - [ ] [CoFB: latency-constrained co-scheduling of flows and batches for deep learning inference service on the CPU–GPU system](https://link.springer.com/article/10.1007/s11227-023-05183-6): Some form of inference service  
@@ -171,6 +180,10 @@ This part include some impressive work optimizing LLM computing by observing the
 - [ ] ⭐ [Flash-LLM: Enabling Cost-Effective and Highly-Efficient Large Generative Model Inference with Unstructured Sparsity](https://arxiv.org/abs/2309.10285): successor to FlashAttention in inference, accepted by VLDB'24
 - [ ] ⭐ [FlashDecoding++: Faster Large Language Model Inference on GPUs](https://arxiv.org/abs/2311.01282): worth reading, FLashDecoding follow-up  
 
+#### Optimization focus on Auto-regressive Decoding
+
+- [ ] [Splitwise: Efficient generative LLM inference using phase splitting](https://arxiv.org/abs/2311.18677): splitting prefill and decode in a map-reduce style, by UW and Microsoft
+
 ### Memory Manage
 
 This part is inspired by PagedAttention of vLLM. And there are many Top-Conference paper discussing the memory management in DL computing on GPUs.  
@@ -181,7 +194,13 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [AttMEMO : Accelerating Transformers with Memoization on Big Memory Systems](https://arxiv.org/abs/2301.09262): a unique observation that there is rich similarity in attention computation across inference sequences
 - [ ] [BPIPE: memory-balanced pipeline parallelism for training large language models](https://dl.acm.org/doi/10.5555/3618408.3619090): memory balance perhaps can work well in inferencce, by SNU, accepted by ICML'23
 
-### Inference on CPUs or based on SSD
+### Inference on hardware: GPUs, CPUs or based on SSD
+
+#### Underlying optimization for GPU
+
+- [ ] [Reducing shared memory footprint to leverage high throughput on Tensor Cores and its flexible API extension library](https://dl.acm.org/doi/abs/10.1145/3578178.3578238): implement some APIs to reduce the shared memory footprint, accepted in HPC Asia'23
+
+#### CPUs or based on SSD
 
 Making optimization for the calculating on CPU or SSD will have different methods.  
 
@@ -189,6 +208,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [Improving Throughput-oriented Generative Inference with CPUs](https://dl.acm.org/doi/abs/10.1145/3609510.3609815): cooperate of CPUs and GPU, accepted by APSys'23  
 - [ ] [FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU](https://arxiv.org/abs/2303.06865): inference a 30B model with a 16GB GPU, accepted by ICML'23
 - [ ] [Chrion: Optimizing Recurrent Neural Network Inference by Collaboratively Utilizing CPUs and GPUs](https://arxiv.org/abs/2307.11339): execute the operators on the CPU and GPU in parallel, by SJTU
+- [ ] [EdgeNN: Efficient Neural Network Inference for CPU-GPU Integrated Edge Devices](https://ieeexplore.ieee.org/document/10184528): inference on edge devices, accepted by ICDE'23
 
 ### Algorithm Optimization 💡
 
@@ -197,6 +217,7 @@ In this part, researchers provide some algorithm-based method to optimizing LLM 
 - [x] [H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models](https://arxiv.org/abs/2306.14048): accepted by NIPS'23
 - [ ] ⭐ [SkipDecode: Autoregressive Skip Decoding with Batching and Caching for Efficient LLM Inference](https://arxiv.org/abs/2307.02628): skipping maybe an useful method like spec decoding
 - [ ] [Inference with Reference: Lossless Acceleration of Large Language Models](https://arxiv.org/abs/2304.04487): also a potential optimization
+- [ ] [Efficient Streaming Language Models with Attention Sinks](https://arxiv.org/abs/2309.17453): streaming LLM for infinite sequence lengths, by MIT and under guidence of Song HAN
 
 ### Industrial Inference Frameworks 💡
 
@@ -205,6 +226,7 @@ In this part, researchers provide some algorithm-based method to optimizing LLM 
 - [ ] [DeepSpeed Model Implementations for Inference (MII)](https://github.com/microsoft/DeepSpeed-MII)
 - [x] [ByteTransformer: A High-Performance Transformer Boosted for Variable-Length Inputs](https://arxiv.org/abs/2210.03052): developed by ByteDance, accepted by IPDPS'23
 - [ ] [TurboTransformers: an efficient GPU serving system for transformer models](https://dl.acm.org/doi/10.1145/3437801.3441578): by Tencent Inc, accepted by PPoPP'21  
+- [ ] [Accelerating Generative AI with PyTorch II: GPT, Fast](https://pytorch.org/blog/accelerating-generative-ai-2/?utm_content=273712248&utm_medium=social&utm_source=twitter&hss_channel=tw-776585502606721024): a blog in PyTorch, use only PyTorch code
 
 ### LLM Serving 💡
 
@@ -216,6 +238,7 @@ LLM server providers will focus on this part.
 - [ ] [Tabi: An Efficient Multi-Level Inference System for Large Language Models](https://dl.acm.org/doi/abs/10.1145/3552326.3587438): under guidence of Kai CHEN, accepted by EuroSys'23  
 - [ ] [FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance](https://arxiv.org/abs/2305.05176): cost is the service provider cares most  
 - [ ] [FaaSwap: SLO-Aware, GPU-Efficient Serverless Inference via Model Swapping](https://arxiv.org/abs/2306.03622)
+- [ ] [Shockwave: Fair and Efficient Cluster Scheduling for Dynamic Adaptation in Machine Learning](https://www.usenix.org/conference/nsdi23/presentation/zheng)
 
 ### Some Interesting Idea
 
@@ -228,3 +251,6 @@ LLM server providers will focus on this part.
 - [ ] [Reducing Activation Recomputation in Large Transformer Models](https://arxiv.org/abs/2205.05198): by NVIDIA  
 - [ ] ⭐ [FLAT: An Optimized Dataflow for Mitigating Attention Bottlenecks](https://dl.acm.org/doi/10.1145/3575693.3575747): dataflow in inference  
 - [ ] [Cheaply Estimating Inference Efficiency Metrics for Autoregressive Transformer Models](https://openreview.net/forum?id=RJpAz15D0S): an interesting performance metric, accepted by NIPS'23
+- [ ] [FEC: Efficient Deep Recommendation Model Training with Flexible Embedding Communication](https://dl.acm.org/doi/abs/10.1145/3589310): accpted by SIGMOD'23
+- [ ] [Efficient Multi-GPU Graph Processing with Remote Work Stealing](https://ieeexplore.ieee.org/document/10184847): accpted by ICDE'23
+- [ ] [ARK: GPU-driven Code Execution for Distributed Deep Learning](https://www.usenix.org/conference/nsdi23/presentation/hwang): accpted by NSDI'23
