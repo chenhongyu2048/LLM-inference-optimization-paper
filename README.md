@@ -22,7 +22,12 @@ Parallel execution of GPU CUDA cores and Tensor cores, but this paper only use s
 - [x] [Orca: A Distributed Serving System for Transformer-Based Generative Models](https://www.usenix.org/conference/osdi22/presentation/yu): accepted in OSDI'23  
 Dynamic batch processing without redundant computing
 - [ ] [EINNET: Optimizing Tensor Programs with Derivation-Based Transformations](https://www.usenix.org/conference/osdi23/presentation/zheng): under guidence of Zhihao JIA & Jidong ZHAI, accepted in OSDI'23  
-*Temporarily suspended*, I just read the intro. Maybe I need some prior knowledge such as TVM, Pet, et.al.
+*Temporarily suspended*, I just read the intro. Maybe I need some prior knowledge such as TVM, Pet, et.al.  
+
+2023/12/07--2023/12/13:  
+- [ ] [gSampler: General and Efficient GPU-based Graph Sampling for Graph Learning](https://dl.acm.org/doi/10.1145/3600006.3613168): accepted by SOSP'23  
+- [ ] [ISPA: Exploiting Intra-SM Parallelism in GPUsvia Fine-grained Resource Management](https://ieeexplore.ieee.org/document/9917312): accepted by 'IEEE Transactions on Computers'
+- [ ] [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566): accepted by ASPLOS'24
 
 # Summary of some awesome works for optimizing  LLM inference    
 
