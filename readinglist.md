@@ -29,3 +29,6 @@ With very detailed description of sampling algorithm, optimization for graph sam
 vLLM is famous for its PagedAttention memory management
 - [x] [Splitwise: Efficient generative LLM inference using phase splitting](https://arxiv.org/abs/2311.18677): splitting prefill and decode in a map-reduce style, by UW and Microsoft
 Map-Reduce arch in LLM inference, these evaluations will bring us some throughts
+
+2023/12/14--2023/12/20
+- [x] [DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale](https://proceedings.mlr.press/v162/rajbhandari22a): provide hybrid MoE parallel framework, communication and kernel optimization

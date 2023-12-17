@@ -231,6 +231,7 @@ LLM server providers will focus on this part.
 - [ ] [MegaBlocks: Efficient Sparse Training with Mixture-of-Experts](https://proceedings.mlsys.org/paper_files/paper/2023/hash/f9f4f0db4894f77240a95bde9df818e0-Abstract-mlsys2023.html): accepted by MLSys'23
 - [ ] [Tutel: Adaptive Mixture-of-Experts at Scale](https://proceedings.mlsys.org/paper_files/paper/2023/hash/9412531719be7ccf755c4ff98d0969dc-Abstract-mlsys2023.html): accepted by MLSys'23
 - [ ] [Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference](https://arxiv.org/abs/2308.12066)
+- [ ] [Optimizing Mixture of Experts using Dynamic Recompilations](https://arxiv.org/abs/2205.01848): under guidence of Zhihao JIA
 
 ### Some Interesting Idea
 
