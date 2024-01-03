@@ -34,7 +34,12 @@ Map-Reduce arch in LLM inference, these evaluations will bring us some throughts
 - [x] [DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale](https://proceedings.mlr.press/v162/rajbhandari22a): provide hybrid MoE parallel framework, communication and kernel optimization
 
 2023/12/28--2024/01/03
-- [ ] [Flash-LLM: Enabling Cost-Effective and Highly-Efficient Large Generative Model Inference with Unstructured Sparsity](https://arxiv.org/abs/2309.10285): successor to FlashAttention in inference, accepted by VLDB'24
-- [ ] [Tutel: Adaptive Mixture-of-Experts at Scale](https://proceedings.mlsys.org/paper_files/paper/2023/hash/9412531719be7ccf755c4ff98d0969dc-Abstract-mlsys2023.html): accepted by MLSys'23
-- [ ] [PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU](https://arxiv.org/abs/2312.12456): by SJTU IPADS
-- [ ] [Generative AI Beyond LLMs: System Implications of Multi-Modal Generation](https://arxiv.org/abs/2312.14385)
+- [x] [HongTu: Scalable Full-Graph GNN Training on Multiple GPUs (via communication-optimized CPU data offloading)](https://arxiv.org/abs/2311.14898): full-graph GNN training on single-machine-multi-gpu, by group of Bingsheng HE  
+combines the partition-based GNN training and *recomputation*-cache-hybrid intermediate data management, and deduplicated communication to utilize the inter-GPU and intra-GPU(local) data access  
+- [x] [Generative AI Beyond LLMs: System Implications of Multi-Modal Generation](https://arxiv.org/abs/2312.14385): A quantitative analysis of the inference system performance of multimodal models and the observation of some interesting bottlenecks. The idea of first building an evaluation framework is good  
+- [ ] [Dissecting the Runtime Performance of the Training, Fine-tuning, and Inference of Large Language Models](https://arxiv.org/abs/2311.03687): evaluations helps you find the bottleneck  
+*Temporarily suspended*, I just read the evaluation of inference and the microbenchmark parts. The Module-wise Analysis part in inference is also incomplete
+
+2024/01/04--2024/01/10
+- [ ] [Flash-LLM: Enabling Cost-Effective and Highly-Efficient Large Generative Model Inference with Unstructured Sparsity](https://arxiv.org/abs/2309.10285): successor to FlashAttention in inference, accepted by VLDB'24  
+- [ ] ⭐ [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](https://arxiv.org/abs/2312.15234)

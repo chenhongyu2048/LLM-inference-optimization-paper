@@ -30,6 +30,7 @@ If you have a different opinion, please feel free to communicate with me through
 [Zhen DONG](https://dong-zhen.com/): many important work in quantization and high-performance ML, affiliated with UCB  
 [Tri DAO](https://tridao.me/): author of FlashAttention, affiliated with Princeton  
 [Ce ZHANG](https://zhangce.github.io/): famous in efficient MLsys, affiliated with UChicago  
+[Ion Stoica](https://people.eecs.berkeley.edu/~istoica/): Alpa, Ray, Spark, et.al.  
 
 [SPCL](https://spcl.inf.ethz.ch/Publications/): Scalable Parallel Computing Lab, affiliated with ETHz  
 [Luo MAI](https://luomai.github.io/): affiliated with University of Edinburgh
@@ -42,6 +43,7 @@ If you have a different opinion, please feel free to communicate with me through
 [Jidong ZHAI](https://pacman.cs.tsinghua.edu.cn/~zjd/): leading many important work in MLSys, affiliated with THU  
 [Lingxiao MA](https://xysmlx.github.io/): with many important work in MLSys on Top-Conference, affiliated with MSRA  
 [Cheng LI](http://staff.ustc.edu.cn/~chengli7/): high performce system and MLSys, affiliated with USTC  
+[Xupeng Miao](https://hsword.github.io/): SpotServe, SpecInfer, HET, et.al
 
 [Chuan WU](https://i.cs.hku.hk/~cwu/): with some important work in distributed machine learning systems, affiliated with HKU   
 [James CHENG](https://www.cse.cuhk.edu.hk/~jcheng/index.html): affiliated with CUHK  
@@ -64,6 +66,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 
 - [ ] ⭐ [Dissecting the Runtime Performance of the Training, Fine-tuning, and Inference of Large Language Models](https://arxiv.org/abs/2311.03687): evaluations helps you find the bottleneck  
 - [ ] ⭐ [Full Stack Optimization of Transformer Inference: a Survey](https://arxiv.org/abs/2302.14017): a survey by UCB  
+- [ ] ⭐ [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](https://arxiv.org/abs/2312.15234): worth a read
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -177,6 +180,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Improving Computation and Memory Efficiency for Real-world Transformer Inference on GPUs](https://dl.acm.org/doi/full/10.1145/3617689): block-based data layout, accepted by TACO'October-2023
 - [ ] [AttMEMO : Accelerating Transformers with Memoization on Big Memory Systems](https://arxiv.org/abs/2301.09262): a unique observation that there is rich similarity in attention computation across inference sequences
 - [ ] [BPIPE: memory-balanced pipeline parallelism for training large language models](https://dl.acm.org/doi/10.5555/3618408.3619090): memory balance perhaps can work well in inferencce, by SNU, accepted by ICML'23
+- [ ] [Improving Large Language Model Throughput with Efficient LongTerm Memory Management](https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F23/projects/reports/project1010_paper_64287652274076362722.pdf): perhaps a new view
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -219,7 +223,7 @@ In this part, researchers provide some algorithm-based method to optimizing LLM 
 
 ### LLM Serving 💡
 
-LLM server providers will focus on this part.  
+LLM server providers will focus on this part. Engineering practices are just as important as algorithm optimization.  
 
 - [ ] ⭐ [AlpaServe: Statistical Multiplexing with Model Parallelism for Deep Learning Serving](https://arxiv.org/abs/2302.11665): accepted by OSDI'23
 - [ ] ⭐ [STI: Turbocharge NLP Inference at the Edge via Elastic Pipelining](https://arxiv.org/abs/2207.05022): Elastic will be important in the future, accepted by ASPLOS'23  
@@ -228,6 +232,12 @@ LLM server providers will focus on this part.
 - [ ] [FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance](https://arxiv.org/abs/2305.05176): cost is the service provider cares most  
 - [ ] [FaaSwap: SLO-Aware, GPU-Efficient Serverless Inference via Model Swapping](https://arxiv.org/abs/2306.03622)
 - [ ] [Shockwave: Fair and Efficient Cluster Scheduling for Dynamic Adaptation in Machine Learning](https://www.usenix.org/conference/nsdi23/presentation/zheng)
+
+- [ ] [SLA-Driven ML INFERENCE FRAMEWORK FOR CLOUDS WITH HETEROGENEOUS ACCELERATORS](https://mlsys.org/virtual/2022/poster/2034): accepted by MLSys'22
+- [ ] [FaST-GShare: Enabling Efficient Spatio-Temporal GPU Sharing in Serverless Computing for Deep Learning Inference](https://dl.acm.org/doi/abs/10.1145/3605573.3605638): accepted by ICPP'23
+- [ ] [Flashpoint: A Low-latency Serverless Platform for Deep Learning Inference Serving](https://uwspace.uwaterloo.ca/handle/10012/19748)
+- [ ] [Serving deep learning models in a serverless platform](https://arxiv.org/abs/1710.08460)
+- [ ] [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566): by Xupeng MIAO and under guidence of Zhihao JIA
 
 ### Combine MoE with LLM inference
 Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https://huggingface.co/collections/mdouglas/papers-moe-ensemble-653fc75fe8eeea516bf739e1), and [MOE papers to read](https://huggingface.co/collections/davanstrien/moe-papers-to-read-657832cedea7e2122d052a83)  
@@ -243,11 +253,14 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Exploiting Transformer Activation Sparsity with Dynamic Inference](https://arxiv.org/abs/2310.04361)
 - [ ] [SE-MoE: A Scalable and Efficient Mixture-of-Experts Distributed Training and Inference System](https://arxiv.org/abs/2205.10034)
 - [ ] [Who Says Elephants Can’t Run: Bringing Large Scale MoE Models into Cloud Scale Production](https://aclanthology.org/2022.sustainlp-1.6/): accepted by ACL'22
+- [ ] [Fast Inference of Mixture-of-Experts LanguageModels with Offloading](https://arxiv.org/abs/2312.17238): combine moe with offloading
 
 ### Inference with multimodal
 
 - [ ] [MOSEL: Inference Serving Using Dynamic Modality Selection](https://arxiv.org/abs/2310.18481): improving system throughput by 3.6× with an accuracy guarantee and shortening job completion times by 11×
 - [ ] [Generative AI Beyond LLMs: System Implications of Multi-Modal Generation](https://arxiv.org/abs/2312.14385): by META
+- [ ] [Speed Is All You Need: On-Device Acceleration of Large Diffusion Models via GPU-Aware Optimizations](https://arxiv.org/abs/2304.11267): by Google
+- [ ] [Accelerating Text-to-image Editing via Cache-enabled Sparse Diffusion Inference](https://arxiv.org/abs/2305.17423): optimization for diffusion models by cache
 
 ### Some Interesting Idea
 
