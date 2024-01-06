@@ -40,6 +40,10 @@ combines the partition-based GNN training and *recomputation*-cache-hybrid inter
 - [ ] [Dissecting the Runtime Performance of the Training, Fine-tuning, and Inference of Large Language Models](https://arxiv.org/abs/2311.03687): evaluations helps you find the bottleneck  
 *Temporarily suspended*, I just read the evaluation of inference and the microbenchmark parts. The Module-wise Analysis part in inference is also incomplete
 
-2024/01/04--2024/01/10
-- [ ] [Flash-LLM: Enabling Cost-Effective and Highly-Efficient Large Generative Model Inference with Unstructured Sparsity](https://arxiv.org/abs/2309.10285): successor to FlashAttention in inference, accepted by VLDB'24  
-- [ ] ⭐ [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](https://arxiv.org/abs/2312.15234)
+2024/01/04--2024/01/10 
+- [x] ⭐ [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](https://arxiv.org/abs/2312.15234)  
+provide a detailed survey of decoder-only LLM inference, and with a similar categorization to our repo :\). I also update some papers based on this survey  
+the authors list a number of optimization methods, and based on some methods they have made their own excellent work. This reminds us of the importance of setting a novelty goal and thinking creatively  
+- [ ] [Cheaply Estimating Inference Efficiency Metrics for Autoregressive Transformer Models](https://openreview.net/forum?id=RJpAz15D0S): an interesting performance metric, accepted by NIPS'23
+- [ ] [Towards MoE Deployment: Mitigating Inefficiencies in Mixture-of-Expert (MoE) Inference](https://arxiv.org/abs/2303.06182): some hot optimizations for inference
+- [ ] ⭐ [MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters](https://www.usenix.org/conference/nsdi22/presentation/weng): challenges and solutions in real-world scenarios
