@@ -155,6 +155,7 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 - [ ] [Handling heavy-tailed input of transformer inference on GPUs](https://dl.acm.org/doi/10.1145/3524059.3532372): accepted by ICS'22  
 - [ ] [CoFB: latency-constrained co-scheduling of flows and batches for deep learning inference service on the CPU–GPU system](https://link.springer.com/article/10.1007/s11227-023-05183-6): Some form of inference service  
 - [ ] [TCB: Accelerating Transformer Inference Services with Request Concatenation](https://dl.acm.org/doi/10.1145/3545008.3545052): perhaps similar to ByteTransformer, accepted by ICPP'22  
+- [ ] [Fairness in Serving Large Language Models](https://arxiv.org/abs/2401.00588): under guidence of Ion Stoica
 
 ### Computing Optimization
 
@@ -250,6 +251,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [BATCH: Machine Learning Inference Serving on Serverless Platforms with Adaptive Batching](https://ieeexplore.ieee.org/document/9355312): accepted by SC'20
 - [ ] [MArk: exploiting cloud services for cost-effective, SLO-aware machine learning inference serving](https://dl.acm.org/doi/abs/10.5555/3358807.3358897): accepted by ATC'19
 - [ ] ⭐ [MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters](https://www.usenix.org/conference/nsdi22/presentation/weng): challenges and solutions in real-world scenarios, accepted by NSDI'22
+- [ ] [SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads](https://arxiv.org/pdf/2312.16733.pdf): under the guidence of Ion Stoica
 
 - [ ] [Microsecond-scale Preemption for Concurrent GPU-accelerated DNN Inferences](https://www.usenix.org/conference/osdi22/presentation/han): accepted by OSDI'22, enables microsecond-scale kernel preemption and controlled concurrent execution in GPU scheduling
 - [ ] [PipeSwitch: fast pipelined context switching for deep learning applications](https://dl.acm.org/doi/10.5555/3488766.3488794): PipeSwitch, a system that enables unused cycles of an inference application to be filled by training or other inference applications, accepted by OSDI'20
