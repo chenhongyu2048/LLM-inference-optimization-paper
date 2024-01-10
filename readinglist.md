@@ -28,7 +28,7 @@ With very detailed description of sampling algorithm, optimization for graph sam
 - [x] [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180): memory page management for the KV-Cache in Attention-type model, accepted by SOSP'23
 vLLM is famous for its PagedAttention memory management
 - [x] [Splitwise: Efficient generative LLM inference using phase splitting](https://arxiv.org/abs/2311.18677): splitting prefill and decode in a map-reduce style, by UW and Microsoft
-Map-Reduce arch in LLM inference, these evaluations will bring us some throughts
+Map-Reduce arch in LLM inference, these evaluations will bring us some throughts. perhaps only useful in great clusters  
 
 2023/12/14--2023/12/20
 - [x] [DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale](https://proceedings.mlr.press/v162/rajbhandari22a): provide hybrid MoE parallel framework, communication and kernel optimization
@@ -44,6 +44,13 @@ combines the partition-based GNN training and *recomputation*-cache-hybrid inter
 - [x] ⭐ [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](https://arxiv.org/abs/2312.15234)  
 provide a detailed survey of decoder-only LLM inference, and with a similar categorization to our repo :\). I also update some papers based on this survey  
 the authors list a number of optimization methods, and based on some methods they have made their own excellent work. This reminds us of the importance of setting a novelty goal and thinking creatively  
+- [x] [Towards MoE Deployment: Mitigating Inefficiencies in Mixture-of-Expert (MoE) Inference](https://arxiv.org/abs/2303.06182): some hot optimizations for inference  
+For a scenario of MoE (encoder-decoder model and a large number of experts), some original and effective optimization strategies are provided: Dynamic Gating, Expert Buffering, and Expert Load Balancing  
+- [x] ⭐ [PIT: Optimization of Dynamic Sparse Deep Learning Models via Permutation Invariant Transformation](https://dl.acm.org/doi/10.1145/3600006.3613139): A novel way to deal with dynamic sparsity may be used for GNN and MoE, accepted by SOSP'23
+Novel observations and solid engineering implementations and experiments, the disadvantage is that the application requirements are relatively high (more than 90% sparsity)
+
+2024/01/11--2024/01/17
 - [ ] [Cheaply Estimating Inference Efficiency Metrics for Autoregressive Transformer Models](https://openreview.net/forum?id=RJpAz15D0S): an interesting performance metric, accepted by NIPS'23
-- [ ] [Towards MoE Deployment: Mitigating Inefficiencies in Mixture-of-Expert (MoE) Inference](https://arxiv.org/abs/2303.06182): some hot optimizations for inference
 - [ ] ⭐ [MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters](https://www.usenix.org/conference/nsdi22/presentation/weng): challenges and solutions in real-world scenarios
+- [ ] [SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads](https://arxiv.org/pdf/2312.16733.pdf): under the guidence of Ion Stoica
+- [ ] [Infinite-LLM: Efficient LLM Service for Long Context with DistAttention and Distributed KVCache](https://arxiv.org/abs/2401.02669)
