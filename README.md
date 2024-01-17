@@ -103,6 +103,7 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
 - [ ] [REST: Retrieval-Based Speculative Decoding](https://arxiv.org/abs/2311.08252): use retrieval for spec decoding, some familiar names in the authors list  
 - [ ] [Cascade Speculative Drafting for Even Faster LLM Inference](https://arxiv.org/abs/2312.11462): by UIUC
+- [ ] [Multi-Candidate Speculative Decoding](https://arxiv.org/abs/2401.06706): multiple draft models
 
 ### 3D Parallelism 💡
 
@@ -122,6 +123,8 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] [Dynamic Context Pruning for Efficient and Interpretable Autoregressive Transformers](https://arxiv.org/abs/2305.15805)
 - [ ] [Dynamic N:M Fine-Grained Structured Sparse Attention Mechanism](https://dl.acm.org/doi/abs/10.1145/3572848.3577500): accpted by PPoPP'23
 - [x] ⭐ [PIT: Optimization of Dynamic Sparse Deep Learning Models via Permutation Invariant Transformation](https://dl.acm.org/doi/10.1145/3600006.3613139): A novel way to deal with dynamic sparsity may be used for GNN and MoE, accepted by SOSP'23
+
+- [ ] [FFSplit: Split Feed-Forward Network For Optimizing Accuracy-Efficiency Trade-off in Language Model Inferenc](https://arxiv.org/abs/2401.04044): sparsity in FFN
 
 ### Quantization 💡
 
@@ -209,6 +212,8 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU](https://arxiv.org/abs/2312.12456): by SJTU IPADS
 - [ ] [LLM in a flash: Efficient Large Language Model Inference with Limited Memory](https://arxiv.org/abs/2312.11514): by Apple
 
+- [ ] [Efficient LLM inference solution on Intel GPU](https://arxiv.org/abs/2401.05391): intel GPU is interesting
+
 #### Heterogeneous or decentralized environments
 
 - [ ] [FusionAI: Decentralized Training and Deploying LLMs with Massive Consumer-Level GPUs](https://arxiv.org/abs/2309.01172): decentrailized system on consumer-level GPUs, through there will be some problems
@@ -234,6 +239,8 @@ In this part, researchers provide some algorithm-based method to optimizing LLM 
 - [ ] [Accelerating Generative AI with PyTorch II: GPT, Fast](https://pytorch.org/blog/accelerating-generative-ai-2/?utm_content=273712248&utm_medium=social&utm_source=twitter&hss_channel=tw-776585502606721024): a blog in PyTorch, use only PyTorch code, [gpt-fast](https://github.com/pytorch-labs/gpt-fast)
 - [ ] [FlexFlow Serve: Low-Latency, High-Performance LLM Serving](https://github.com/flexflow/FlexFlow): based on FlexFlow
 - [ ] [FlashInfer: Kernel Library for LLM Serving](https://github.com/flashinfer-ai/flashinfer)
+- [ ] [Efficiently Programming Large Language Models using SGLang](https://arxiv.org/abs/2312.07104): we can get some optimization from here
+- [ ] [Inferflow: an Efficient and Highly Configurable Inference Engine for Large Language Models](https://arxiv.org/abs/2401.08294): different parallel, by Tencent
 
 ### LLM Serving 💡
 
@@ -263,6 +270,11 @@ LLM server providers will focus on this part. Engineering practices are just as 
 
 - [ ] ⭐ [Paella: Low-latency Model Serving with Software-defined GPU Scheduling](https://dl.acm.org/doi/abs/10.1145/3600006.3613163): how the tasks are scheduled to GPUs, accepted by SOSP'23
 - [ ] [OTAS: An Elastic Transformer Serving System via Token Adaptation](https://arxiv.org/abs/2401.05031): elastic in serving while considering SLO
+
+#### Serving for LoRA
+
+- [ ] [S-LoRA: Serving Thousands of Concurrent LoRA Adapters](https://arxiv.org/abs/2311.03285): beginninf of Serving for LoRA, under the guidence of Ion Stoica
+- [ ] [Dynamic LoRA Serving System for Offline Context Learning](https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F23/projects/reports/project1011_paper_92116151989678177816.pdf): successor of S-LoRA
 
 ### RAG with LLM
  
@@ -300,7 +312,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Optimizing Dynamic Neural Networks with Brainstorm](https://www.usenix.org/conference/osdi23/presentation/cui): this idea has the potential to go further, accepted by OSDI'23  
 - [ ] [Ring Attention with Blockwise Transformers for Near-Infinite Context](https://arxiv.org/abs/2310.01889): Ring Attention?  
 - [ ] [Reducing Activation Recomputation in Large Transformer Models](https://arxiv.org/abs/2205.05198): by NVIDIA  
-- [ ] [Cheaply Estimating Inference Efficiency Metrics for Autoregressive Transformer Models](https://openreview.net/forum?id=RJpAz15D0S): an interesting performance metric, accepted by NIPS'23
+- [x] [Cheaply Estimating Inference Efficiency Metrics for Autoregressive Transformer Models](https://openreview.net/forum?id=RJpAz15D0S): an interesting performance metric, accepted by NIPS'23
 - [ ] [FEC: Efficient Deep Recommendation Model Training with Flexible Embedding Communication](https://dl.acm.org/doi/abs/10.1145/3589310): accpted by SIGMOD'23
 - [ ] [Efficient Multi-GPU Graph Processing with Remote Work Stealing](https://ieeexplore.ieee.org/document/10184847): accpted by ICDE'23
 - [ ] [ARK: GPU-driven Code Execution for Distributed Deep Learning](https://www.usenix.org/conference/nsdi23/presentation/hwang): accpted by NSDI'23
