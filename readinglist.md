@@ -64,10 +64,16 @@ Serving LoRA is becoming more and more important, provide some optimization base
 - [x] [Liger: Interleaving Intra- and Inter-Operator Parallelism for Distributed Large Model Inference](https://dl.acm.org/doi/abs/10.1145/3627535.3638466): accepted by PPoPP'24  
 I would like to call it as the tensor model parallel + overlap communication with computation. The engineering implementation is excellent.  
 
-2024/02/29--2024/03/13
+2024/02/29--2024/03/06
 - [ ] [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566): by Xupeng MIAO and under guidence of Zhihao JIA
+- [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
+- [ ] [Sequoia: Scalable, Robust, and Hardware-aware Speculative Decoding](https://arxiv.org/abs/2402.12374): accelerating spec decoding
+
+2024/03/07--2024/03/13
 - [ ] [ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models](https://arxiv.org/abs/2401.14351): find different problems in serving LLMs
 - [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
+- [ ] ⭐ [Chameleon: a heterogeneous and disaggregated accelerator system for retrieval-augmented language models](https://arxiv.org/abs/2310.09949): retrieval will be helpful, but how to use it?
+
 - [ ] [GLISP: A Scalable GNN Learning System by Exploiting Inherent Structural Properties of Graphs](https://arxiv.org/abs/2401.03114): by Ant Group
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
 - [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel? 

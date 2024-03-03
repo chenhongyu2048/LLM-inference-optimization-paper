@@ -115,6 +115,7 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [Decoding Speculative Decoding](https://arxiv.org/abs/2402.01528): provide some insight into the selection of draft models
 - [ ] [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting](https://arxiv.org/abs/2402.13720): perhaps tree specualtive decoding?
 - [ ] ⭐ [Speculative Streaming: Fast LLM Inference without Auxiliary Models](https://arxiv.org/abs/2402.11131): a promising method for speculative decoding
+- [ ] [Sequoia: Scalable, Robust, and Hardware-aware Speculative Decoding](https://arxiv.org/abs/2402.12374): accelerating spec decoding
 
 #### Skeleton-of-Thought
 
@@ -130,6 +131,7 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [InternEvo: Efficient Long-sequence Large Language Model Training via Hybrid Parallelism and Redundant Sharding](https://arxiv.org/abs/2401.09149): Efficient Long-sequence training 
 - [x] [Liger: Interleaving Intra- and Inter-Operator Parallelism for Distributed Large Model Inference](https://dl.acm.org/doi/abs/10.1145/3627535.3638466): accepted by PPoPP'24
 - [ ] [T3: Transparent Tracking & Triggering for Fine-grained Overlap of Compute & Collectives](https://arxiv.org/abs/2401.16677): similar to Liger, accepted by ASPLOS'24
+- [ ] [MegaScale: Scaling Large Language Model Training to More Than 10,000 GPUs](https://arxiv.org/abs/2402.15627): full-stack approach of LLM training
 
 ### Prune & Sparsity 💡
 
@@ -310,7 +312,9 @@ LLM server providers will focus on this part. Engineering practices are just as 
 
 ### RAG with LLM
  
-- [ ] [Chameleon: a heterogeneous and disaggregated accelerator system for retrieval-augmented language models](https://arxiv.org/abs/2310.09949): retrieval will be helpful, but how to use it?
+- [ ] ⭐ [Chameleon: a heterogeneous and disaggregated accelerator system for retrieval-augmented language models](https://arxiv.org/abs/2310.09949): retrieval will be helpful, but how to use it?
+- [ ] [Generative Dense Retrieval: Memory Can Be a Burden](https://arxiv.org/abs/2401.10487): accepted by EACL'24
+- [ ] ⭐ [Accelerating Retrieval-Augmented Language Model Serving with Speculation](https://arxiv.org/abs/2401.14021): also a paper for RaLM
 
 ### Combine MoE with LLM inference
 Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https://huggingface.co/collections/mdouglas/papers-moe-ensemble-653fc75fe8eeea516bf739e1), and [MOE papers to read](https://huggingface.co/collections/davanstrien/moe-papers-to-read-657832cedea7e2122d052a83)  
@@ -328,8 +332,9 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Who Says Elephants Can’t Run: Bringing Large Scale MoE Models into Cloud Scale Production](https://aclanthology.org/2022.sustainlp-1.6/): accepted by ACL'22
 - [ ] [Fast Inference of Mixture-of-Experts LanguageModels with Offloading](https://arxiv.org/abs/2312.17238): combine moe with offloading
 - [ ] [LoRAMoE: Revolutionizing Mixture of Experts for Maintaining World Knowledge in Language Model Alignment](https://arxiv.org/abs/2312.09979): MoE with LoRA
-- [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
+- [ ] ⭐ [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
+- [ ] [FlexLLM: A System for Co-Serving Large Language Model Inference and Parameter-Efficient Finetuning](https://arxiv.org/abs/2402.18789): how to find novel questions?
 
 ### Inference with multimodal
 
