@@ -65,14 +65,21 @@ Serving LoRA is becoming more and more important, provide some optimization base
 I would like to call it as the tensor model parallel + overlap communication with computation. The engineering implementation is excellent.  
 
 2024/02/29--2024/03/06
-- [ ] [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566): by Xupeng MIAO and under guidence of Zhihao JIA
-- [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
-- [ ] [Sequoia: Scalable, Robust, and Hardware-aware Speculative Decoding](https://arxiv.org/abs/2402.12374): accelerating spec decoding
+- [x] [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566): by Xupeng MIAO and under guidence of Zhihao JIA  
+As the paper said, "We believe that our approach inspires a new paradigm for distributed inference on preemptible instances, and the insights gleaned from SpotServe’s design can motivate a variety of following-up research along this direction".  
 
 2024/03/07--2024/03/13
-- [ ] [ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models](https://arxiv.org/abs/2401.14351): find different problems in serving LLMs
-- [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
+- [x] [BitNet: Scaling 1-bit Transformers for Large Language Models](https://arxiv.org/abs/2310.11453): quantization to 1-bit: {-1, +1}, replace `mul` to `add`, improve both memory, computation and energy effciency
+- [x] [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](https://arxiv.org/abs/2402.17764)： follow-ip work of BitNet, 1.5b means {-1, 0, 1}
+
+2024/03/14--2024/03/20
+- [x] [OneBit: Towards Extremely Low-bit Large Language Models](https://arxiv.org/abs/2402.11295): seems add a sign matrix to the Low-rank decomposition, thus achieve higher accuracy  
 - [ ] ⭐ [Chameleon: a heterogeneous and disaggregated accelerator system for retrieval-augmented language models](https://arxiv.org/abs/2310.09949): retrieval will be helpful, but how to use it?
+*Temporarily suspended*, I just read the intro. This work is more based on the FPGA and vertor search.  
+- [ ] [ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models](https://arxiv.org/abs/2401.14351): find different problems in serving LLMs
+
+- [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
+- [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
 
 - [ ] [GLISP: A Scalable GNN Learning System by Exploiting Inherent Structural Properties of Graphs](https://arxiv.org/abs/2401.03114): by Ant Group
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
@@ -81,3 +88,4 @@ I would like to call it as the tensor model parallel + overlap communication wit
 PENDING:   
 - [ ] ⭐ [MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters](https://www.usenix.org/conference/nsdi22/presentation/weng): challenges and solutions in real-world scenarios
 - [ ] [Fairness in Serving Large Language Models](https://arxiv.org/abs/2401.00588): under guidence of Ion Stoica
+- [ ] [Sequoia: Scalable, Robust, and Hardware-aware Speculative Decoding](https://arxiv.org/abs/2402.12374): accelerating spec decoding, and it is more inclined to a pure algorithmic work
