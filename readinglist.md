@@ -72,20 +72,26 @@ As the paper said, "We believe that our approach inspires a new paradigm for dis
 - [x] [BitNet: Scaling 1-bit Transformers for Large Language Models](https://arxiv.org/abs/2310.11453): quantization to 1-bit: {-1, +1}, replace `mul` to `add`, improve both memory, computation and energy effciency
 - [x] [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](https://arxiv.org/abs/2402.17764)： follow-ip work of BitNet, 1.5b means {-1, 0, 1}
 
-2024/03/14--2024/03/20
+2024/03/14--2024/03/22
 - [x] [OneBit: Towards Extremely Low-bit Large Language Models](https://arxiv.org/abs/2402.11295): seems add a sign matrix to the Low-rank decomposition, thus achieve higher accuracy  
 - [ ] ⭐ [Chameleon: a heterogeneous and disaggregated accelerator system for retrieval-augmented language models](https://arxiv.org/abs/2310.09949): retrieval will be helpful, but how to use it?
 *Temporarily suspended*, I just read the intro. This work is more based on the FPGA and vertor search.  
-- [ ] [ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models](https://arxiv.org/abs/2401.14351): find different problems in serving LLMs
+- [x] [ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models](https://arxiv.org/abs/2401.14351): find different problems in serving LLMs
+LLM as serverless function: the LLMs will be loaded from DRAM and moved out from GPUs. This paper provides some engineering optimization in model loading, and schedules the models among the cluster.  
+
+2024/03/23--2024/03/29
+- [ ] [BitDelta: Your Fine-Tune May Only Be Worth One Bit](https://arxiv.org/abs/2402.10193)  
+- [ ] [Dynamic LoRA Serving System for Offline Context Learning](https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F23/projects/reports/project1011_paper_92116151989678177816.pdf): successor of S-LoRA
+- [ ] [Fairness in Serving Large Language Models](https://arxiv.org/abs/2401.00588): under guidence of Ion Stoica
+- [ ] [FlexLLM: A System for Co-Serving Large Language Model Inference and Parameter-Efficient Finetuning](https://arxiv.org/abs/2402.18789): how to find novel questions?
+- [ ] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24
 
 - [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
 - [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
 
+PENDING:   
+- [ ] ⭐ [MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters](https://www.usenix.org/conference/nsdi22/presentation/weng): challenges and solutions in real-world scenarios
+- [ ] [Sequoia: Scalable, Robust, and Hardware-aware Speculative Decoding](https://arxiv.org/abs/2402.12374): accelerating spec decoding, and it is more inclined to a pure algorithmic work
 - [ ] [GLISP: A Scalable GNN Learning System by Exploiting Inherent Structural Properties of Graphs](https://arxiv.org/abs/2401.03114): by Ant Group
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
 - [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel? 
-
-PENDING:   
-- [ ] ⭐ [MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters](https://www.usenix.org/conference/nsdi22/presentation/weng): challenges and solutions in real-world scenarios
-- [ ] [Fairness in Serving Large Language Models](https://arxiv.org/abs/2401.00588): under guidence of Ion Stoica
-- [ ] [Sequoia: Scalable, Robust, and Hardware-aware Speculative Decoding](https://arxiv.org/abs/2402.12374): accelerating spec decoding, and it is more inclined to a pure algorithmic work
