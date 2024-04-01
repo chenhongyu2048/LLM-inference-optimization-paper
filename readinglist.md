@@ -79,16 +79,17 @@ As the paper said, "We believe that our approach inspires a new paradigm for dis
 - [x] [ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models](https://arxiv.org/abs/2401.14351): find different problems in serving LLMs
 LLM as serverless function: the LLMs will be loaded from DRAM and moved out from GPUs. This paper provides some engineering optimization in model loading, and schedules the models among the cluster.  
 
-2024/03/23--2024/03/29
+2024/03/30--2024/04/05
+- [x] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24  
+A new paradigm for multi-tenant LoRA serving, optimizing compute kernel SGMV (only single LoRA rank) and request scheduling (not the focus)
+- [ ] [FastDecode: High-Throughput GPU-Efficient LLM Serving using Heterogeneous Pipelines](https://arxiv.org/abs/2403.11421): efficient serving with CPU-GPU system
+- [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
+
+- [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
 - [ ] [BitDelta: Your Fine-Tune May Only Be Worth One Bit](https://arxiv.org/abs/2402.10193)  
 - [ ] [Dynamic LoRA Serving System for Offline Context Learning](https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F23/projects/reports/project1011_paper_92116151989678177816.pdf): successor of S-LoRA
 - [ ] [Fairness in Serving Large Language Models](https://arxiv.org/abs/2401.00588): under guidence of Ion Stoica
 - [ ] [FlexLLM: A System for Co-Serving Large Language Model Inference and Parameter-Efficient Finetuning](https://arxiv.org/abs/2402.18789): how to find novel questions?
-- [ ] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24
-- [ ] [FastDecode: High-Throughput GPU-Efficient LLM Serving using Heterogeneous Pipelines](https://arxiv.org/abs/2403.11421): efficient serving with CPU-GPU system
-
-- [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
-- [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
 
 PENDING:   
 - [ ] ⭐ [MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters](https://www.usenix.org/conference/nsdi22/presentation/weng): challenges and solutions in real-world scenarios

@@ -243,6 +243,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Dynamic Memory Compression: Retrofitting LLMs for Accelerated Inference](https://arxiv.org/abs/2403.09636): compress KV Cache
 - [ ] [LLM as a System Service on Mobile Devices](https://arxiv.org/abs/2403.11805): LLM as a service on Mobile devices
 - [ ] [DistMind: Efficient Resource Disaggregation for Deep Learning Workloads](https://ieeexplore.ieee.org/abstract/document/10414009): by Xin JIN, accepted by ToN'Jan24
+- [ ] [ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching](https://arxiv.org/abs/2403.17312): sparsity in KV Cache, accepted by ISCA'24
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -357,7 +358,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [x] [S-LoRA: Serving Thousands of Concurrent LoRA Adapters](https://arxiv.org/abs/2311.03285): beginninf of Serving for LoRA, under the guidence of Ion Stoica: accepted by MLSys'24
 - [ ] [Dynamic LoRA Serving System for Offline Context Learning](https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F23/projects/reports/project1011_paper_92116151989678177816.pdf): successor of S-LoRA
 - [x] [CaraServe: CPU-Assisted and Rank-Aware LoRA Serving for Generative LLM Inference](https://arxiv.org/abs/2401.11240): serving LoRA is becoming more and more important
-- [ ] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24
+- [x] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24
 - [ ] [Petals: Collaborative Inference and Fine-tuning of Large Models](https://arxiv.org/abs/2209.01188)
 
 -------------------------------------  
