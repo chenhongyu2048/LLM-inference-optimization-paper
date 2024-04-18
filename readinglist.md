@@ -82,8 +82,12 @@ LLM as serverless function: the LLMs will be loaded from DRAM and moved out from
 2024/03/30--2024/04/05
 - [x] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24  
 A new paradigm for multi-tenant LoRA serving, optimizing compute kernel SGMV (only single LoRA rank) and request scheduling (not the focus)
-- [ ] [FastDecode: High-Throughput GPU-Efficient LLM Serving using Heterogeneous Pipelines](https://arxiv.org/abs/2403.11421): efficient serving with CPU-GPU system
+
+2024/04/07--2024/04/12
 - [ ] [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
+- [ ] [FastDecode: High-Throughput GPU-Efficient LLM Serving using Heterogeneous Pipelines](https://arxiv.org/abs/2403.11421): efficient serving with CPU-GPU system
+- [ ] ⭐ [HeteGen: Heterogeneous Parallel Inference for Large Language Models on Resource-Constrained Devices](https://arxiv.org/abs/2403.01164): heterogeneous parallel computing using CPUs and GPUs, accepted by MLSys'24
+- [ ] [Improving Throughput-oriented Generative Inference with CPUs](https://dl.acm.org/doi/abs/10.1145/3609510.3609815): cooperate of CPUs and GPU, accepted by APSys'23 
 
 - [ ] [The Synergy of Speculative Decoding and Batching in Serving Large Language Models](https://arxiv.org/abs/2310.18813): analyse for combining the spec decoding with batching  
 - [ ] [BitDelta: Your Fine-Tune May Only Be Worth One Bit](https://arxiv.org/abs/2402.10193)  
@@ -96,4 +100,4 @@ PENDING:
 - [ ] [Sequoia: Scalable, Robust, and Hardware-aware Speculative Decoding](https://arxiv.org/abs/2402.12374): accelerating spec decoding, and it is more inclined to a pure algorithmic work
 - [ ] [GLISP: A Scalable GNN Learning System by Exploiting Inherent Structural Properties of Graphs](https://arxiv.org/abs/2401.03114): by Ant Group
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
-- [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel? 
+- [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel?

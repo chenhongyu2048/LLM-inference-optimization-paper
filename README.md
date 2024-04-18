@@ -95,6 +95,7 @@ There are some interesting papers about parallel decoding.
 - [ ] [Fast Chain-of-Thought: A Glance of Future from Parallel Decoding Leads to Answers Faster](https://arxiv.org/abs/2311.08263)  
 - [ ] [Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding](https://arxiv.org/abs/2307.15337)  
 - [ ] [ProPD: Dynamic Token Tree Pruning and Generation for LLM Parallel Decoding](https://arxiv.org/abs/2402.13485)
+- [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel? 
 
 ### Speculative Decoding
 
@@ -123,6 +124,8 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [Minions: Accelerating Large Language Model Inference with Adaptive and Collective Speculative Decoding](https://arxiv.org/abs/2402.15678): using several SSMs, adaptive SSM prediction length, pipelining SSM decode and LLM verify
 - [ ] [Recurrent Drafter for Fast Speculative Decoding in Large Language Models](https://arxiv.org/abs/2403.09919)
 - [ ] [Optimal Block-Level Draft Verification for Accelerating Speculative Decoding](https://arxiv.org/abs/2403.10444)
+- [ ] [Accelerating LLM Inference with Staged Speculative Decoding](https://arxiv.org/abs/2308.04623): token tree and a second stage of speculative decoding
+- [ ] [EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/abs/2401.15077)
 
 #### different model collaboration  
 
@@ -138,7 +141,6 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 
 - [x] ⭐ [Efficiently Scaling Transformer Inference](https://arxiv.org/abs/2211.05102): use model parallel to accelerating inference, by Google, in MLSys'23    
 - [ ] [HexGen: Generative Inference of Foundation Model over Heterogeneous Decentralized Environment](https://arxiv.org/abs/2311.11514):  a distributed inference engine that supports asymmetric partitioning of the inference computation
-- [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel? 
 - [ ] [InternEvo: Efficient Long-sequence Large Language Model Training via Hybrid Parallelism and Redundant Sharding](https://arxiv.org/abs/2401.09149): Efficient Long-sequence training 
 - [x] [Liger: Interleaving Intra- and Inter-Operator Parallelism for Distributed Large Model Inference](https://dl.acm.org/doi/abs/10.1145/3627535.3638466): accepted by PPoPP'24
 - [ ] [T3: Transparent Tracking & Triggering for Fine-grained Overlap of Compute & Collectives](https://arxiv.org/abs/2401.16677): similar to Liger, accepted by ASPLOS'24
@@ -184,6 +186,7 @@ Low-precision for memory and computing efficiency.
 - [ ] [QUICK: Quantization-aware Interleaving and Conflict-free Kernel for efficient LLM inference](https://arxiv.org/abs/2402.10076): simple and crude optimization work
 - [ ] [LLM-PQ: Serving LLM on Heterogeneous Clusters with Phase-Aware Partition and Adaptive Quantization](https://arxiv.org/abs/2403.01136): for Heterogeneous Clusters and Adaptive Quantization, under guidence of Chuan WU, accepted by PPoPP'24(poster)  
 - [ ] [IntactKV: Improving Large Language Model Quantization by Keeping Pivot Tokens Intact](https://arxiv.org/abs/2403.01241): use pivot token
+- [ ] [QAQ: Quality Adaptive Quantization for LLM KV Cache](https://arxiv.org/abs/2403.04643)
 
 ### Batch Processing
 
@@ -219,6 +222,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [ ] ⭐ [Flash-LLM: Enabling Cost-Effective and Highly-Efficient Large Generative Model Inference with Unstructured Sparsity](https://arxiv.org/abs/2309.10285): successor to FlashAttention in inference, accepted by VLDB'24
 - [ ] ⭐ [FlashDecoding++: Faster Large Language Model Inference on GPUs](https://arxiv.org/abs/2311.01282): worth reading, FLashDecoding follow-up  
 - [ ] [SubGen: Token Generation in Sublinear Time and Memory](https://arxiv.org/abs/2402.06082)
+- [ ] [DeFT: Flash Tree-attention with IO-Awareness for Efficient Tree-search-based LLM Inference](https://arxiv.org/abs/2404.00242)
 
 #### Optimization focus on Auto-regressive Decoding
 
@@ -244,6 +248,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [LLM as a System Service on Mobile Devices](https://arxiv.org/abs/2403.11805): LLM as a service on Mobile devices
 - [ ] [DistMind: Efficient Resource Disaggregation for Deep Learning Workloads](https://ieeexplore.ieee.org/abstract/document/10414009): by Xin JIN, accepted by ToN'Jan24
 - [ ] [ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching](https://arxiv.org/abs/2403.17312): sparsity in KV Cache, accepted by ISCA'24
+- [ ] [AttentionStore: Cost-effective Attention Reuse across Multi-turn Conversations in Large Language Model Serving](https://arxiv.org/abs/2403.19708): a hierarchical KV caching system that leverages cost-effective memory/storage mediums to save KV caches for all requests
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -271,6 +276,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 
 - [ ] [Efficient Inference on CPU](https://huggingface.co/docs/transformers/v4.34.0/en/perf_infer_cpu)
 - [ ] [CPU inference](https://huggingface.co/docs/transformers/en/perf_infer_cpu)
+- [ ] [NoMAD-Attention: Efficient LLM Inference on CPUs Through Multiply-add-free Attention](https://arxiv.org/abs/2403.01273)
 
 #### Heterogeneous or decentralized environments
 
@@ -334,6 +340,9 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [DeltaZip: Multi-Tenant Language Model Serving via Delta Compression](https://arxiv.org/abs/2312.05215): Multi-Tenant is interesting
 - [x] [ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models](https://arxiv.org/abs/2401.14351): find different problems in serving LLMs
 - [ ] [Fast and Efficient Model Serving Using Multi-GPUs with Direct-Host-Access](https://dl.acm.org/doi/10.1145/3552326.3567508): accepted by EuroSys'23
+- [ ] [Towards Pareto Optimal Throughput in Small Language Model Serving](https://arxiv.org/abs/2404.03353): Small Language Model Serving
+- [ ] [MOPAR: A Model Partitioning Framework for Deep Learning Inference Services on Serverless Platforms](https://arxiv.org/abs/2404.02445)
+- [ ] [MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving](https://arxiv.org/abs/2404.02015): multiple LLMs
 
 #### Dynamic resource
 
@@ -393,6 +402,9 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] ⭐ [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
 - [ ] [FlexMoE: Scaling Large-scale Sparse Pre-trained Model Training via Dynamic Device Placement](https://dl.acm.org/doi/abs/10.1145/3588964): train MoE with new schedule plan, maybe work for inference
+- [ ] [Exploiting Inter-Layer Expert Affinity for Accelerating Mixture-of-Experts Model Inference](https://arxiv.org/abs/2401.08383)
+- [ ] [EdgeMoE: Fast On-Device Inference of MoE-based Large Language Models](https://arxiv.org/abs/2308.14352): quantized experts and expers management
+- [ ] [Toward Inference-optimal Mixture-of-Expert Large Language Models](https://arxiv.org/abs/2404.02852): some analysis for training moe based on inference cost
 
 ### Inference with multimodal
 
