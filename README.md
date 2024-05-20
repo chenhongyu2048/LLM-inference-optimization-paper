@@ -242,6 +242,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [ ] [DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670): also split the prefill and decode, accepted by OSDI'24
 - [x] [Inference without Interference: Disaggregate LLM Inference for Mixed Downstream Workloads](https://arxiv.org/abs/2401.11181): seems a combination of SARATHI and Splitwise
 - [ ] [ExeGPT: Constraint-Aware Resource Scheduling for LLM Inference](https://dl.acm.org/doi/10.1145/3620665.3640383): similar to splitwise, accepted by ASPLOS'24
+- [ ] [Splitwiser: Efficient LLM Inference with Constrained Resources](https://asadaali.com/assets/pdf/paper_splitwiser.pdf)
 
 ### Memory Manage
 
@@ -397,6 +398,12 @@ For LoRA but not serving
 
 - [ ] [Deferred Continuous Batching in Resource-Efficient Large Language Model Serving](https://dl.acm.org/doi/abs/10.1145/3642970.3655835)
 
+#### Serving Long-Context
+
+Long-Context is a hot point recently  
+
+- [ ] [Challenges in Deploying Long-Context Transformers: A Theoretical Peak Performance Analysis](https://arxiv.org/abs/2405.08944)
+
 ### RAG with LLM
  
 - [ ] ⭐ [Chameleon: a heterogeneous and disaggregated accelerator system for retrieval-augmented language models](https://arxiv.org/abs/2310.09949): retrieval will be helpful, but how to use it?
@@ -451,6 +458,7 @@ What is this? maybe multiple LLM?
 - [ ] [ROUTERBENCH: A Benchmark for Multi-LLM Routing System](https://arxiv.org/abs/2403.12031): but what is multi-LLM?  
 - [ ] [Expert Router: Orchestrating Efficient Language Model Inference through Prompt Classification](https://arxiv.org/abs/2404.15153)
 - [ ] [BlockLLM: Multi-tenant Finer-grained Serving for Large Language Models](https://arxiv.org/abs/2404.18322)
+- [ ] [Preble: Efficient Distributed Prompt Scheduling for LLM Serving](https://escholarship.org/uc/item/1bm0k1w0): similar to BlockLLM?
 
 ### Some Interesting Idea
 
