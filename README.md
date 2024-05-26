@@ -77,6 +77,8 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] ⭐ [A Survey on Efficient Inference for Large Language Models](https://arxiv.org/abs/2404.14294): worth reading
 - [ ] [Beyond the Speculative Game: A Survey of Speculative Execution in Large Language Models](https://arxiv.org/abs/2404.14897)
 - [ ] ⭐ [Navigating Challenges and Technical Debt in Large Language Models Deployment](https://dl.acm.org/doi/abs/10.1145/3642970.3655840): important
+- [ ] [The CAP Principle for LLM Serving](https://arxiv.org/abs/2405.11299): anothor angle
+- [ ] [Demystifying Data Management for Large Language Models](https://dl.acm.org/doi/abs/10.1145/3626246.3654683): talking about database in LLM, by Xupeng MIAO, accpted by SIDMOD'24
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -134,6 +136,7 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [Accelerating LLM Inference with Staged Speculative Decoding](https://arxiv.org/abs/2308.04623): token tree and a second stage of speculative decoding
 - [ ] [EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/abs/2401.15077)
 - [ ] [TriForce: Lossless Acceleration of Long Sequence Generation with Hierarchical Speculative Decoding](https://arxiv.org/abs/2404.11912): combine KV cache with spec decoding
+- [ ] [EMS-SD: Efficient Multi-sample Speculative Decoding for Accelerating Large Language Models](https://arxiv.org/abs/2405.07542): algorithm optimization in spec decoding
 
 #### different model collaboration  
 
@@ -199,6 +202,8 @@ Low-precision for memory and computing efficiency.
 - [ ] [QAQ: Quality Adaptive Quantization for LLM KV Cache](https://arxiv.org/abs/2403.04643)
 - [ ] [QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532): quantization in inference, under guidence of Song HAN
 - [ ] [Does compressing activations help model parallel training?](https://arxiv.org/abs/2301.02654): analyse in compressing(including pruning and quantization) in MP training, accepted by MLSys'24
+- [ ] [Unlocking Data-free Low-bit Quantization with Matrix Decomposition for KV Cache Compression](https://arxiv.org/abs/2405.12591): compress KV cache with quantization
+- [ ] [Mitigating Quantization Errors Due to Activation Spikes in GLU-Based LLMs](https://arxiv.org/abs/2405.14428): with targeted activate function
 
 ### Batch Processing
 
@@ -236,6 +241,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [x] ⭐ [FlashDecoding++: Faster Large Language Model Inference on GPUs](https://arxiv.org/abs/2311.01282): worth reading, FLashDecoding follow-up  
 - [ ] [SubGen: Token Generation in Sublinear Time and Memory](https://arxiv.org/abs/2402.06082)
 - [ ] [DeFT: Flash Tree-attention with IO-Awareness for Efficient Tree-search-based LLM Inference](https://arxiv.org/abs/2404.00242)
+- [ ] [Lean Attention: Hardware-Aware Scalable Attention Mechanism for the Decode-Phase of Transformers](https://arxiv.org/abs/2405.10480): modification in self-attention
 
 #### Optimization focus on Auto-regressive Decoding
 
@@ -244,6 +250,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [x] [Inference without Interference: Disaggregate LLM Inference for Mixed Downstream Workloads](https://arxiv.org/abs/2401.11181): seems a combination of SARATHI and Splitwise
 - [ ] [ExeGPT: Constraint-Aware Resource Scheduling for LLM Inference](https://dl.acm.org/doi/10.1145/3620665.3640383): similar to splitwise, accepted by ASPLOS'24
 - [ ] [Splitwiser: Efficient LLM Inference with Constrained Resources](https://asadaali.com/assets/pdf/paper_splitwiser.pdf)
+- [ ] [ToEx: Accelerating Generation Stage of Transformer-based Language Models via Token-adaptive Early Exit](https://ieeexplore.ieee.org/abstract/document/10535998): Token-adaptive Early Exit
 
 ### Memory Manage
 
@@ -265,6 +272,8 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching](https://arxiv.org/abs/2403.17312): sparsity in KV Cache, accepted by ISCA'24
 - [ ] [AttentionStore: Cost-effective Attention Reuse across Multi-turn Conversations in Large Language Model Serving](https://arxiv.org/abs/2403.19708): a hierarchical KV caching system that leverages cost-effective memory/storage mediums to save KV caches for all requests
 - [ ] [vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention](https://arxiv.org/abs/2405.04437): improve PagedAttention
+- [ ] [Layer-Condensed KV Cache for Efficient Inference of Large Language Models](https://arxiv.org/abs/2405.10637): only computes and caches the KVs of a small number of layers
+- [ ] [MiniCache: KV Cache Compression in Depth Dimension for Large Language Models](https://arxiv.org/abs/2405.14366): compress KV cache
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -412,6 +421,7 @@ Long-Context is a hot point recently
 - [ ] [Generative Dense Retrieval: Memory Can Be a Burden](https://arxiv.org/abs/2401.10487): accepted by EACL'24
 - [ ] ⭐ [Accelerating Retrieval-Augmented Language Model Serving with Speculation](https://arxiv.org/abs/2401.14021): also a paper for RaLM
 - [ ] [RAGCache: Efficient Knowledge Caching for Retrieval-Augmented Generation](https://arxiv.org/abs/2404.12457): improve RAG inference with cache, under guidence of Xin JIN
+- [ ] [FlashRAG: A Modular Toolkit for Efficient Retrieval-Augmented Generation Research](https://arxiv.org/abs/2405.13576)
 
 ### Combine MoE with LLM inference
 Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https://huggingface.co/collections/mdouglas/papers-moe-ensemble-653fc75fe8eeea516bf739e1), and [MOE papers to read](https://huggingface.co/collections/davanstrien/moe-papers-to-read-657832cedea7e2122d052a83)  
@@ -441,6 +451,8 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [ScheMoE: An Extensible Mixture-of-Experts Distributed Training System with Tasks Scheduling](https://dl.acm.org/doi/10.1145/3627703.3650083): scheduling comp and comm in MoE training, perhaps useful for MoE inference. accepted by EuroSys'24
 - [ ] [ST-MoE: Designing Stable and Transferable Sparse Expert Models](https://arxiv.org/abs/2202.08906): a start work in MoE
 - [ ] [Lancet: Accelerating Mixture-of-Experts Training via Whole Graph Computation-Communication Overlapping](https://arxiv.org/abs/2404.19429): accepted by MLSys'24
+- [ ] [MoESys: A Distributed and Efficient Mixture-of-Experts Training and Inference System for Internet Services](https://ieeexplore.ieee.org/abstract/document/10528887)
+- [ ] [Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models](https://arxiv.org/abs/2405.14297): algorithm change in MoE
 
 ### Inference with multimodal
 
