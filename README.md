@@ -177,7 +177,7 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] [DéjàVu: KV-cache Streaming for Fast, Fault-tolerant Generative LLM Serving](https://arxiv.org/abs/2403.01876): seem a follow-up work of Deja Vu, also focus on KV-Cache
 
 - [ ] [FFSplit: Split Feed-Forward Network For Optimizing Accuracy-Efficiency Trade-off in Language Model Inferenc](https://arxiv.org/abs/2401.04044): sparsity in FFN
-- [ ] [ProSparse: Introducing and Enhancing Intrinsic Activation Sparsity within Large Language Models](https://arxiv.org/abs/2402.13516)
+- [ ] [ProSparse: Introducing and Enhancing Intrinsic Activation Sparsity within Large Language Models](https://arxiv.org/abs/2402.13516): a simple and effective sparsification method named "ProSparse"
 
 ### Quantization 💡
 
@@ -188,14 +188,14 @@ Low-precision for memory and computing efficiency.
 - [ ] ⭐ [SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models](https://arxiv.org/abs/2211.10438): paper under guidance of Song HAN  
 - [ ] ⭐ [AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration](https://arxiv.org/abs/2306.00978): paper under guidance of Song HAN  
 - [x] [Atom: Low-bit Quantization for Efficient and Accurate LLM Serving](https://arxiv.org/abs/2310.19102): paper under guidance of Tianqi CHEN, quantization is not important, designing how to quantify is important, in review of MLSys'24 
-- [ ] [FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU](https://arxiv.org/abs/2303.06865): target on inference on a single GPU, equipped quantization  
 - [ ] [FineQuant: Unlocking Efficiency with Fine-Grained Weight-Only Quantization for LLMs](https://arxiv.org/abs/2308.09723)
 - [ ] [QUIK: Towards End-to-End 4-Bit Inference on Generative Large Language Models](https://arxiv.org/abs/2310.09259)  
 - [ ] [Understanding the Impact of Post-Training Quantization on Large Language Models](https://arxiv.org/abs/2309.05210): tech report will help  
 - [ ] ⭐ [LLM-FP4: 4-Bit Floating-Point Quantized Transformers](https://arxiv.org/abs/2310.16836): by HKUST, accepted in EMNLP'23
 - [ ] ⭐ [Enabling Fast 2-bit LLM on GPUs: Memory Alignment, Sparse Outlier, and Asynchronous Dequantization](https://arxiv.org/pdf/2311.16442.pdf): by SJTU, accepted in DAC'24
 - [ ] [INT4 Wight + FP8 KV-Cache: optimization for LLM inference](https://zhuanlan.zhihu.com/p/653735572): INT4 Wight + FP8 KV-Cache + Continues batching
-- [ ] [KIVI : Plug-and-play 2bit KV Cache Quantization with Streaming Asymmetric Quantization](https://www.researchgate.net/profile/Zirui-Liu-29/publication/376831635_KIVI_Plug-and-play_2bit_KV_Cache_Quantization_with_Streaming_Asymmetric_Quantization/links/658b5d282468df72d3db3280/KIVI-Plug-and-play-2bit-KV-Cache-Quantization-with-Streaming-Asymmetric-Quantization.pdf)
+- [ ] [KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache](https://arxiv.org/abs/2402.02750)
+- [ ] [KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization](https://arxiv.org/abs/2401.18079): quant KV cache
 - [ ] [QUICK: Quantization-aware Interleaving and Conflict-free Kernel for efficient LLM inference](https://arxiv.org/abs/2402.10076): simple and crude optimization work
 - [ ] [LLM-PQ: Serving LLM on Heterogeneous Clusters with Phase-Aware Partition and Adaptive Quantization](https://arxiv.org/abs/2403.01136): for Heterogeneous Clusters and Adaptive Quantization, under guidence of Chuan WU, accepted by PPoPP'24(poster)  
 - [ ] [IntactKV: Improving Large Language Model Quantization by Keeping Pivot Tokens Intact](https://arxiv.org/abs/2403.01241): use pivot token
@@ -287,9 +287,10 @@ Heterogeneous scenarios or single PC are becoming increasingly important.
 
 Making optimization for the calculating on CPU or SSD will have different methods.  
 
-- [ ] [Efficient LLM Inference on CPUs](https://arxiv.org/abs/2311.00502): LLMs with quantization on CPUs, by Intel, accepted by NIPS'23  
+- [ ] [Efficient LLM Inference on CPUs](https://arxiv.org/abs/2311.00502): LLMs with quantization on CPUs, by Intel, accepted by NIPS'23
+- [ ] [Exploiting Intel Advanced Matrix Extensions (AMX) for Large Language Model Inference](https://ieeexplore.ieee.org/abstract/document/10538369): inference on CPU based on advanced hardware
+- [ ] [TURNIP: A "Nondeterministic" GPU Runtime with CPU RAM Offload](https://arxiv.org/abs/2405.16283): free to run operations such as GPU kernel calls in many different orders
 - [ ] [Improving Throughput-oriented Generative Inference with CPUs](https://dl.acm.org/doi/abs/10.1145/3609510.3609815): cooperate of CPUs and GPU, accepted by APSys'23  
-- [ ] [FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU](https://arxiv.org/abs/2303.06865): inference a 30B model with a 16GB GPU, accepted by ICML'23
 - [ ] [Chrion: Optimizing Recurrent Neural Network Inference by Collaboratively Utilizing CPUs and GPUs](https://arxiv.org/abs/2307.11339): execute the operators on the CPU and GPU in parallel, by SJTU
 - [ ] [EdgeNN: Efficient Neural Network Inference for CPU-GPU Integrated Edge Devices](https://ieeexplore.ieee.org/document/10184528): inference on edge devices, accepted by ICDE'23
 - [ ] [PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU](https://arxiv.org/abs/2312.12456): by SJTU IPADS
@@ -304,6 +305,14 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [CPU inference](https://huggingface.co/docs/transformers/en/perf_infer_cpu)
 - [ ] [NoMAD-Attention: Efficient LLM Inference on CPUs Through Multiply-add-free Attention](https://arxiv.org/abs/2403.01273)
 - [ ] ⭐ [A Quantitative Analysis and Guidelines of Data Streaming Accelerator in Modern Intel Xeon Scalable Processors](https://dl.acm.org/doi/10.1145/3620665.3640401): use CPU for DL, accepted by ASPLOS'24
+
+#### Inference on personal device
+
+Inspired by AI PC, open up a new area.  
+
+- [ ] [FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU](https://arxiv.org/abs/2303.06865): inference a 30B model with a 16GB GPU, accepted by ICML'23
+- [ ] [LLM as a System Service on Mobile Devices](https://arxiv.org/abs/2403.11805): an intro for LLM on private devices
+- [ ] [PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU](https://arxiv.org/abs/2312.12456): based on sparsity in NN Layers
 
 #### Heterogeneous or decentralized environments
 
@@ -371,6 +380,9 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Towards Pareto Optimal Throughput in Small Language Model Serving](https://arxiv.org/abs/2404.03353): Small Language Model Serving
 - [ ] [MOPAR: A Model Partitioning Framework for Deep Learning Inference Services on Serverless Platforms](https://arxiv.org/abs/2404.02445)
 - [ ] [Andes: Defining and Enhancing Quality-of-Experience in LLM-Based Text Streaming Services](https://arxiv.org/abs/2404.16283): idea of QoE
+
+- [ ] [FlexLLM: A System for Co-Serving Large Language Model Inference and Parameter-Efficient Finetuning](https://arxiv.org/abs/2402.18789): how to find novel questions?
+- [ ] [Deferred Continuous Batching in Resource-Efficient Large Language Model Serving](https://dl.acm.org/doi/abs/10.1145/3642970.3655835): similar to FlexLLM
 
 #### Dynamic resource
 
@@ -505,6 +517,7 @@ What is this? maybe multiple LLM?
 - [ ] [Arrow Matrix Decomposition: A Novel Approach for Communication-Efficient Sparse Matrix Multiplication](https://dl.acm.org/doi/10.1145/3627535.3638496)
 - [ ] [FinGPT-HPC: Efficient Pretraining and Finetuning Large Language Models for Financial Applications with High-Performance Computing](https://arxiv.org/abs/2402.13533)
 - [ ] [Two-Face: Combining Collective and One-Sided Communication for Efficient Distributed SpMM](https://dl.acm.org/doi/10.1145/3620665.3640427): efficient SpMM, accepted by ASPLOS'24
+- [ ] [GMLake: Efficient and Transparent GPU Memory Defragmentation for Large-scale DNN Training with Virtual Memory Stitching](https://dl.acm.org/doi/abs/10.1145/3620665.3640423): GPU memory pool, accepted by ASPLOS'24
 
 #### Dataflow
 
