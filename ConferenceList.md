@@ -14,8 +14,8 @@ Sorted by their opening time.
 | [EuroSys](https://dblp.uni-trier.de/db/conf/eurosys/index.html) | Apr22 &#124; opened | &#10004; |
 | [ASPLOS](https://dl.acm.org/conference/asplos) | Apr27 &#124; opened | &#10004; |
 | [MLSys](https://mlsys.org/) | May13 &#124; opened | &#10004; |
-| [IPDPS](https://dblp.uni-trier.de/db/conf/ipps/index.html) | May27 &#124; not open | x |
-| [HPDC](https://dblp.uni-trier.de/db/conf/hpdc/index.html) | Jun03 &#124; not open | x |
+| [IPDPS](https://dblp.uni-trier.de/db/conf/ipps/index.html) | May27 &#124; opened | &#10004; |
+| [HPDC](https://dblp.uni-trier.de/db/conf/hpdc/index.html) | Jun03 &#124; not open | &#10004; |
 | [OSDI](https://dblp.uni-trier.de/db/conf/osdi/index.html) | Jul10 &#124; not open | x |
 | [ATC](https://dblp.uni-trier.de/db/conf/usenix/index.html) | Jul10 &#124; not open | x |
 | [ICDCS](https://dblp.uni-trier.de/db/conf/icdcs/index.html) | Jul23 &#124; not open | x |
@@ -27,8 +27,8 @@ Sorted by their opening time.
 
 | conference name | time    | already checked |
 | :-------------: | :----:  | :-------------: |
-| [ICDE](https://dblp.uni-trier.de/db/conf/icde/index.html) | May13 &#124; not open | &#10004; |
-| [SIGMOD](https://dblp.uni-trier.de/db/conf/sigmod/index.html) | Jun09 &#124; not open | x |
+| [ICDE](https://dblp.uni-trier.de/db/conf/icde/index.html) | May13 &#124; opened | &#10004; |
+| [SIGMOD](https://dblp.uni-trier.de/db/conf/sigmod/index.html) | Jun09 &#124; opened | &#10004; |
 | [VLDB](https://dl.acm.org/loi/pvldb/group/d2020.y2023) | Aug25 &#124; not open | x |
 
 ## NETWORK
