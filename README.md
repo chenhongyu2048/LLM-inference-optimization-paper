@@ -140,6 +140,7 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [TriForce: Lossless Acceleration of Long Sequence Generation with Hierarchical Speculative Decoding](https://arxiv.org/abs/2404.11912): combine KV cache with spec decoding
 - [ ] [EMS-SD: Efficient Multi-sample Speculative Decoding for Accelerating Large Language Models](https://arxiv.org/abs/2405.07542): algorithm optimization in spec decoding
 - [ ] [SpecExec: Massively Parallel Speculative Decoding for Interactive LLM Inference on Consumer Devices](https://arxiv.org/abs/2406.02532): any difference with specinfer?
+- [ ] [Optimizing Speculative Decoding for Serving Large Language Models Using Goodput](https://arxiv.org/abs/2406.14066): model the speculative decoding length
 
 #### different model collaboration  
 
@@ -234,6 +235,7 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 - [ ] [RelayAttention for Efficient Large Language Model Serving with Long System Prompts](https://arxiv.org/abs/2402.14808): think about the memory access of KV cache
 - [ ] [Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve](https://arxiv.org/abs/2403.02310): follow-up work of sarathi
 - [ ] [Efficient Interactive LLM Serving with Proxy Model-based Sequence Length Prediction](https://arxiv.org/abs/2404.08509): predict length
+- [ ] [LiveMind: Low-latency Large Language Models with Simultaneous Inference](https://arxiv.org/abs/2406.14319): perform inferences with incomplete prompts, to take advantage of streaming prompt
 
 ### Computing Optimization
 
@@ -287,6 +289,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [MiniCache: KV Cache Compression in Depth Dimension for Large Language Models](https://arxiv.org/abs/2405.14366): compress KV cache
 - [ ] [CacheBlend: Fast Large Language Model Serving with Cached Knowledge Fusion](https://arxiv.org/abs/2405.16444): very popular idea recently
 - [ ] [Block Transformer: Global-to-Local Language Modeling for Fast Inference](https://arxiv.org/abs/2406.02657): build KV Cache block from many tokens' KV Cache
+- [ ] [MemServe: Context Caching for Disaggregated LLM Serving with Elastic Memory Pool](https://arxiv.org/abs/2406.17565): KV Cache management in P/D disaggregation arch
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -401,6 +404,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [FlexLLM: A System for Co-Serving Large Language Model Inference and Parameter-Efficient Finetuning](https://arxiv.org/abs/2402.18789): how to find novel questions?
 - [ ] [Deferred Continuous Batching in Resource-Efficient Large Language Model Serving](https://dl.acm.org/doi/abs/10.1145/3642970.3655835): similar to FlexLLM
 - [ ] [LLMServingSim: A Simulation Infrastructure for LLM Inference Serving Systems](https://openreview.net/forum?id=LI2IUfI8km): provide some features about LLM serving
+- [ ] [Slice-Level Scheduling for High Throughput and Load Balanced LLM Serving](https://arxiv.org/abs/2406.13511): Improvements to ORCA(SLS) and FastServe(ILS)
 
 #### Dynamic resource
 
@@ -443,7 +447,7 @@ For LoRA but not serving
 
 #### Serving Long-Context
 
-Long-Context is a hot point recently  
+Long-Context is a hot point recently.  
 
 - [ ] [Challenges in Deploying Long-Context Transformers: A Theoretical Peak Performance Analysis](https://arxiv.org/abs/2405.08944)
 
