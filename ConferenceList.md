@@ -15,9 +15,9 @@ Sorted by their opening time.
 | [ASPLOS](https://dl.acm.org/conference/asplos) | Apr27 &#124; opened | &#10004; |
 | [MLSys](https://mlsys.org/) | May13 &#124; opened | &#10004; |
 | [IPDPS](https://dblp.uni-trier.de/db/conf/ipps/index.html) | May27 &#124; opened | &#10004; |
-| [HPDC](https://dblp.uni-trier.de/db/conf/hpdc/index.html) | Jun03 &#124; not open | &#10004; |
-| [OSDI](https://dblp.uni-trier.de/db/conf/osdi/index.html) | Jul10 &#124; not open | x |
-| [ATC](https://dblp.uni-trier.de/db/conf/usenix/index.html) | Jul10 &#124; not open | x |
+| [HPDC](https://dblp.uni-trier.de/db/conf/hpdc/index.html) | Jun03 &#124; opened | &#10004; |
+| [OSDI](https://dblp.uni-trier.de/db/conf/osdi/index.html) | Jul10 &#124; opened | &#10004; |
+| [ATC](https://dblp.uni-trier.de/db/conf/usenix/index.html) | Jul10 &#124; opened | &#10004; |
 | [ICDCS](https://dblp.uni-trier.de/db/conf/icdcs/index.html) | Jul23 &#124; not open | x |
 | [SoCC](https://dblp.uni-trier.de/db/conf/cloud/index.html) | Sep16 &#124; not open | x |
 | [SOSP](https://dblp.uni-trier.de/db/conf/sosp/index.html) | Nov04 &#124; not open | x |

@@ -223,6 +223,8 @@ Low-precision for memory and computing efficiency.
 - [ ] [Does Compressing Activations Help Model Parallel Training?](https://proceedings.mlsys.org/paper_files/paper/2024/hash/71381211d0abef73ed1887b83c4547b1-Abstract-Conference.html): quantization Activation?
 - [ ] [PQCache: Product Quantization-based KVCache for Long Context LLM Inference](https://arxiv.org/abs/2407.12820): apply quantization and Maximum Inner-Product Search for KV Cache compression
 - [ ] [Fast Matrix Multiplications for Lookup Table-Quantized LLMs](https://arxiv.org/abs/2407.10960): provide efficient kernels for lookup quantization
+- [ ] [Ladder: Enabling Efficient Low-Precision Deep Learning Computing through Hardware-aware Tensor Transformation](https://www.usenix.org/conference/osdi24/presentation/wang-lei): a computation optimization for Low-Precision
+- [ ] [Quant-LLM: Accelerating the Serving of Large Language Models via FP6-Centric Algorithm-System Co-Design on Modern GPUs](https://www.usenix.org/conference/atc24/presentation/xia): a computation optimization for 6-bit LLM
 
 ### Batch Processing
 
@@ -278,6 +280,7 @@ This part include some impressive work optimizing LLM computing by observing the
 #### Kernels Optimization
 
 - [ ] [Automatic Task Parallelization of Dataflow Graphs in ML/DL models](https://arxiv.org/abs/2308.11192)
+- [ ] [MonoNN: Enabling a New Monolithic Optimization Space for Neural Network Inference Tasks on Modern GPU-Centric Architectures](https://www.usenix.org/conference/osdi24/presentation/zhuang): compilation optimization on compuataion graph
 
 ### Memory Manage
 
@@ -304,9 +307,10 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [CacheBlend: Fast Large Language Model Serving with Cached Knowledge Fusion](https://arxiv.org/abs/2405.16444): very popular idea recently
 - [ ] [Block Transformer: Global-to-Local Language Modeling for Fast Inference](https://arxiv.org/abs/2406.02657): build KV Cache block from many tokens' KV Cache
 - [ ] [MemServe: Context Caching for Disaggregated LLM Serving with Elastic Memory Pool](https://arxiv.org/abs/2406.17565): KV Cache management in P/D disaggregation arch
-- [ ] [Cost-Efficient Large Language Model Serving for Multi-turn Conversations with CachedAttention](https://arxiv.org/abs/2403.19708): multi-round chat and memory management, accepted by ATC'24
+- [ ] [Cost-Efficient Large Language Model Serving for Multi-turn Conversations with CachedAttention](https://www.usenix.org/conference/atc24/presentation/gao-bin-cost): multi-round chat and memory management, accepted by ATC'24
 - [ ] [Stateful Large Language Model Serving with Pensieve](https://arxiv.org/abs/2312.05516): similar to cachedattention
 - [ ] [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079): P/D disaggregation archtecture and KV Cache management
+- [ ] [InfiniGen: Efficient Generative Inference of Large Language Models with Dynamic KV Cache Management](https://www.usenix.org/conference/osdi24/presentation/lee): offload KV Cache
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -356,6 +360,7 @@ Inspired by AI PC, open up a new area.
 - [ ] [Distributed Inference and Fine-tuning of Large Language Models Over The Internet](https://arxiv.org/abs/2312.08361): some techs in this paper will be instructive
 
 - [ ] ⭐ [HeteGen: Heterogeneous Parallel Inference for Large Language Models on Resource-Constrained Devices](https://arxiv.org/abs/2403.01164): heterogeneous parallel computing using CPUs and GPUs
+- [ ] [Metis: Fast Automatic Distributed Training on Heterogeneous GPUs](https://www.usenix.org/conference/atc24/presentation/um): accepted by ATC'24
 - [ ] [Helix: Distributed Serving of Large Language Models via Max-Flow on Heterogeneous GPUs](https://arxiv.org/abs/2406.01566): algorithm analyse for Heterogeneous GPUs
 - [ ] [Mélange: Cost Efficient Large Language Model Serving by Exploiting GPU Heterogeneity](https://arxiv.org/abs/2404.14527): making heterogeneity-aware GPU provisioning decisions for LLM serving
 
@@ -424,6 +429,11 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [LLMServingSim: A Simulation Infrastructure for LLM Inference Serving Systems](https://openreview.net/forum?id=LI2IUfI8km): provide some features about LLM serving
 - [ ] [Slice-Level Scheduling for High Throughput and Load Balanced LLM Serving](https://arxiv.org/abs/2406.13511): Improvements to ORCA(SLS) and FastServe(ILS)
 - [ ] [Offline Energy-Optimal LLM Serving: Workload-Based Energy Models for LLM Inference on Heterogeneous Systems](https://arxiv.org/abs/2407.04014): consider serving efficiency from energy view
+- [ ] [Power-aware Deep Learning Model Serving with μ-Serve](https://www.usenix.org/conference/atc24/presentation/qiu): consider energy
+
+#### Aligning Systems
+
+- [ ] [PUZZLE: Efficiently Aligning Large Language Models through Light-Weight Context Switch](https://www.usenix.org/conference/atc24/presentation/lei)
 
 #### Comm kernels
 
@@ -452,6 +462,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [x] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24
 - [ ] [Petals: Collaborative Inference and Fine-tuning of Large Models](https://arxiv.org/abs/2209.01188)
 - [ ] [LoRA-Switch: Boosting the Efficiency of Dynamic LLM Adapters via System-Algorithm Co-design](https://arxiv.org/abs/2405.17741): maybe useful, kernel optimization
+- [ ] [dLoRA: Dynamically Orchestrating Requests and Adapters for LoRA LLM Serving](https://www.usenix.org/conference/osdi24/presentation/wu-bingyang): accepted by OSDI'24
 
 -------------------------------------  
 For LoRA but not serving  
@@ -559,6 +570,7 @@ What is this? maybe multiple LLM?
 - [ ] [Conveyor: Efficient Tool-aware LLM Serving with Tool Partial Execution](https://arxiv.org/abs/2406.00059): for LLM-based Applications
 - [ ] [Are More LLM Calls All You Need? Towards Scaling Laws of Compound Inference Systems](https://arxiv.org/abs/2403.02419)
 - [ ] [RouteLLM: Learning to Route LLMs with Preference Data](https://arxiv.org/abs/2406.18665): use multiple LLMs for efficient serving
+- [ ] [USHER: Holistic Interference Avoidance for Resource Optimized ML Inference](https://www.usenix.org/conference/osdi24/presentation/shubha): inference several models simultaneously
 
 ### LLM Application
 
@@ -600,6 +612,10 @@ I'd like to create a separate area for data flows. It's just my preference.
 - [ ] ⭐ [FLAT: An Optimized Dataflow for Mitigating Attention Bottlenecks](https://dl.acm.org/doi/10.1145/3575693.3575747): dataflow in inference  
 - [ ] [Pathways: Asynchronous Distributed Dataflow for ML](https://proceedings.mlsys.org/paper_files/paper/2022/hash/37385144cac01dff38247ab11c119e3c-Abstract.html): accepted by MLSys'22  
 - [ ] [VirtualFlow: Decoupling Deep Learning Models from the Underlying Hardware](https://proceedings.mlsys.org/paper_files/paper/2022/hash/7c47b303273905755d3e513ab43ef94f-Abstract.html): accepted by MLSys'22  
+
+How about data pre-processing overhead in training?
+
+- [ ] [Pecan: Cost-Efficient ML Data Preprocessing with Automatic Transformation Ordering and Hybrid Placement](https://www.usenix.org/conference/atc24/presentation/graur)
 
 #### GNN
 
