@@ -81,6 +81,10 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] [The CAP Principle for LLM Serving](https://arxiv.org/abs/2405.11299): anothor angle
 - [ ] [Demystifying Data Management for Large Language Models](https://dl.acm.org/doi/abs/10.1145/3626246.3654683): talking about database in LLM, by Xupeng MIAO, accpted by SIDMOD'24
 - [ ] [Benchmarking LLM Inference Backends: vLLM, LMDeploy, MLC-LLM, TensorRT-LLM, and TGI](https://bentoml.com/blog/benchmarking-llm-inference-backends): with [code](https://github.com/bentoml/llm-bench/tree/main)
+- [ ] [A Survey on Mixture of Experts](https://arxiv.org/pdf/2407.06204)
+- [ ] [Analyzing LLM performance: The impact of high-bandwidth memory on model inference](https://www.micron.com/content/dam/micron/global/public/documents/products/product-flyer/llm-inference-engineering-report.pdf): analyze of inference
+- [ ] [Inference Optimization of Foundation Models on AI Accelerators](https://arxiv.org/abs/2407.09111)
+- [ ] [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391): newest
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -88,6 +92,7 @@ Make useful benchmark or evaluation is helfpul.
 - [ ] [llmperf](https://github.com/ray-project/llmperf): evaluate both performance and correctness, but based on ray
 - [ ] [The Importance of Workload Choice in Evaluating LLM Inference Systems](https://dl.acm.org/doi/abs/10.1145/3642970.3655823): important angles in LLM inference systems
 - [ ] [Vidur: A Large-Scale Simulation Framework For LLM Inference](https://arxiv.org/abs/2405.05465): test the performance of LLM inference
+- [ ] [Metron: Holistic Performance Evaluation Framework for LLM Inference Systems](https://arxiv.org/abs/2407.07000): an evaluation framework
 
 ### Interesting *NEW* Frameworks in Parallel Decoding 
 
@@ -161,6 +166,8 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [MegaScale: Scaling Large Language Model Training to More Than 10,000 GPUs](https://arxiv.org/abs/2402.15627): full-stack approach of LLM training
 - [ ] [DSP: Dynamic Sequence Parallelism for Multi-Dimensional Transformers](https://arxiv.org/abs/2403.10266): sequence parallel by Yang YOU
 - [x] [LoongServe: Efficiently Serving Long-context Large Language Models with Elastic Sequence Parallelism](https://arxiv.org/abs/2404.09526): Elastic Sequence Parallelism?
+- [ ] [GraphPipe: Improving Performance and Scalability of DNN Training with Graph Pipeline Parallelism](https://arxiv.org/abs/2406.17145): this could be potential in inference
+- [ ] [TeraPipe: Token-Level Pipeline Parallelism for Training Large-Scale Language Models](https://proceedings.mlr.press/v139/li21y.html): pipeline parallism
 
 #### Communication Overlap
 
@@ -183,6 +190,8 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] [FFSplit: Split Feed-Forward Network For Optimizing Accuracy-Efficiency Trade-off in Language Model Inferenc](https://arxiv.org/abs/2401.04044): sparsity in FFN
 - [ ] [ProSparse: Introducing and Enhancing Intrinsic Activation Sparsity within Large Language Models](https://arxiv.org/abs/2402.13516): a simple and effective sparsification method named "ProSparse"
 - [ ] [Turbo Sparse: Achieving LLM SOTA Performance with Minimal Activated Parameters](https://arxiv.org/abs/2406.05955): work for powerinfo
+- [ ] [Pruning Large Language Models to Intra-module Low-rank Architecture with Transitional Activations](https://arxiv.org/abs/2407.05690): pruning for LLM
+- [ ] [MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention](https://arxiv.org/abs/2407.02490): inference framework based on sparse attention, by Microsoft
 
 ### Quantization 💡
 
@@ -212,6 +221,8 @@ Low-precision for memory and computing efficiency.
 - [ ] [FP6-LLM: Efficiently Serving Large Language Models Through FP6-Centric Algorithm-System Co-Design](https://arxiv.org/abs/2401.14112): FPx quantization, accepted by ATC'24
 - [ ] [Demystifying the Compression of Mixture-of-Experts Through a Unified Framework](https://arxiv.org/abs/2406.02500): combine quantization with MoE
 - [ ] [Does Compressing Activations Help Model Parallel Training?](https://proceedings.mlsys.org/paper_files/paper/2024/hash/71381211d0abef73ed1887b83c4547b1-Abstract-Conference.html): quantization Activation?
+- [ ] [PQCache: Product Quantization-based KVCache for Long Context LLM Inference](https://arxiv.org/abs/2407.12820): apply quantization and Maximum Inner-Product Search for KV Cache compression
+- [ ] [Fast Matrix Multiplications for Lookup Table-Quantized LLMs](https://arxiv.org/abs/2407.10960): provide efficient kernels for lookup quantization
 
 ### Batch Processing
 
@@ -236,6 +247,8 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 - [ ] [Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve](https://arxiv.org/abs/2403.02310): follow-up work of sarathi
 - [ ] [Efficient Interactive LLM Serving with Proxy Model-based Sequence Length Prediction](https://arxiv.org/abs/2404.08509): predict length
 - [ ] [LiveMind: Low-latency Large Language Models with Simultaneous Inference](https://arxiv.org/abs/2406.14319): perform inferences with incomplete prompts, to take advantage of streaming prompt
+- [ ] [A Queueing Theoretic Perspective on Low-Latency LLM Inference with Variable Token Length](https://arxiv.org/abs/2407.05347): theoretical analysis of latency
+- [ ] [ElasticBatch: A Learning-Augmented Elastic Scheduling System for Batch Inference on MIG](https://ieeexplore.ieee.org/abstract/document/10605084)
 
 ### Computing Optimization
 
@@ -251,6 +264,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [ ] [SubGen: Token Generation in Sublinear Time and Memory](https://arxiv.org/abs/2402.06082)
 - [ ] [DeFT: Flash Tree-attention with IO-Awareness for Efficient Tree-search-based LLM Inference](https://arxiv.org/abs/2404.00242)
 - [ ] [Lean Attention: Hardware-Aware Scalable Attention Mechanism for the Decode-Phase of Transformers](https://arxiv.org/abs/2405.10480): modification in self-attention
+- [ ] [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://arxiv.org/abs/2407.08608)
 
 #### Optimization focus on Auto-regressive Decoding
 
@@ -290,6 +304,9 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [CacheBlend: Fast Large Language Model Serving with Cached Knowledge Fusion](https://arxiv.org/abs/2405.16444): very popular idea recently
 - [ ] [Block Transformer: Global-to-Local Language Modeling for Fast Inference](https://arxiv.org/abs/2406.02657): build KV Cache block from many tokens' KV Cache
 - [ ] [MemServe: Context Caching for Disaggregated LLM Serving with Elastic Memory Pool](https://arxiv.org/abs/2406.17565): KV Cache management in P/D disaggregation arch
+- [ ] [Cost-Efficient Large Language Model Serving for Multi-turn Conversations with CachedAttention](https://arxiv.org/abs/2403.19708): multi-round chat and memory management, accepted by ATC'24
+- [ ] [Stateful Large Language Model Serving with Pensieve](https://arxiv.org/abs/2312.05516): similar to cachedattention
+- [ ] [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079): P/D disaggregation archtecture and KV Cache management
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -314,7 +331,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [LLM in a flash: Efficient Large Language Model Inference with Limited Memory](https://arxiv.org/abs/2312.11514): by Apple
 
 - [ ] [Efficient LLM inference solution on Intel GPU](https://arxiv.org/abs/2401.05391): intel GPU is interesting
-- [x] [FastDecode: High-Throughput GPU-Efficient LLM Serving using Heterogeneous Pipelines](https://arxiv.org/abs/2403.11421): efficient serving with CPU-GPU system
+- [x] [FastDecode: High-Throughput GPU-Efficient LLM Serving using Heterogeneous Pipelines](https://openreview.net/forum?id=GahfuPsGw2): efficient serving with CPU-GPU system
 - [ ] [Efficient and Economic Large Language Model Inference with Attention Offloading](https://arxiv.org/abs/2405.01814): similar to FastDecode
 - [ ] [Petals: Collaborative Inference and Fine-tuning of Large Models](https://arxiv.org/abs/2209.01188): looks like heterogeneous resources are being utilized
 
@@ -331,6 +348,7 @@ Inspired by AI PC, open up a new area.
 - [ ] [FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU](https://arxiv.org/abs/2303.06865): inference a 30B model with a 16GB GPU, accepted by ICML'23
 - [ ] [LLM as a System Service on Mobile Devices](https://arxiv.org/abs/2403.11805): an intro for LLM on private devices
 - [ ] [PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU](https://arxiv.org/abs/2312.12456): based on sparsity in NN Layers
+- [ ] ⭐ [LLM for Mobile: An Initial Roadmap](https://arxiv.org/abs/2407.06573): a road map
 
 #### Heterogeneous or decentralized environments
 
@@ -405,6 +423,11 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Deferred Continuous Batching in Resource-Efficient Large Language Model Serving](https://dl.acm.org/doi/abs/10.1145/3642970.3655835): similar to FlexLLM
 - [ ] [LLMServingSim: A Simulation Infrastructure for LLM Inference Serving Systems](https://openreview.net/forum?id=LI2IUfI8km): provide some features about LLM serving
 - [ ] [Slice-Level Scheduling for High Throughput and Load Balanced LLM Serving](https://arxiv.org/abs/2406.13511): Improvements to ORCA(SLS) and FastServe(ILS)
+- [ ] [Offline Energy-Optimal LLM Serving: Workload-Based Energy Models for LLM Inference on Heterogeneous Systems](https://arxiv.org/abs/2407.04014): consider serving efficiency from energy view
+
+#### Comm kernels
+
+- [ ] [Enabling Elastic Model Serving with MultiWorld](https://arxiv.org/abs/2407.08980): optimizing collective communication lib for LLM inference
 
 #### Dynamic resource
 
@@ -440,6 +463,8 @@ For LoRA but not serving
 - [ ] [FlexLLM: A System for Co-Serving Large Language Model Inference and Parameter-Efficient Finetuning](https://arxiv.org/abs/2402.18789): how to find novel questions?
 - [ ] [LoRA Meets Dropout under a Unified Framework](https://arxiv.org/abs/2403.00812): Analyze LoRA algorithmically
 - [ ] [HydraLoRA: An Asymmetric LoRA Architecture for Efficient Fine-Tuning](https://arxiv.org/abs/2404.19245): algorithm optimization for LoRA
+- [ ] [SBoRA: Low-Rank Adaptation with Regional Weight Updates](https://arxiv.org/abs/2407.05413): an algorithm optimization for LoRA
+- [ ] [A Survey on LoRA of Large Language Models](https://arxiv.org/abs/2407.11046): survey of LoRAs, incluing parallel LoRA computing and Multi-LoRA
 
 #### Combining fine-tuning with inference
 
@@ -450,6 +475,7 @@ For LoRA but not serving
 Long-Context is a hot point recently.  
 
 - [ ] [Challenges in Deploying Long-Context Transformers: A Theoretical Peak Performance Analysis](https://arxiv.org/abs/2405.08944)
+- [ ] [Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](https://arxiv.org/abs/2407.11550): like a update for H2O or Dejevu, et.al, each attention head have different memory budget
 
 ### RAG with LLM
  
@@ -459,6 +485,8 @@ Long-Context is a hot point recently.
 - [ ] [RAGCache: Efficient Knowledge Caching for Retrieval-Augmented Generation](https://arxiv.org/abs/2404.12457): improve RAG inference with cache, under guidence of Xin JIN
 - [ ] [FlashRAG: A Modular Toolkit for Efficient Retrieval-Augmented Generation Research](https://arxiv.org/abs/2405.13576)
 - [ ] [Accelerating Retrieval-Augmented Language Model Serving with Speculation](https://arxiv.org/abs/2401.14021): help understand RaLM
+- [ ] [NinjaLLM: Fast, Scalable and Cost-effective RAG using Amazon SageMaker and AWS Trainium and Inferentia2](https://arxiv.org/abs/2407.12057)
+- [ ] [Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting](https://arxiv.org/abs/2407.08223): RAG with spec decoding, different draft models with different RAG
 
 ### Combine MoE with LLM inference
 Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https://huggingface.co/collections/mdouglas/papers-moe-ensemble-653fc75fe8eeea516bf739e1), and [MOE papers to read](https://huggingface.co/collections/davanstrien/moe-papers-to-read-657832cedea7e2122d052a83)  
@@ -487,6 +515,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Demystifying the Compression of Mixture-of-Experts Through a Unified Framework](https://arxiv.org/abs/2406.02500): introduce some features of MoE too
 - [ ] [Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models](https://arxiv.org/abs/2405.14297): introduction paper
 - [ ] [Efficient All-to-All Collective Communication Schedules for Direct-Connect Topologies](https://arxiv.org/abs/2309.13541): all_to_all comm, HPDC'24
+- [ ] [Scattered Mixture-of-Experts Implementation](https://arxiv.org/abs/2403.08245): ScatterMoE, an implementation of Sparse MoE
 
 #### MoE training
 
@@ -497,6 +526,8 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models](https://arxiv.org/abs/2405.14297): algorithm change in MoE
 - [ ] [Lancet: Accelerating Mixture-of-Experts Training via Whole Graph Computation-Communication Overlapping](https://proceedings.mlsys.org/paper_files/paper/2024/hash/339caf45a6fa281cae8adc6465343464-Abstract-Conference.html): Computation-Communication Overlapping, accepted by MLSys'24
 - [ ] [Scaling Beyond the GPU Memory Limit for Large Mixture-of-Experts Model Training](https://openreview.net/forum?id=uLpyWQPyF9): training with offload, ICML'24
+- [ ] [MPMoE: Memory Efficient MoE for Pre-Trained Models With Adaptive Pipeline Parallelism](https://ieeexplore.ieee.org/document/10494556)
+- [ ] [Parm: Efficient Training of Large Sparsely-Activated Models with Dedicated Schedules](https://arxiv.org/abs/2407.00599): Dedicated Schedules for MP+EP+ESP MoE training, maybe work for infernece
 
 ### Inference with multimodal
 
@@ -510,6 +541,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 
 - [ ] [Approximate Caching for Efficiently Serving Text-to-Image Diffusion Models](https://www.usenix.org/conference/nsdi24/presentation/agarwal-shubham): serving Diffusion models, accepted by NSDI'24
 - [ ] [DiffusionPipe: Training Large Diffusion Models with Efficient Pipelines](https://arxiv.org/abs/2405.01248): accepted by MLSys'24
+- [ ] [SwiftDiffusion: Efficient Diffusion Model Serving with Add-on Modules](https://arxiv.org/abs/2407.02031): more papers in diffusion models
 
 ### Compound Inference Systems
 
@@ -519,19 +551,25 @@ What is this? maybe multiple LLM?
 - [ ] [ALTO: An Efficient Network Orchestrator for Compound AI Systems](https://arxiv.org/abs/2403.04311): also new to me, by Stanford
 - [ ] [Proteus: A High-Throughput Inference-Serving System with Accuracy Scaling](https://dl.acm.org/doi/10.1145/3617232.3624849): accuracy scaling is interesting, accepted by ASPLOS'24
 - [ ] [MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving](https://arxiv.org/abs/2404.02015): multiple LLMs
-- [ ] [Orion: Interference-aware, Fine-grained GPU Sharing for ML Applications](https://dl.acm.org/doi/10.1145/3627703.3629578): many LLM apps share GPU, accepted by EuroSys'24
 - [ ] [ROUTERBENCH: A Benchmark for Multi-LLM Routing System](https://arxiv.org/abs/2403.12031): but what is multi-LLM?  
 - [ ] [Expert Router: Orchestrating Efficient Language Model Inference through Prompt Classification](https://arxiv.org/abs/2404.15153)
 - [ ] [BlockLLM: Multi-tenant Finer-grained Serving for Large Language Models](https://arxiv.org/abs/2404.18322)
 - [ ] [Prompt Cache: Modular Attention Reuse for Low-Latency Inference](https://arxiv.org/abs/2311.04934): prompt KV cache reuse, accepted by MLSys'24
 - [ ] [Preble: Efficient Distributed Prompt Scheduling for LLM Serving](https://escholarship.org/uc/item/1bm0k1w0): similar to BlockLLM?
-- [ ] [Parrot: Efficient Serving of LLM-based Applications with Semantic Variable](https://arxiv.org/abs/2405.19888): accepted by OSDI'24
 - [ ] [Conveyor: Efficient Tool-aware LLM Serving with Tool Partial Execution](https://arxiv.org/abs/2406.00059): for LLM-based Applications
 - [ ] [Are More LLM Calls All You Need? Towards Scaling Laws of Compound Inference Systems](https://arxiv.org/abs/2403.02419)
+- [ ] [RouteLLM: Learning to Route LLMs with Preference Data](https://arxiv.org/abs/2406.18665): use multiple LLMs for efficient serving
+
+### LLM Application
+
+- [ ] [Teola: Towards End-to-End Optimization of LLM-based Applications](https://arxiv.org/abs/2407.00326): endd-to-end optimization
+- [ ] [Parrot: Efficient Serving of LLM-based Applications with Semantic Variable](https://arxiv.org/abs/2405.19888): accepted by OSDI'24
+- [ ] [Orion: Interference-aware, Fine-grained GPU Sharing for ML Applications](https://dl.acm.org/doi/10.1145/3627703.3629578): many LLM apps share GPU, accepted by EuroSys'24
 
 ### Fault Tolerance
 
 - [ ] [Characterization of Large Language Model Development in the Datacenter](https://www.usenix.org/conference/nsdi24/presentation/hu): fault-tolerant serving in the future?
+- [ ] [Lazarus: Resilient and Elastic Training of Mixture-of-Experts Models with Adaptive Expert Placement](https://arxiv.org/html/2407.04656v1): Fault Tolerance in MoE training
 
 ### Some Interesting Idea
 
