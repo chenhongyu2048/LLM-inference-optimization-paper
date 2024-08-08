@@ -86,6 +86,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] [Inference Optimization of Foundation Models on AI Accelerators](https://arxiv.org/abs/2407.09111)
 - [ ] [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391): newest
 - [ ] [A Survey on Mixture of Experts](https://arxiv.org/abs/2407.06204)
+- [ ] [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391): better than nothing
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -177,7 +178,7 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959): overlap comm with comp, similar to Liger
 - [ ] [Centauri: Enabling Efficient Scheduling for Communication-Computation Overlap in Large Model Training via Communication Partitioning](https://dl.acm.org/doi/10.1145/3620666.3651379): accepted by ASPLOS'24
 - [ ] [T3: Transparent Tracking & Triggering for Fine-grained Overlap of Compute & Collectives](https://dl.acm.org/doi/10.1145/3620665.3640410): many work about overlap in LLM, accepted by ASPLOS'24
-- [ ] [FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion](https://arxiv.org/abs/2406.06858): Fine-grained decomposition, perhaps provide some experiment result
+- [x] [FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion](https://arxiv.org/abs/2406.06858): Fine-grained decomposition, perhaps provide some experiment result
 
 ### Prune & Sparsity 💡
 
@@ -320,6 +321,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Keep the Cost Down: A Review on Methods to Optimize LLM' s KV-Cache Consumption](https://arxiv.org/abs/2407.18003): a survey for optimizing KV Cache
 - [ ] [vTensor: Flexible Virtual Tensor Management for Efficient LLM Serving](https://arxiv.org/abs/2407.15309): tensor management especially for llm inference
 - [ ] [Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation](https://arxiv.org/abs/2407.15131): remove unimportant tokens in KV Cache  
+- [ ] [CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving](https://arxiv.org/abs/2310.07240): compression and streaming transfering of KV Cache, accepted by SIGCOMM'24 
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -445,6 +447,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Offline Energy-Optimal LLM Serving: Workload-Based Energy Models for LLM Inference on Heterogeneous Systems](https://arxiv.org/abs/2407.04014): consider serving efficiency from energy view
 - [ ] [Power-aware Deep Learning Model Serving with μ-Serve](https://www.usenix.org/conference/atc24/presentation/qiu): consider energy
 - [ ] [Eloquent: A More Robust Transmission Scheme for LLM Token Streaming](https://dl.acm.org/doi/abs/10.1145/3672198.3673797): a new token transmission scheme, useful in chatbot
+- [ ] [Responsive ML inference in multi-tenanted environments using AQUA](https://arxiv.org/abs/2407.21255): serving several LLMs based on time-sharing GPUs cycles, in multi-tenanted environments
 
 #### Aligning Systems
 
@@ -520,7 +523,7 @@ Long-Context is a hot point recently.
 Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https://huggingface.co/collections/mdouglas/papers-moe-ensemble-653fc75fe8eeea516bf739e1), and [MOE papers to read](https://huggingface.co/collections/davanstrien/moe-papers-to-read-657832cedea7e2122d052a83)  
 
 - [x] ⭐ [DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale](https://proceedings.mlr.press/v162/rajbhandari22a): accepted by ICML'22
-- [ ] [Accelerating Distributed MoE Training and Inference with Lina](https://www.usenix.org/conference/atc23/presentation/li-jiamin): both training and inference, accepted by ATC'23
+- [x] [Accelerating Distributed MoE Training and Inference with Lina](https://www.usenix.org/conference/atc23/presentation/li-jiamin): both training and inference, accepted by ATC'23
 - [ ] [MegaBlocks: Efficient Sparse Training with Mixture-of-Experts](https://proceedings.mlsys.org/paper_files/paper/2023/hash/f9f4f0db4894f77240a95bde9df818e0-Abstract-mlsys2023.html): accepted by MLSys'23
 - [ ] [Tutel: Adaptive Mixture-of-Experts at Scale](https://proceedings.mlsys.org/paper_files/paper/2023/hash/9412531719be7ccf755c4ff98d0969dc-Abstract-mlsys2023.html): accepted by MLSys'23
 - [ ] [Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference](https://arxiv.org/abs/2308.12066)
@@ -534,7 +537,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [x] ⭐ [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
 - [x] [FlexMoE: Scaling Large-scale Sparse Pre-trained Model Training via Dynamic Device Placement](https://dl.acm.org/doi/abs/10.1145/3588964): train MoE with new schedule plan, maybe work for inference
-- [ ] [Exploiting Inter-Layer Expert Affinity for Accelerating Mixture-of-Experts Model Inference](https://arxiv.org/abs/2401.08383)
+- [x] [Exploiting Inter-Layer Expert Affinity for Accelerating Mixture-of-Experts Model Inference](https://arxiv.org/abs/2401.08383)
 - [ ] [EdgeMoE: Fast On-Device Inference of MoE-based Large Language Models](https://arxiv.org/abs/2308.14352): quantized experts and expers management
 - [ ] [Toward Inference-optimal Mixture-of-Expert Large Language Models](https://arxiv.org/abs/2404.02852): some analysis for training moe based on inference cost
 - [ ] [Parm: Efficient Training of Large Sparsely-Activated Models with Dedicated Schedules]: comm optimization in MoE, accepted by InfoCom'24
@@ -545,18 +548,22 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Efficient All-to-All Collective Communication Schedules for Direct-Connect Topologies](https://arxiv.org/abs/2309.13541): all_to_all comm, HPDC'24
 - [ ] [Scattered Mixture-of-Experts Implementation](https://arxiv.org/abs/2403.08245): ScatterMoE, an implementation of Sparse MoE
 - [ ] [Shortcut-connected Expert Parallelism for Accelerating Mixture-of-Experts](https://arxiv.org/abs/2404.05019): the Shortcut-connection looks more like a algorithm optimization, and provide oppotunity for overlapping
+- [ ] [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://arxiv.org/pdf/2405.04434): a opsen-source work and it inferences based expert-parallel
+- [ ] [SwapMoE: Serving Off-the-shelf MoE-based Large Language Models with Tunable Memory Budget](https://arxiv.org/abs/2308.15030): MoE experts offloading, at the cost of reduced accuracy
 
 #### MoE training
 
 - [ ] [ScheMoE: An Extensible Mixture-of-Experts Distributed Training System with Tasks Scheduling](https://dl.acm.org/doi/10.1145/3627703.3650083): scheduling comp and comm in MoE training, perhaps useful for MoE inference. accepted by EuroSys'24
 - [ ] [ST-MoE: Designing Stable and Transferable Sparse Expert Models](https://arxiv.org/abs/2202.08906): a start work in MoE
-- [ ] [Lancet: Accelerating Mixture-of-Experts Training via Whole Graph Computation-Communication Overlapping](https://arxiv.org/abs/2404.19429): accepted by MLSys'24
 - [ ] [MoESys: A Distributed and Efficient Mixture-of-Experts Training and Inference System for Internet Services](https://ieeexplore.ieee.org/abstract/document/10528887)
 - [ ] [Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models](https://arxiv.org/abs/2405.14297): algorithm change in MoE
 - [ ] [Lancet: Accelerating Mixture-of-Experts Training via Whole Graph Computation-Communication Overlapping](https://proceedings.mlsys.org/paper_files/paper/2024/hash/339caf45a6fa281cae8adc6465343464-Abstract-Conference.html): Computation-Communication Overlapping, accepted by MLSys'24
 - [ ] [Scaling Beyond the GPU Memory Limit for Large Mixture-of-Experts Model Training](https://openreview.net/forum?id=uLpyWQPyF9): training with offload, ICML'24
 - [ ] [MPMoE: Memory Efficient MoE for Pre-Trained Models With Adaptive Pipeline Parallelism](https://ieeexplore.ieee.org/document/10494556)
 - [ ] [Parm: Efficient Training of Large Sparsely-Activated Models with Dedicated Schedules](https://arxiv.org/abs/2407.00599): Dedicated Schedules for MP+EP+ESP MoE training, maybe work for infernece
+- [x] [Prediction Is All MoE Needs: Expert Load Distribution Goes from Fluctuating to Stabilizing](https://arxiv.org/pdf/2404.16914): load is stabilized in the middle and late stages of training, but may not wrok greatly for insference
+
+- [ ] [SmartMoE: Efficiently Training Sparsely-Activated Models through Combining Offline and Online Parallelization](https://www.usenix.org/conference/atc23/presentation/zhai): parallel strategy of MoE, accepted by ATC'23
 
 ### Inference with multimodal
 
@@ -600,6 +607,13 @@ What is this? maybe multiple LLM?
 
 - [ ] [Characterization of Large Language Model Development in the Datacenter](https://www.usenix.org/conference/nsdi24/presentation/hu): fault-tolerant serving in the future?
 - [ ] [Lazarus: Resilient and Elastic Training of Mixture-of-Experts Models with Adaptive Expert Placement](https://arxiv.org/html/2407.04656v1): Fault Tolerance in MoE training
+
+### Energy Optimization
+
+It is usually related to CPU-GPU heterogeneity and GPU power consumption.
+
+- [ ] [DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency](https://arxiv.org/abs/2408.00741)
+- [ ] [Offline Energy-Optimal LLM Serving: Workload-Based Energy Models for LLM Inference on Heterogeneous Systems](https://arxiv.org/abs/2407.04014)
 
 ### Some Interesting Idea
 
