@@ -95,6 +95,7 @@ Make useful benchmark or evaluation is helfpul.
 - [ ] [The Importance of Workload Choice in Evaluating LLM Inference Systems](https://dl.acm.org/doi/abs/10.1145/3642970.3655823): important angles in LLM inference systems
 - [ ] [Vidur: A Large-Scale Simulation Framework For LLM Inference](https://arxiv.org/abs/2405.05465): test the performance of LLM inference
 - [ ] [Metron: Holistic Performance Evaluation Framework for LLM Inference Systems](https://arxiv.org/abs/2407.07000): an evaluation framework
+- [ ] [LLMServingSim: A HW/SW Co-Simulation Infrastructure for LLM Inference Serving at Scale](https://arxiv.org/abs/2408.05499): a Simulator
 
 - [ ] [LLMCompass: Enabling Efficient Hardware Design for Large Language Model Inference](https://parallel.princeton.edu/papers/isca24_llmcompass.pdf): a performance evaluation framework, can be used to estimate the time cost
 
@@ -150,6 +151,7 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [EMS-SD: Efficient Multi-sample Speculative Decoding for Accelerating Large Language Models](https://arxiv.org/abs/2405.07542): algorithm optimization in spec decoding
 - [ ] [SpecExec: Massively Parallel Speculative Decoding for Interactive LLM Inference on Consumer Devices](https://arxiv.org/abs/2406.02532): any difference with specinfer?
 - [ ] [Optimizing Speculative Decoding for Serving Large Language Models Using Goodput](https://arxiv.org/abs/2406.14066): model the speculative decoding length
+- [ ] [MagicDec: Breaking the Latency-Throughput Tradeoff for Long Context Generation with Speculative Decoding](https://arxiv.org/abs/2408.11049): spec decoding for long-context
 
 #### different model collaboration  
 
@@ -179,6 +181,7 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [Centauri: Enabling Efficient Scheduling for Communication-Computation Overlap in Large Model Training via Communication Partitioning](https://dl.acm.org/doi/10.1145/3620666.3651379): accepted by ASPLOS'24
 - [ ] [T3: Transparent Tracking & Triggering for Fine-grained Overlap of Compute & Collectives](https://dl.acm.org/doi/10.1145/3620665.3640410): many work about overlap in LLM, accepted by ASPLOS'24
 - [x] [FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion](https://arxiv.org/abs/2406.06858): Fine-grained decomposition, perhaps provide some experiment result
+- [ ] [Kraken: Inherently Parallel Transformers For Efficient Multi-Device Inference](https://arxiv.org/abs/2408.07802): modify the model design for fast decoding, based on comm-comp overlapping
 
 ### Prune & Sparsity 💡
 
@@ -259,6 +262,7 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 - [ ] [LiveMind: Low-latency Large Language Models with Simultaneous Inference](https://arxiv.org/abs/2406.14319): perform inferences with incomplete prompts, to take advantage of streaming prompt
 - [ ] [A Queueing Theoretic Perspective on Low-Latency LLM Inference with Variable Token Length](https://arxiv.org/abs/2407.05347): theoretical analysis of latency
 - [ ] [ElasticBatch: A Learning-Augmented Elastic Scheduling System for Batch Inference on MIG](https://ieeexplore.ieee.org/abstract/document/10605084)
+- [ ] [Prepacking: A Simple Method for Fast Prefilling and Increased Throughput in Large Language Models](https://arxiv.org/abs/2404.09529): seems similar to ORCA or bytetransformer?
 
 ### Computing Optimization
 
@@ -318,11 +322,12 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Cost-Efficient Large Language Model Serving for Multi-turn Conversations with CachedAttention](https://www.usenix.org/conference/atc24/presentation/gao-bin-cost): multi-round chat and memory management, accepted by ATC'24
 - [ ] [Stateful Large Language Model Serving with Pensieve](https://arxiv.org/abs/2312.05516): similar to cachedattention
 - [ ] [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079): P/D disaggregation archtecture and KV Cache management
+- [ ] [P/D-Serve: Serving Disaggregated Large Language Model at Scale](https://arxiv.org/abs/2408.08147): a P/D based system, with D2D access optimization
 - [ ] [InfiniGen: Efficient Generative Inference of Large Language Models with Dynamic KV Cache Management](https://www.usenix.org/conference/osdi24/presentation/lee): offload KV Cache
 - [ ] [Keep the Cost Down: A Review on Methods to Optimize LLM' s KV-Cache Consumption](https://arxiv.org/abs/2407.18003): a survey for optimizing KV Cache
 - [ ] [vTensor: Flexible Virtual Tensor Management for Efficient LLM Serving](https://arxiv.org/abs/2407.15309): tensor management especially for llm inference
 - [ ] [Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation](https://arxiv.org/abs/2407.15131): remove unimportant tokens in KV Cache  
-- [ ] [CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving](https://arxiv.org/abs/2310.07240): compression and streaming transfering of KV Cache, accepted by SIGCOMM'24 
+- [ ] [CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving](https://arxiv.org/abs/2310.07240): compression and streaming transfering of KV Cache, accepted by SIGCOMM'24
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -330,6 +335,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 
 - [ ] [Reducing shared memory footprint to leverage high throughput on Tensor Cores and its flexible API extension library](https://dl.acm.org/doi/abs/10.1145/3578178.3578238): implement some APIs to reduce the shared memory footprint, accepted in HPC Asia'23
 - [ ] [Benchmarking and Dissecting the Nvidia Hopper GPU Architecture](https://arxiv.org/abs/2402.13499): help us understand GPUs
+- [ ] [SLO-aware GPU Frequency Scaling for Energy Efficient LLM Inference Serving](https://arxiv.org/abs/2408.05235): optimizing energy consuming based on lower GPU frequency
 
 #### CPUs or based on SSD
 
@@ -360,6 +366,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] ⭐ [A Quantitative Analysis and Guidelines of Data Streaming Accelerator in Modern Intel Xeon Scalable Processors](https://dl.acm.org/doi/10.1145/3620665.3640401): use CPU for DL, accepted by ASPLOS'24
 - [ ] [LM-Offload: Performance Model-Guided Generative Inference of Large Language Models with Parallelism Control](https://pasalabs.org/papers/2024/llm_offload_2024.pdf): based on offload
 - [ ] [T-MAC: CPU Renaissance via Table Lookup for Low-Bit LLM Deployment on Edge](https://arxiv.org/abs/2407.00088): computation on CPU with quantization
+- [ ] [TBA: Faster Large Language Model Training Using SSD-Based Activation Offloading](https://arxiv.org/abs/2408.10013): how to use SSD?
 
 #### Inference on personal device
 
@@ -575,6 +582,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Accelerating Text-to-image Editing via Cache-enabled Sparse Diffusion Inference](https://arxiv.org/abs/2305.17423): optimization for diffusion models by cache
 - [ ] [DISTMM: Accelerating distributed multimodal model training](https://www.amazon.science/publications/distmm-accelerating-distributed-multimodal-model-training): helpful although it is made for training, accepted by NSDI'24
 - [ ] [Addressing Model and Data Heterogeneity in Multimodal Large Language Model Training](https://arxiv.org/abs/2408.04275): distributed MM trainging
+- [ ] [DistTrain: Addressing Model and Data Heterogeneity with Disaggregated Training for Multimodal Large Language Models](https://arxiv.org/abs/2408.04275): multimodal model training, mm is getting more popular recently
 
 #### Diffusion Models
 
