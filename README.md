@@ -182,6 +182,7 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [T3: Transparent Tracking & Triggering for Fine-grained Overlap of Compute & Collectives](https://dl.acm.org/doi/10.1145/3620665.3640410): many work about overlap in LLM, accepted by ASPLOS'24
 - [x] [FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion](https://arxiv.org/abs/2406.06858): Fine-grained decomposition, perhaps provide some experiment result
 - [ ] [Kraken: Inherently Parallel Transformers For Efficient Multi-Device Inference](https://arxiv.org/abs/2408.07802): modify the model design for fast decoding, based on comm-comp overlapping
+- [x] [NanoFlow: Towards Optimal Large Language Model Serving Throughput](https://arxiv.org/abs/2408.12757): overlaping based on nano-batch, with some interesting engineer implemntation
 
 ### Prune & Sparsity 💡
 
@@ -457,6 +458,10 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Eloquent: A More Robust Transmission Scheme for LLM Token Streaming](https://dl.acm.org/doi/abs/10.1145/3672198.3673797): a new token transmission scheme, useful in chatbot
 - [ ] [Responsive ML inference in multi-tenanted environments using AQUA](https://arxiv.org/abs/2407.21255): serving several LLMs based on time-sharing GPUs cycles, in multi-tenanted environments
 - [ ] [Towards SLO-Optimized LLM Serving via Automatic Inference Engine Tuning](https://arxiv.org/abs/2408.04323): effect of hyper-parameters in inference engine
+
+- [ ] [Intelligent Router for LLM Workloads: Improving Performance Through Workload-Aware Scheduling](https://arxiv.org/abs/2408.13510?utm_source=pocket_shared): request schedule
+- [ ] [Efficient LLM Scheduling by Learning to Rank](https://arxiv.org/abs/2408.15792): rank request based on output length predict and schedule
+- [ ] [Responsive ML inference in multi-tenanted environments using AQUA](https://arxiv.org/abs/2407.21255): offload context to other GPUs in multi-tenant environment
 
 #### Aligning Systems
 
