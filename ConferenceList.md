@@ -18,7 +18,7 @@ Sorted by their opening time.
 | [HPDC](https://dblp.uni-trier.de/db/conf/hpdc/index.html) | Jun03 &#124; opened | &#10004; |
 | [OSDI](https://dblp.uni-trier.de/db/conf/osdi/index.html) | Jul10 &#124; opened | &#10004; |
 | [ATC](https://dblp.uni-trier.de/db/conf/usenix/index.html) | Jul10 &#124; opened | &#10004; |
-| [ICDCS](https://dblp.uni-trier.de/db/conf/icdcs/index.html) | Jul23 &#124; not open | x |
+| [ICDCS](https://dblp.uni-trier.de/db/conf/icdcs/index.html) | Jul23 &#124; opened | &#10004; |
 | [SoCC](https://dblp.uni-trier.de/db/conf/cloud/index.html) | Sep16 &#124; not open | x |
 | [SOSP](https://dblp.uni-trier.de/db/conf/sosp/index.html) | Nov04 &#124; not open | x |
 | [SC](http://dblp.uni-trier.de/db/conf/sc/) | Nov12 &#124; not open | x |
@@ -36,5 +36,5 @@ Sorted by their opening time.
 | conference name | time    | already checked |
 | :-------------: | :----:  | :-------------: |
 | [NSDI](https://www.usenix.org/conference/nsdi24/technical-sessions) | Apr16 &#124; opened | &#10004; |
-| [INFOCOM](https://infocom2024.ieee-infocom.org/program/accepted-paper-list-main-conference) | May20 &#124; not open | &#10004; |
-| [SIGCOMM](https://dblp.uni-trier.de/db/conf/sigcomm/index.html) | Aug04 &#124; not open | x |
+| [INFOCOM](https://infocom2024.ieee-infocom.org/program/accepted-paper-list-main-conference) | May20 &#124; opened | &#10004; |
+| [SIGCOMM](https://dblp.uni-trier.de/db/conf/sigcomm/index.html) | Aug04 &#124; opened | &#10004; |

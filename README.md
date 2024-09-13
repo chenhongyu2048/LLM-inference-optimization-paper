@@ -87,6 +87,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391): newest
 - [ ] [A Survey on Mixture of Experts](https://arxiv.org/abs/2407.06204)
 - [ ] [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391): better than nothing
+- [ ] [Contemporary Model Compression on Large Language Models Inference](https://arxiv.org/abs/2409.01990): survey in model compression
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -117,6 +118,15 @@ There are some interesting papers about parallel decoding.
 - [ ] [Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding](https://arxiv.org/abs/2307.15337)  
 - [ ] [ProPD: Dynamic Token Tree Pruning and Generation for LLM Parallel Decoding](https://arxiv.org/abs/2402.13485)
 - [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel?
+
+### Complete Inference
+
+In fact, I'm not so familiar with with topic. But perhaps OpenAI 4o1 used this...  
+Spend more time inferencing than pre-training  
+
+- [ ] ⭐ [Large Language Monkeys: Scaling Inference Compute with Repeated Sampling](https://arxiv.org/abs/2407.21787): Starter material, apply repeated sampling
+- [ ] ⭐ [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://arxiv.org/abs/2408.03314): Starter material, scaling LLM Test-Time to improve accuracy
+- [ ] [Strategic Chain-of-Thought: Guiding Accurate Reasoning in LLMs through Strategy Elicitation](https://arxiv.org/abs/2409.03271): seems fewer people have explore the efficiency of CoT; a two-stage method gives me some throught
 
 ### Speculative Decoding
 
@@ -174,6 +184,7 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [x] [LoongServe: Efficiently Serving Long-context Large Language Models with Elastic Sequence Parallelism](https://arxiv.org/abs/2404.09526): Elastic Sequence Parallelism?
 - [ ] [GraphPipe: Improving Performance and Scalability of DNN Training with Graph Pipeline Parallelism](https://arxiv.org/abs/2406.17145): this could be potential in inference
 - [ ] [TeraPipe: Token-Level Pipeline Parallelism for Training Large-Scale Language Models](https://proceedings.mlr.press/v139/li21y.html): pipeline parallism
+- [ ] [QUART: Latency-Aware FaaS System for Pipelining Large Model Inference](https://ieeexplore.ieee.org/document/10631006): pipeline in serving and fast expanding
 
 #### Communication Overlap
 
@@ -368,6 +379,8 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [LM-Offload: Performance Model-Guided Generative Inference of Large Language Models with Parallelism Control](https://pasalabs.org/papers/2024/llm_offload_2024.pdf): based on offload
 - [ ] [T-MAC: CPU Renaissance via Table Lookup for Low-Bit LLM Deployment on Edge](https://arxiv.org/abs/2407.00088): computation on CPU with quantization
 - [ ] [TBA: Faster Large Language Model Training Using SSD-Based Activation Offloading](https://arxiv.org/abs/2408.10013): how to use SSD?
+- [ ] [InstInfer: In-Storage Attention Offloading for Cost-Effective Long-Context LLM Inference](https://arxiv.org/abs/2409.04992): offload KV Cache to CSD(Computational Storage Drive)
+- [ ] [TwinPilots: A New Computing Paradigm for GPU-CPU Parallel LLM Inference](https://jiangs.utasites.cloud/pubs/papers/Yu24-TwinPilots.pdf): some idea in using CPU
 
 #### Inference on personal device
 
@@ -470,6 +483,9 @@ LLM server providers will focus on this part. Engineering practices are just as 
 #### Comm kernels
 
 - [ ] [Enabling Elastic Model Serving with MultiWorld](https://arxiv.org/abs/2407.08980): optimizing collective communication lib for LLM inference
+- [ ] [Flexible Scheduling of Network and Computing Resources for Distributed AI Tasks](https://dl.acm.org/doi/10.1145/3672202.3673744)
+- [ ] [AdapCC: Making Collective Communication in Distributed Machine Learning Adaptive](https://ieeexplore.ieee.org/document/10631011): communicating strategy based on runtime, ICDCS'24
+- [ ] [Crux: GPU-Efficient Communication Scheduling for Deep Learning Training](https://dl.acm.org/doi/10.1145/3651890.3672239): a communication scheduler that aims to maximize GPU computation utilization by mitigating the communication contention among DLT jobs, SIGCOMM'24
 
 #### Dynamic resource
 
@@ -482,6 +498,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Compass: A Decentralized Scheduler for Latency-Sensitive ML Workflows](https://arxiv.org/abs/2402.17652): scheduler for latency-sensitive request
 - [ ] [Llumnix: Dynamic Scheduling for Large Language Model Serving](https://arxiv.org/abs/2406.03243): scheduling in multi instances may by helpful for me now
 - [ ] [Arlo: Serving Transformer-based Language Models with Dynamic Input Lengths](https://henryhxu.github.io/share/xin-icpp24.pdf): solve Dynamic Input Lengths by multi-instance and request scheduling
+- [ ] [Intelligent Router for LLM Workloads: Improving Performance Through Workload-Aware Scheduling](https://arxiv.org/abs/2408.13510): scheduling based on a output length predictor
 
 #### Shared Prefix Serving
 
@@ -510,9 +527,10 @@ For LoRA but not serving
 - [ ] [SBoRA: Low-Rank Adaptation with Regional Weight Updates](https://arxiv.org/abs/2407.05413): an algorithm optimization for LoRA
 - [ ] [A Survey on LoRA of Large Language Models](https://arxiv.org/abs/2407.11046): survey of LoRAs, incluing parallel LoRA computing and Multi-LoRA
 
-#### Combining fine-tuning with inference
+#### Combining fine-tuning/training with inference
 
 - [ ] [Deferred Continuous Batching in Resource-Efficient Large Language Model Serving](https://dl.acm.org/doi/abs/10.1145/3642970.3655835)
+- [ ] [Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses](https://ieeexplore.ieee.org/document/10630927): place training and inference together, control the inference latency to the desired SLO, while maximizing the throughput of the training jobs co-located on the same GPUs, accepted by ICDCS'24
 
 #### Serving Long-Context
 
@@ -674,3 +692,5 @@ Just my preference.
 - [ ] [GNNPipe: Scaling Deep GNN Training with Pipelined Model Parallelism](https://arxiv.org/abs/2308.10087)
 - [ ] [PckGNN: Optimizing Aggregation Operators with Packing Strategies in Graph Neural Networks]: accepted by IPDPS'24
 - [ ] [NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention](https://dl.acm.org/doi/10.1145/3626246.3653399): SIGMOD'24
+- [ ] [Eliminating Data Processing Bottlenecks in GNN Training over Large Graphs via Two-level Feature Compression](https://dl.acm.org/doi/10.14778/3681954.3681968): compress node features in graph, accepted by VLDB'24
+- [ ] [Mega: More Efficient Graph Attention for GNNs](https://ieeexplore.ieee.org/document/10631005): optimize graph attention efficiency, ICDCS'24
