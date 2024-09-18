@@ -128,6 +128,19 @@ Spend more time inferencing than pre-training
 - [ ] ⭐ [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://arxiv.org/abs/2408.03314): Starter material, scaling LLM Test-Time to improve accuracy
 - [ ] [Strategic Chain-of-Thought: Guiding Accurate Reasoning in LLMs through Strategy Elicitation](https://arxiv.org/abs/2409.03271): seems fewer people have explore the efficiency of CoT; a two-stage method gives me some throught
 
+#### GPT-o1
+
+This topic is about GPT-o1, aka the strawberry.  
+
+- [ ] ⭐ [Reverse engineering OpenAI’s o1](https://www.interconnects.ai/p/reverse-engineering-openai-o1): a leading blog for introduction in OpenAI’s o1
+- [ ] ⭐ [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/abs/2201.11903): base work
+- [ ] [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](https://arxiv.org/abs/2305.10601): a improment based on CoT
+- [ ] [Large Language Model Guided Tree-of-Thought](https://arxiv.org/abs/2305.08291): also a ToT
+- [ ] [Let's Verify Step by Step](https://arxiv.org/abs/2305.20050): verify by step can be helpful
+- [ ] [Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models](https://arxiv.org/abs/2310.04406): what is Language Agent Tree Search (LATS)? accepted by ICML'24
+- [ ] [Critique-out-Loud Reward Models](https://arxiv.org/abs/2408.11791)
+- [ ] [Generative Verifiers: Reward Modeling as Next-Token Prediction](https://arxiv.org/abs/2408.15240): a verifier, by DeepMind
+
 ### Speculative Decoding
 
 Also named as Speculative Sampling, model collaboration.  
