@@ -119,7 +119,7 @@ There are some interesting papers about parallel decoding.
 - [ ] [ProPD: Dynamic Token Tree Pruning and Generation for LLM Parallel Decoding](https://arxiv.org/abs/2402.13485)
 - [ ] [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761): how to make it auto-parallel?
 
-### Complete Inference
+### Complex Inference
 
 In fact, I'm not so familiar with with topic. But perhaps OpenAI 4o1 used this...  
 Spend more time inferencing than pre-training  
@@ -261,6 +261,7 @@ Low-precision for memory and computing efficiency.
 - [ ] [Quant-LLM: Accelerating the Serving of Large Language Models via FP6-Centric Algorithm-System Co-Design on Modern GPUs](https://www.usenix.org/conference/atc24/presentation/xia): a computation optimization for 6-bit LLM
 - [ ] [Mixture of Experts with Mixture of Precisions for Tuning Quality of Service](https://arxiv.org/abs/2407.14417): quantization on MoE models
 - [ ] [Zero-Delay QKV Compression for Mitigating KV Cache and Network Bottlenecks in LLM Inference](https://arxiv.org/abs/2408.04107): compress the KV Cache
+- [ ] [ABQ-LLM: Arbitrary-Bit Quantized Inference Acceleration for Large Language Models](https://arxiv.org/abs/2408.08554): quantization matrix multiplication of arbitrary precision combinations based on BTC (Binary TensorCore) equivalents
 
 ### Batch Processing
 
@@ -361,6 +362,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Reducing shared memory footprint to leverage high throughput on Tensor Cores and its flexible API extension library](https://dl.acm.org/doi/abs/10.1145/3578178.3578238): implement some APIs to reduce the shared memory footprint, accepted in HPC Asia'23
 - [ ] [Benchmarking and Dissecting the Nvidia Hopper GPU Architecture](https://arxiv.org/abs/2402.13499): help us understand GPUs
 - [ ] [SLO-aware GPU Frequency Scaling for Energy Efficient LLM Inference Serving](https://arxiv.org/abs/2408.05235): optimizing energy consuming based on lower GPU frequency
+- [ ] [Foreseer: Knowledge-Driven Acceleration of Memory-Bound Matrix Multiplications for Large Language Model Inference](https://dl.acm.org/doi/abs/10.1145/3688351.3689153): similar to cutlass, optimization on intel GPU
 
 #### CPUs or based on SSD
 
@@ -426,6 +428,8 @@ In this part, researchers provide some algorithm-based method to optimizing LLM 
 - [ ] [Efficient Streaming Language Models with Attention Sinks](https://arxiv.org/abs/2309.17453): streaming LLM for infinite sequence lengths, by MIT and under guidence of Song HAN
 - [ ] [Keyformer: KV Cache Reduction through Key Tokens Selection for Efficient Generative Inference](https://proceedings.mlsys.org/paper_files/paper/2024/hash/48fecef47b19fe501d27d338b6d52582-Abstract-Conference.html): also important tokens, just like H2O, accepted by MLSys'24
 - [ ] [Q-Hitter: A Better Token Oracle for Efficient LLM Inference via Sparse-Quantized KV Cache](https://proceedings.mlsys.org/paper_files/paper/2024/hash/bbb7506579431a85861a05fff048d3e1-Abstract-Conference.html): an optimization to H2O, accepted by MLSys'24
+- [ ] [RetrievalAttention: Accelerating Long-Context LLM Inference via Vector Retrieval](https://arxiv.org/abs/2409.10516): use approximate nearest neighbor search to search the most relevant KV cache
+- [ ] [CritiPrefill: A Segment-wise Criticality-based Approach for Prefilling Acceleration in LLMs](https://arxiv.org/abs/2409.12490): based on observation: adjacent query tokens tend to focus on similar subsets of the past Key-Value (KV) cache
 
 ### Industrial Inference Frameworks 💡
 
