@@ -16,6 +16,8 @@ Besides, [awesome-AI-system](https://github.com/lambda7xx/awesome-AI-system) wor
 
 The log ["Large Transformer Model Inference Optimization"](https://lilianweng.github.io/posts/2023-01-10-inference-optimization/) helps me a lot at the beginning.  
 
+This log [OpenAI Keynote on Building Scalable AI Infrastructure](https://www.servethehome.com/openai-keynote-on-building-scalable-ai-infrastructure/) seems to be a laeding guidance.  
+
 ## Person/Lab
 
 **Follow others' research, and find yourself's idea.**  
@@ -497,6 +499,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Efficient LLM Scheduling by Learning to Rank](https://arxiv.org/abs/2408.15792): rank request based on output length predict and schedule
 - [ ] [Responsive ML inference in multi-tenanted environments using AQUA](https://arxiv.org/abs/2407.21255): offload context to other GPUs in multi-tenant environment
 - [ ] [UELLM: A Unified and Efficient Approach for LLM Inference Serving](https://arxiv.org/abs/2409.14961): serving optimization in MaaS clouds
+- [ ] [One Queue Is All You Need: Resolving Head-of-Line Blocking in Large Language Model Serving](https://arxiv.org/abs/2407.00047): shcduling the requests
 
 #### Aligning Systems
 
@@ -628,6 +631,11 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [DISTMM: Accelerating distributed multimodal model training](https://www.amazon.science/publications/distmm-accelerating-distributed-multimodal-model-training): helpful although it is made for training, accepted by NSDI'24
 - [ ] [Addressing Model and Data Heterogeneity in Multimodal Large Language Model Training](https://arxiv.org/abs/2408.04275): distributed MM trainging
 - [ ] [DistTrain: Addressing Model and Data Heterogeneity with Disaggregated Training for Multimodal Large Language Models](https://arxiv.org/abs/2408.04275): multimodal model training, mm is getting more popular recently
+
+#### Training in Multimodal
+
+- [ ] [DistTrain: Addressing Model and Data Heterogeneity with Disaggregated Training for Multimodal Large Language Models](https://arxiv.org/abs/2408.04275): disaggregation in MM training, under guidence of Xin JIN
+- [ ] [Efficient Multi-Task Large Model Training via Data Heterogeneity-aware Model Management](https://arxiv.org/abs/2409.03365): efficient MM model training
 
 #### Diffusion Models
 
