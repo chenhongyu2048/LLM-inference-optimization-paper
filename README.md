@@ -359,8 +359,12 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [vTensor: Flexible Virtual Tensor Management for Efficient LLM Serving](https://arxiv.org/abs/2407.15309): tensor management especially for llm inference
 - [ ] [Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation](https://arxiv.org/abs/2407.15131): remove unimportant tokens in KV Cache  
 - [ ] [CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving](https://arxiv.org/abs/2310.07240): compression and streaming transfering of KV Cache, accepted by SIGCOMM'24
+- [ ] [Compute Or Load KV Cache? Why Not Both?](https://arxiv.org/abs/2410.03065): recompute and load together for long context
+- [ ] [LayerKV: Optimizing Large Language Model Serving with Layer-wise KV Cache Management](https://arxiv.org/abs/2410.00428): manage KV Cache by layers
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
+
+- [ ] [Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective](https://arxiv.org/abs/2410.04466): a helpful survey
 
 #### Underlying optimization for GPU
 
@@ -436,6 +440,8 @@ In this part, researchers provide some algorithm-based method to optimizing LLM 
 - [ ] [Q-Hitter: A Better Token Oracle for Efficient LLM Inference via Sparse-Quantized KV Cache](https://proceedings.mlsys.org/paper_files/paper/2024/hash/bbb7506579431a85861a05fff048d3e1-Abstract-Conference.html): an optimization to H2O, accepted by MLSys'24
 - [ ] [RetrievalAttention: Accelerating Long-Context LLM Inference via Vector Retrieval](https://arxiv.org/abs/2409.10516): use approximate nearest neighbor search to search the most relevant KV cache
 - [ ] [CritiPrefill: A Segment-wise Criticality-based Approach for Prefilling Acceleration in LLMs](https://arxiv.org/abs/2409.12490): based on observation: adjacent query tokens tend to focus on similar subsets of the past Key-Value (KV) cache
+- [ ] [TidalDecode: Fast and Accurate LLM Decoding with Position Persistent Sparse Attention](https://arxiv.org/abs/2410.05076): sparse attention
+- [ ] [SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation](https://arxiv.org/abs/2410.03960): algorithm optimization for less KV Cache
 
 ### Industrial Inference Frameworks 💡
 
@@ -500,6 +506,8 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Responsive ML inference in multi-tenanted environments using AQUA](https://arxiv.org/abs/2407.21255): offload context to other GPUs in multi-tenant environment
 - [ ] [UELLM: A Unified and Efficient Approach for LLM Inference Serving](https://arxiv.org/abs/2409.14961): serving optimization in MaaS clouds
 - [ ] [One Queue Is All You Need: Resolving Head-of-Line Blocking in Large Language Model Serving](https://arxiv.org/abs/2407.00047): shcduling the requests
+- [ ] [ConServe: Harvesting GPUs for Low-Latency and High-Throughput Large Language Model Serving](https://arxiv.org/html/2410.01228v1): harvest stranded GPU resources for offline LLM inference tasks
+- [ ] [LLM-Pilot: Characterize and Optimize Performance of your LLM Inference Services](https://arxiv.org/abs/2410.02425): accepted by SC'24
 
 #### Aligning Systems
 
@@ -701,6 +709,7 @@ It is usually related to CPU-GPU heterogeneity and GPU power consumption.
 - [ ] [Two-Face: Combining Collective and One-Sided Communication for Efficient Distributed SpMM](https://dl.acm.org/doi/10.1145/3620665.3640427): efficient SpMM, accepted by ASPLOS'24
 - [ ] [GMLake: Efficient and Transparent GPU Memory Defragmentation for Large-scale DNN Training with Virtual Memory Stitching](https://dl.acm.org/doi/abs/10.1145/3620665.3640423): GPU memory pool, accepted by ASPLOS'24
 - [ ] [QuickLLaMA: Query-aware Inference Acceleration for Large Language Models](https://arxiv.org/abs/2406.07528): an inference-friendly LLaMA architecture
+- [ ] [HybridFlow: A Flexible and Efficient RLHF Framework](https://arxiv.org/abs/2409.19256v1): framework for RLHF
 
 #### Dataflow
 
