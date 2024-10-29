@@ -270,6 +270,7 @@ Low-precision for memory and computing efficiency.
 - [ ] [Zero-Delay QKV Compression for Mitigating KV Cache and Network Bottlenecks in LLM Inference](https://arxiv.org/abs/2408.04107): compress the KV Cache
 - [ ] [ABQ-LLM: Arbitrary-Bit Quantized Inference Acceleration for Large Language Models](https://arxiv.org/abs/2408.08554): quantization matrix multiplication of arbitrary precision combinations based on BTC (Binary TensorCore) equivalents
 - [ ] [Progressive Mixed-Precision Decoding for Efficient LLM Inference](https://arxiv.org/abs/2410.13461): gradual lowering of precision deeper in the generated sequence, together with a spectrum of precision-switching schedulers
+- [ ] [COMET: Towards Partical W4A4KV4 LLMs Serving](https://arxiv.org/abs/2410.12168): provide quantization algorithm, quantization kernel and SM schedule method
 
 ### Batch Processing
 
@@ -297,6 +298,7 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 - [ ] [A Queueing Theoretic Perspective on Low-Latency LLM Inference with Variable Token Length](https://arxiv.org/abs/2407.05347): theoretical analysis of latency
 - [ ] [ElasticBatch: A Learning-Augmented Elastic Scheduling System for Batch Inference on MIG](https://ieeexplore.ieee.org/abstract/document/10605084)
 - [ ] [Prepacking: A Simple Method for Fast Prefilling and Increased Throughput in Large Language Models](https://arxiv.org/abs/2404.09529): seems similar to ORCA or bytetransformer?
+- [ ] [BATON: Enhancing Batch-wise Inference Efficiency for Large Language Models via Dynamic Re-batching](https://arxiv.org/abs/2410.18701): optimization on ORCA, dynamic re-batching
 
 ### Computing Optimization
 
@@ -327,6 +329,7 @@ This part include some impressive work optimizing LLM computing by observing the
 
 - [ ] [Automatic Task Parallelization of Dataflow Graphs in ML/DL models](https://arxiv.org/abs/2308.11192)
 - [ ] [MonoNN: Enabling a New Monolithic Optimization Space for Neural Network Inference Tasks on Modern GPU-Centric Architectures](https://www.usenix.org/conference/osdi24/presentation/zhuang): compilation optimization on compuataion graph
+- [ ] [POD-Attention: Unlocking Full Prefill-Decode Overlap for Faster LLM Inference](https://arxiv.org/abs/2410.18038): optimize attention kernel in mix-batching
 
 ### Memory Manage
 
@@ -364,6 +367,8 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving](https://arxiv.org/abs/2310.07240): compression and streaming transfering of KV Cache, accepted by SIGCOMM'24
 - [ ] [Compute Or Load KV Cache? Why Not Both?](https://arxiv.org/abs/2410.03065): recompute and load together for long context
 - [ ] [LayerKV: Optimizing Large Language Model Serving with Layer-wise KV Cache Management](https://arxiv.org/abs/2410.00428): manage KV Cache by layers
+- [ ] [Harnessing Your DRAM and SSD for Sustainable and Accessible LLM Inference with Mixed-Precision and Multi-level Caching](https://arxiv.org/abs/2410.14740): compress KV cache and multi-level memory
+- [ ] [EPIC: Efficient Position-Independent Context Caching for Serving Large Language Models](https://arxiv.org/abs/2410.15332): better prefix-cache
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -513,6 +518,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [One Queue Is All You Need: Resolving Head-of-Line Blocking in Large Language Model Serving](https://arxiv.org/abs/2407.00047): shcduling the requests
 - [ ] [ConServe: Harvesting GPUs for Low-Latency and High-Throughput Large Language Model Serving](https://arxiv.org/html/2410.01228v1): harvest stranded GPU resources for offline LLM inference tasks
 - [ ] [LLM-Pilot: Characterize and Optimize Performance of your LLM Inference Services](https://arxiv.org/abs/2410.02425): accepted by SC'24
+- [ ] [Revisiting SLO and Goodput Metrics in LLM Serving](https://arxiv.org/abs/2410.14257): check metrics SLO and Goodput in LLM serving
 
 #### Aligning Systems
 
@@ -537,6 +543,8 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Llumnix: Dynamic Scheduling for Large Language Model Serving](https://arxiv.org/abs/2406.03243): scheduling in multi instances may by helpful for me now
 - [ ] [Arlo: Serving Transformer-based Language Models with Dynamic Input Lengths](https://henryhxu.github.io/share/xin-icpp24.pdf): solve Dynamic Input Lengths by multi-instance and request scheduling
 - [ ] [Intelligent Router for LLM Workloads: Improving Performance Through Workload-Aware Scheduling](https://arxiv.org/abs/2408.13510): scheduling based on a output length predictor
+- [ ] [Is the GPU Half-Empty or Half-Full? Practical Scheduling Techniques for LLMs](https://arxiv.org/abs/2410.17840): request scheduling in cluster and on instance
+- [ ] [Fast Inference for Augmented Large Language Models](https://arxiv.org/abs/2410.18248): schedule for Augmented LLM
 
 #### Shared Prefix Serving
 
@@ -567,6 +575,7 @@ For LoRA but not serving
 - [ ] [A Survey on LoRA of Large Language Models](https://arxiv.org/abs/2407.11046): survey of LoRAs, incluing parallel LoRA computing and Multi-LoRA, [github](https://github.com/ZJU-LLMs/Awesome-LoRAs)
 - [ ] [mLoRA: Fine-Tuning LoRA Adapters via Highly-Efficient Pipeline Parallelism in Multiple GPUs](https://arxiv.org/abs/2312.02515): can study the LoRA-aware pipeline parallelism scheme, [github](https://github.com/TUDB-Labs/mLoRA)
 - [ ] [MixLoRA: Enhancing Large Language Models Fine-Tuning with LoRA-based Mixture of Experts](https://arxiv.org/abs/2404.15159): LoRA based MoE, [github](https://github.com/TUDB-Labs/MixLoRA)
+- [ ] [GongBu: Easily Fine-tuning LLMs for Domain-specific Adaptation](https://dl.acm.org/doi/abs/10.1145/3627673.3679233): LLM fine-tuning tools
 
 #### Combining fine-tuning/training with inference
 
@@ -695,6 +704,11 @@ It is usually related to CPU-GPU heterogeneity and GPU power consumption.
 
 - [ ] [DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency](https://arxiv.org/abs/2408.00741)
 - [ ] [Offline Energy-Optimal LLM Serving: Workload-Based Energy Models for LLM Inference on Heterogeneous Systems](https://arxiv.org/abs/2407.04014)
+
+### Early Exits
+
+- [ ] [Apparate: Rethinking Early Exits to Tame Latency-Throughput Tensions in ML Serving](https://arxiv.org/abs/2312.05385): early exits, accepted by SOSP'24
+- [ ] [Improving DNN Inference Throughput Using Practical, Per-Input Compute Adaptation](https://gts3.org/assets/papers/2024/iyer:e3.pdf): early exits and some system optimization, accepted by SOSP'24
 
 ### Some Interesting Idea
 
