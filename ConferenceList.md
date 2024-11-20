@@ -18,9 +18,9 @@ Sorted by their opening time.
 | [OSDI](https://dblp.uni-trier.de/db/conf/osdi/index.html) | Jul10 &#124; opened | &#10004; |
 | [ATC](https://dblp.uni-trier.de/db/conf/usenix/index.html) | Jul10 &#124; opened | &#10004; |
 | [ICDCS](https://dblp.uni-trier.de/db/conf/icdcs/index.html) | Jul23 &#124; opened | &#10004; |
-| [SoCC](https://dblp.uni-trier.de/db/conf/cloud/index.html) | Sep16 &#124; not open | x |
-| [SOSP](https://dblp.uni-trier.de/db/conf/sosp/index.html) | Nov04 &#124; not open | x |
-| [SC](http://dblp.uni-trier.de/db/conf/sc/) | Nov12 &#124; not open | x |
+| [SoCC](https://dblp.uni-trier.de/db/conf/cloud/index.html) | Sep16 &#124; opened | &#10004; |
+| [SOSP](https://dblp.uni-trier.de/db/conf/sosp/index.html) | Nov04 &#124; opened | &#10004; |
+| [SC](http://dblp.uni-trier.de/db/conf/sc/) | Nov12 &#124; opened | &#10004; |
 
 ## DATABASE
 
@@ -28,7 +28,7 @@ Sorted by their opening time.
 | :-------------: | :----:  | :-------------: |
 | [ICDE](https://dblp.uni-trier.de/db/conf/icde/index.html) | May13 &#124; opened | &#10004; |
 | [SIGMOD](https://dblp.uni-trier.de/db/conf/sigmod/index.html) | Jun09 &#124; opened | &#10004; |
-| [VLDB](https://dl.acm.org/loi/pvldb/group/d2020.y2023) | Aug25 &#124; not open | x |
+| [VLDB](https://dl.acm.org/loi/pvldb/group/d2020.y2023) | Aug25 &#124; opened | x |
 
 ## NETWORK
 

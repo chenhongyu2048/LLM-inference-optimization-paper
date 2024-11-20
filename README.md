@@ -29,7 +29,7 @@ If you have a different opinion, please feel free to communicate with me through
 
 [Zhihao JIA](https://www.cs.cmu.edu/~zhihaoj2/): FlexFlow and other imporessive work, important role in MLSys, affiliated with CMU  
 [Tianqi CHEN](https://tqchen.com/): TVM, XGBoost, and other imporessive work, important role in Machine Learning System and ML compilers, affiliated with CMU  
-[Song HAN](https://hanlab.mit.edu/songhan): many impoertant work in efficient ML including sparsity and quantization. btw, the class [*TinyML and Efficient Deep Learning Computing*](https://efficientml.ai) is highly recommanded, affiliated with MIT
+[Song HAN](https://hanlab.mit.edu/songhan): many important work in efficient ML including sparsity and quantization. btw, the class [*TinyML and Efficient Deep Learning Computing*](https://efficientml.ai) is highly recommanded, affiliated with MIT
 [Zhen DONG](https://dong-zhen.com/): many important work in quantization and high-performance ML, affiliated with UCB  
 [Tri DAO](https://tridao.me/): author of FlashAttention, affiliated with Princeton  
 [Ce ZHANG](https://zhangce.github.io/): famous in efficient MLsys, affiliated with UChicago  
@@ -81,7 +81,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] [Beyond the Speculative Game: A Survey of Speculative Execution in Large Language Models](https://arxiv.org/abs/2404.14897)
 - [ ] ⭐ [Navigating Challenges and Technical Debt in Large Language Models Deployment](https://dl.acm.org/doi/abs/10.1145/3642970.3655840): important
 - [ ] [The CAP Principle for LLM Serving](https://arxiv.org/abs/2405.11299): anothor angle
-- [ ] [Demystifying Data Management for Large Language Models](https://dl.acm.org/doi/abs/10.1145/3626246.3654683): talking about database in LLM, by Xupeng MIAO, accpted by SIDMOD'24
+- [ ] [Demystifying Data Management for Large Language Models](https://dl.acm.org/doi/abs/10.1145/3626246.3654683): talking about database in LLM, by Xupeng MIAO, accepted by SIDMOD'24
 - [ ] [Benchmarking LLM Inference Backends: vLLM, LMDeploy, MLC-LLM, TensorRT-LLM, and TGI](https://bentoml.com/blog/benchmarking-llm-inference-backends): with [code](https://github.com/bentoml/llm-bench/tree/main)
 - [ ] [A Survey on Mixture of Experts](https://arxiv.org/pdf/2407.06204)
 - [ ] [Analyzing LLM performance: The impact of high-bandwidth memory on model inference](https://www.micron.com/content/dam/micron/global/public/documents/products/product-flyer/llm-inference-engineering-report.pdf): analyze of inference
@@ -90,6 +90,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] [A Survey on Mixture of Experts](https://arxiv.org/abs/2407.06204)
 - [ ] [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391): better than nothing
 - [ ] [Contemporary Model Compression on Large Language Models Inference](https://arxiv.org/abs/2409.01990): survey in model compression
+- [ ] ⭐ [Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b314/21HUWpZ2Xgk): bring insights for MLSys
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -207,6 +208,7 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [QUART: Latency-Aware FaaS System for Pipelining Large Model Inference](https://ieeexplore.ieee.org/document/10631006): pipeline in serving and fast expanding
 - [ ] [Mnemosyne: Parallelization Strategies for Efficiently Serving Multi-Million Context Length LLM Inference Requests Without Approximations](https://arxiv.org/abs/2409.17264): optimize sequence parallel
 - [ ] [CSPS: A Communication-Efficient Sequence-Parallelism based Serving System for Transformer based Models with Long Prompts](https://arxiv.org/abs/2409.15104): optimize sequence parallel
+- [ ] ⭐ [PipeInfer: Accelerating LLM Inference using Asynchronous Pipelined Speculation](https://www.computer.org/csdl/proceedings-article/sc/2024/529100a624/21HUVz57ZgQ): pipeline parallelism and speculation, accepted by SC'24
 
 #### Communication Overlap
 
@@ -226,7 +228,7 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] ⭐ [Accelerating Sparse Deep Neural Networks](https://arxiv.org/abs/2104.08378): use N:M sparsity to fully utilize the hardware for accelerating, by Nvidia
 - [ ] ⭐ [Deja Vu: Contextual Sparsity for Efficient LLMs at Inference Time](https://proceedings.mlr.press/v202/liu23am.html): interesting paper in using sparsity, under guidence of Tri DAO and Ce ZHANG, accepted in ICML'23
 - [ ] [Dynamic Context Pruning for Efficient and Interpretable Autoregressive Transformers](https://arxiv.org/abs/2305.15805)
-- [ ] [Dynamic N:M Fine-Grained Structured Sparse Attention Mechanism](https://dl.acm.org/doi/abs/10.1145/3572848.3577500): accpted by PPoPP'23
+- [ ] [Dynamic N:M Fine-Grained Structured Sparse Attention Mechanism](https://dl.acm.org/doi/abs/10.1145/3572848.3577500): accepted by PPoPP'23
 - [x] ⭐ [PIT: Optimization of Dynamic Sparse Deep Learning Models via Permutation Invariant Transformation](https://dl.acm.org/doi/10.1145/3600006.3613139): A novel way to deal with dynamic sparsity may be used for GNN and MoE, accepted by SOSP'23
 - [ ] [DéjàVu: KV-cache Streaming for Fast, Fault-tolerant Generative LLM Serving](https://arxiv.org/abs/2403.01876): seem a follow-up work of Deja Vu, also focus on KV-Cache
 
@@ -275,6 +277,7 @@ Low-precision for memory and computing efficiency.
 - [ ] [ABQ-LLM: Arbitrary-Bit Quantized Inference Acceleration for Large Language Models](https://arxiv.org/abs/2408.08554): quantization matrix multiplication of arbitrary precision combinations based on BTC (Binary TensorCore) equivalents
 - [ ] [Progressive Mixed-Precision Decoding for Efficient LLM Inference](https://arxiv.org/abs/2410.13461): gradual lowering of precision deeper in the generated sequence, together with a spectrum of precision-switching schedulers
 - [ ] [COMET: Towards Partical W4A4KV4 LLMs Serving](https://arxiv.org/abs/2410.12168): provide quantization algorithm, quantization kernel and SM schedule method
+- [ ] [MixQ: Taming Dynamic Outliers in Mixed-Precision Quantization by Online Prediction](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b161/21HUWiUMiqI): quantization with outliers, optimization on AWQ, accepted by SC'24
 
 ### Batch Processing
 
@@ -303,6 +306,8 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 - [ ] [ElasticBatch: A Learning-Augmented Elastic Scheduling System for Batch Inference on MIG](https://ieeexplore.ieee.org/abstract/document/10605084)
 - [ ] [Prepacking: A Simple Method for Fast Prefilling and Increased Throughput in Large Language Models](https://arxiv.org/abs/2404.09529): seems similar to ORCA or bytetransformer?
 - [ ] [BATON: Enhancing Batch-wise Inference Efficiency for Large Language Models via Dynamic Re-batching](https://arxiv.org/abs/2410.18701): optimization on ORCA, dynamic re-batching
+- [ ] [EcoServe: Maximizing Multi-Resource Utilization with SLO Guarantees in LLM Serving](https://arxiv.org/abs/2411.06364): A fusion monster with a variety of optimization techniques
+- [ ] ⭐ [AcceLLM: Accelerating LLM Inference using Redundancy for Load Balancing and Data Locality](https://arxiv.org/abs/2411.05555): what's Redundancy
 
 ### Computing Optimization
 
@@ -375,6 +380,8 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [EPIC: Efficient Position-Independent Context Caching for Serving Large Language Models](https://arxiv.org/abs/2410.15332): better prefix-cache
 - [ ] [ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference](https://arxiv.org/abs/2410.21465): Low-rank KV cache and dynamic rebuild KV cache
 - [ ] ⭐ [VL-Cache: Sparsity and Modality-Aware KV Cache Compression for Vision-Language Model Inference Acceleration](https://arxiv.org/abs/2410.23317): the first work I see that optimize KV cache in vision models
+- [ ] [ArkVale: Efficient Generative LLM Inference with Recallable Key-Value Eviction](https://openreview.net/forum?id=4oAt5L4lYe): KV cache page evict and recall, accepted by NIPS'24
+- [ ] [SpeedLoader: An I/O efficient scheme for heterogeneous and distributed LLM operation](https://openreview.net/forum?id=Y2I0Fy4sm7): Optimization on Zero? redesign the data flow of heterogeneous hardware and sharded model training to minimize the excessive communication overhead, accepted by NIPS'24
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -421,6 +428,9 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [TwinPilots: A New Computing Paradigm for GPU-CPU Parallel LLM Inference](https://jiangs.utasites.cloud/pubs/papers/Yu24-TwinPilots.pdf): some idea in using CPU
 - [ ] [Improving Throughput-oriented LLM Inference with CPU Computations](https://dl.acm.org/doi/abs/10.1145/3656019.3676949): pipeline in CPU-GPU inference
 - [ ] [Understanding Performance Implications of LLM Inference on CPUs](https://seonjinna.github.io/assets/pdf/iiswc24_CPULLM.pdf): analyse of using CPU for inference
+
+- [ ] [Pie: Pooling CPU Memory for LLM Inference](https://arxiv.org/abs/2411.09317): use CPU memory to enlarge batchsize to improve throughput, by Ion Stoica
+- [ ] [NEO: Saving GPU Memory Crisis with CPU Offloading for Online LLM Inference](https://arxiv.org/abs/2411.01142): offload KV cache and attention to CPU for larger batchsize, similar to fastdecode, by Ion Stoica
 
 #### Inference on personal device
 
@@ -526,6 +536,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [ConServe: Harvesting GPUs for Low-Latency and High-Throughput Large Language Model Serving](https://arxiv.org/html/2410.01228v1): harvest stranded GPU resources for offline LLM inference tasks
 - [ ] [LLM-Pilot: Characterize and Optimize Performance of your LLM Inference Services](https://arxiv.org/abs/2410.02425): accepted by SC'24
 - [ ] [Revisiting SLO and Goodput Metrics in LLM Serving](https://arxiv.org/abs/2410.14257): check metrics SLO and Goodput in LLM serving
+- [ ] [Hops: Fine-grained heterogeneous sensing, efficient and fair Deep Learning cluster scheduling system](https://dl.acm.org/doi/10.1145/3698038.3698515): schedule tasks in multi-tenant deep learning (DL) cluster, accepted by SoCC'24
 
 #### Aligning Systems
 
@@ -543,6 +554,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [TENPLEX: Changing Resources of Deep Learning Jobs using Parallelizable Tensor Collections](https://arxiv.org/abs/2312.05181): by Luo MAI, similar to SpotServe?
 - [x] [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566): by Xupeng MIAO and under guidence of Zhihao JIA
 - [ ] [Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances](https://arxiv.org/abs/2403.14097): by team of SpotServe
+- [ ] [FaPES: Enabling Efficient Elastic Scaling for Serverless Machine Learning Platforms](https://dl.acm.org/doi/10.1145/3698038.3698548): a FaaS-oriented Performance-aware Elastic Scaling system to enable efficient resource allocation in serverless platforms for ML jobs, accepted by SoCC'24
 
 #### Request Scheduling
 
@@ -552,7 +564,9 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Intelligent Router for LLM Workloads: Improving Performance Through Workload-Aware Scheduling](https://arxiv.org/abs/2408.13510): scheduling based on a output length predictor
 - [ ] [Is the GPU Half-Empty or Half-Full? Practical Scheduling Techniques for LLMs](https://arxiv.org/abs/2410.17840): request scheduling in cluster and on instance
 - [ ] [Fast Inference for Augmented Large Language Models](https://arxiv.org/abs/2410.18248): schedule for Augmented LLM
-- [ ] [ALISE: Accelerating Large Language Model Serving with Speculative Scheduling](https://arxiv.org/abs/2410.23537)：prediction-based scheduling + memory management + quantization's hodgepodge
+- [ ] [ALISE: Accelerating Large Language Model Serving with Speculative Scheduling](https://arxiv.org/abs/2410.23537): prediction-based scheduling + memory management + quantization's hodgepodge
+- [ ] [The Effect of Scheduling and Preemption on the Efficiency of LLM Inference Serving](https://arxiv.org/abs/2411.07447): cost model in request scheduling
+- [ ] [Queue Management for SLO-Oriented Large Language Model Serving](https://dl.acm.org/doi/10.1145/3698038.3698523): schedule for request with differnt models and differnet SLO requirements
 
 #### Shared Prefix Serving
 
@@ -569,6 +583,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [x] [dLoRA: Dynamically Orchestrating Requests and Adapters for LoRA LLM Serving](https://www.usenix.org/conference/osdi24/presentation/wu-bingyang): accepted by OSDI'24
 - [ ] [Enhancing LoRA Model Serving Capacity via Adaptive Operator Scheduling for Multi-Tenancy on GPU](https://ieeexplore.ieee.org/abstract/document/10721583): optimize SGMV kernels
 - [ ] [V-LoRA: An Efficient and Flexible System Boosts Vision Applications with LoRA LMM](https://arxiv.org/abs/2411.00915): LoRA for vision models, and optimize LoRA kernels
+- [ ] [Efficient Multi-task LLM Quantization and Serving for Multiple LoRA Adapters](https://openreview.net/forum?id=HfpV6u0kbX): facilitates the sharing of a single quantized model for multiple LoRA adapters, accepted by NIPS'24
 
 -------------------------------------  
 For LoRA but not serving  
@@ -597,6 +612,15 @@ Long-Context is a hot point recently.
 
 - [ ] [Challenges in Deploying Long-Context Transformers: A Theoretical Peak Performance Analysis](https://arxiv.org/abs/2405.08944)
 - [ ] [Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](https://arxiv.org/abs/2407.11550): like a update for H2O or Dejevu, et.al, each attention head have different memory budget
+- [ ] [Context Parallelism for Scalable Million-Token Inference](https://arxiv.org/abs/2411.01783)
+- [ ] [TokenSelect: Efficient Long-Context Inference and Length Extrapolation for LLMs via Dynamic Token-Level KV Cache Selection](https://arxiv.org/abs/2411.02886): select some important KV cache to take part in attention computation
+
+#### Complex ML loads
+
+Process differnet ML loads in a cluster.  
+
+- [ ] [PAL: A Variability-Aware Policy for Scheduling ML Workloads in GPU Clusters](https://www.computer.org/csdl/proceedings-article/sc/2024/529100a373/21HUVogFs2s): serve multiple different loads in GPU cluster, accepted by SC'24
+- [ ] [PipeLLM: Fast and Confidential Large Language Model Services with Speculative Pipelined Encryption](https://arxiv.org/abs/2411.03357): why Encryption in LLM inference? by IPADS, accepted by ASPLOS'25
 
 ### RAG with LLM
 
@@ -620,10 +644,10 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference](https://arxiv.org/abs/2308.12066): accepted by ISCA'24
 - [ ] [Optimizing Mixture of Experts using Dynamic Recompilations](https://arxiv.org/abs/2205.01848): under guidence of Zhihao JIA
 - [ ] [Serving MoE Models on Resource-constrained Edge Devices via Dynamic Expert Swapping](https://arxiv.org/abs/2308.15030): expert swapping is interesting
-- [x] [Towards MoE Deployment: Mitigating Inefficiencies in Mixture-of-Expert (MoE) Inference](https://arxiv.org/abs/2303.06182): some hot optimizations for inference
+- [x] [Towards MoE Deployment: Mitigating Inefficiencies in Mixture-of-Expert (MoE) Inference](https://arxiv.org/abs/2303.06182): some hot optimizations for inference, accepted by NIPS'24
 - [ ] [Exploiting Transformer Activation Sparsity with Dynamic Inference](https://arxiv.org/abs/2310.04361)
 - [ ] [SE-MoE: A Scalable and Efficient Mixture-of-Experts Distributed Training and Inference System](https://arxiv.org/abs/2205.10034)
-- [ ] [Who Says Elephants Can’t Run: Bringing Large Scale MoE Models into Cloud Scale Production](https://aclanthology.org/2022.sustainlp-1.6/): accepted by ACL'22
+- [ ] [Who Says Elephants Can't Run: Bringing Large Scale MoE Models into Cloud Scale Production](https://aclanthology.org/2022.sustainlp-1.6/): accepted by ACL'22
 - [ ] [Fast Inference of Mixture-of-Experts Language Models with Offloading](https://arxiv.org/abs/2312.17238): combine moe with offloading
 - [x] ⭐ [MoE-Infinity: Activation-Aware Expert Offloading for Efficient MoE Serving](https://arxiv.org/abs/2401.14361): under guidence of Luo MAI, provided some features and design in moe inference
 - [ ] [Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models](https://arxiv.org/abs/2402.07033)
@@ -643,6 +667,8 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [SwapMoE: Serving Off-the-shelf MoE-based Large Language Models with Tunable Memory Budget](https://arxiv.org/abs/2308.15030): MoE experts offloading, at the cost of reduced accuracy
 - [ ] [ProMoE: Fast MoE-based LLM Serving using Proactive Caching](https://arxiv.org/abs/2410.22134): optimization on Pre-gated MoE, by IPADS
 - [ ] [Read-ME: Refactorizing LLMs as Router-Decoupled Mixture of Experts with System Co-Design](https://arxiv.org/abs/2410.19123): pre-gating router decoupled from the MoE backbone that facilitates system-friendly pre-computing and lookahead scheduling, NIPS'24
+- [ ] [MoEsaic: Shared Mixture of Experts](https://dl.acm.org/doi/abs/10.1145/3698038.3698521): share Expert among different MoE instance, "MoE's modular architecture lets users compose their model from popular off-the-shelf experts" is a new scenario
+- [ ] [HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference](https://arxiv.org/abs/2411.01433): use quantization to decrease uncached MoE load overhead, on edge devices
 
 #### MoE training
 
@@ -658,9 +684,11 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 
 - [ ] [SmartMoE: Efficiently Training Sparsely-Activated Models through Combining Offline and Online Parallelization](https://www.usenix.org/conference/atc23/presentation/zhai): parallel strategy of MoE, accepted by ATC'23
 
+- [ ] [APTMoE: Affinity-Aware Pipeline Tuning for MoE Models on Bandwidth-Constrained GPU Nodes](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b436/21HUWvO6IIo): fine-tune MoE models with CPU and some algorithm insights, accepted by SC'24
+
 ### Inference with multimodal
 
-- [ ] [MOSEL: Inference Serving Using Dynamic Modality Selection](https://arxiv.org/abs/2310.18481): improving system throughput by 3.6× with an accuracy guarantee and shortening job completion times by 11×
+- [ ] [MOSEL: Inference Serving Using Dynamic Modality Selection](https://arxiv.org/abs/2310.18481): improving system throughput by 3.6x with an accuracy guarantee and shortening job completion times by 11x
 - [ ] [Generative AI Beyond LLMs: System Implications of Multi-Modal Generation](https://arxiv.org/abs/2312.14385): by META
 - [ ] [Speed Is All You Need: On-Device Acceleration of Large Diffusion Models via GPU-Aware Optimizations](https://arxiv.org/abs/2304.11267): by Google
 - [ ] [Accelerating Text-to-image Editing via Cache-enabled Sparse Diffusion Inference](https://arxiv.org/abs/2305.17423): optimization for diffusion models by cache
@@ -731,9 +759,9 @@ It is usually related to CPU-GPU heterogeneity and GPU power consumption.
 - [ ] [Ring Attention with Blockwise Transformers for Near-Infinite Context](https://arxiv.org/abs/2310.01889): Ring Attention?  
 - [ ] [Reducing Activation Recomputation in Large Transformer Models](https://arxiv.org/abs/2205.05198): by NVIDIA  
 - [x] [Cheaply Estimating Inference Efficiency Metrics for Autoregressive Transformer Models](https://openreview.net/forum?id=RJpAz15D0S): an interesting performance metric, accepted by NIPS'23
-- [ ] [FEC: Efficient Deep Recommendation Model Training with Flexible Embedding Communication](https://dl.acm.org/doi/abs/10.1145/3589310): accpted by SIGMOD'23
-- [ ] [Efficient Multi-GPU Graph Processing with Remote Work Stealing](https://ieeexplore.ieee.org/document/10184847): accpted by ICDE'23
-- [ ] [ARK: GPU-driven Code Execution for Distributed Deep Learning](https://www.usenix.org/conference/nsdi23/presentation/hwang): accpted by NSDI'23
+- [ ] [FEC: Efficient Deep Recommendation Model Training with Flexible Embedding Communication](https://dl.acm.org/doi/abs/10.1145/3589310): accepted by SIGMOD'23
+- [ ] [Efficient Multi-GPU Graph Processing with Remote Work Stealing](https://ieeexplore.ieee.org/document/10184847): accepted by ICDE'23
+- [ ] [ARK: GPU-driven Code Execution for Distributed Deep Learning](https://www.usenix.org/conference/nsdi23/presentation/hwang): accepted by NSDI'23
 - [ ] [Sequential Aggregation and Rematerialization: Distributed Full-batch Training of Graph Neural Networks on Large Graphs](https://proceedings.mlsys.org/paper_files/paper/2022/hash/1d781258d409a6efc66cd1aa14a1681c-Abstract.html): accepted by MLSys'22  
 - [ ] [Golgi: Performance-Aware, Resource-Efficient Function Scheduling for Serverless Computing](https://dl.acm.org/doi/abs/10.1145/3620678.3624645): Scheduling for Serverless Computing
 - [ ] [FastFold: Optimizing AlphaFold Training and Inference on GPU Clusters](https://dl.acm.org/doi/10.1145/3627535.3638465): expand to other ML models instead of LLM
@@ -762,7 +790,8 @@ Just my preference.
 
 - [ ] [Boosting Distributed Full-graph GNN Training with Asynchronous One-bit Communication](https://arxiv.org/abs/2303.01277)
 - [ ] [GNNPipe: Scaling Deep GNN Training with Pipelined Model Parallelism](https://arxiv.org/abs/2308.10087)
-- [ ] [PckGNN: Optimizing Aggregation Operators with Packing Strategies in Graph Neural Networks]: accepted by IPDPS'24
+- [ ] [PckGNN: Optimizing Aggregation Operators with Packing Strategies in Graph Neural Networks](https://www.computer.org/csdl/proceedings-article/ipdps/2024/871100a002/1YpzV3puh32): accepted by IPDPS'24
 - [ ] [NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention](https://dl.acm.org/doi/10.1145/3626246.3653399): SIGMOD'24
 - [ ] [Eliminating Data Processing Bottlenecks in GNN Training over Large Graphs via Two-level Feature Compression](https://dl.acm.org/doi/10.14778/3681954.3681968): compress node features in graph, accepted by VLDB'24
 - [ ] [Mega: More Efficient Graph Attention for GNNs](https://ieeexplore.ieee.org/document/10631005): optimize graph attention efficiency, ICDCS'24
+- [ ] [TORCHGT: A Holistic System for Large-Scale Graph Transformer Training](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b210/21HUWlk5iQE): graph transformer model
