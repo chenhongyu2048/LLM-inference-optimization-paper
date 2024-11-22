@@ -328,7 +328,7 @@ This part include some impressive work optimizing LLM computing by observing the
 #### Optimization focus on Auto-regressive Decoding
 
 - [x] [Splitwise: Efficient generative LLM inference using phase splitting](https://arxiv.org/abs/2311.18677): splitting prefill and decode in a map-reduce style, by UW and Microsoft
-- [ ] [DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670): also split the prefill and decode, accepted by OSDI'24
+- [x] [DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670): also split the prefill and decode, accepted by OSDI'24
 - [x] [Inference without Interference: Disaggregate LLM Inference for Mixed Downstream Workloads](https://arxiv.org/abs/2401.11181): seems a combination of SARATHI and Splitwise
 - [ ] [ExeGPT: Constraint-Aware Resource Scheduling for LLM Inference](https://dl.acm.org/doi/10.1145/3620665.3640383): similar to splitwise, accepted by ASPLOS'24
 - [ ] [Splitwiser: Efficient LLM Inference with Constrained Resources](https://asadaali.com/assets/pdf/paper_splitwiser.pdf)
@@ -669,6 +669,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Read-ME: Refactorizing LLMs as Router-Decoupled Mixture of Experts with System Co-Design](https://arxiv.org/abs/2410.19123): pre-gating router decoupled from the MoE backbone that facilitates system-friendly pre-computing and lookahead scheduling, NIPS'24
 - [ ] [MoEsaic: Shared Mixture of Experts](https://dl.acm.org/doi/abs/10.1145/3698038.3698521): share Expert among different MoE instance, "MoE's modular architecture lets users compose their model from popular off-the-shelf experts" is a new scenario
 - [ ] [HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference](https://arxiv.org/abs/2411.01433): use quantization to decrease uncached MoE load overhead, on edge devices
+- [ ] [ExpertFlow: Optimized Expert Activation and Token Allocation for Efficient Mixture-of-Experts Inference](https://arxiv.org/abs/2410.17954): predication and offload based optimization
 
 #### MoE training
 
