@@ -103,6 +103,7 @@ Make useful benchmark or evaluation is helfpul.
 - [ ] [LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators](https://arxiv.org/abs/2411.00136): inference + hardware
 
 - [ ] [LLMCompass: Enabling Efficient Hardware Design for Large Language Model Inference](https://parallel.princeton.edu/papers/isca24_llmcompass.pdf): a performance evaluation framework, can be used to estimate the time cost
+- [ ] [Predicting LLM Inference Latency: A Roofline-Driven ML Method](https://neurips.cc/virtual/2024/103606): predict inference performance based on Roofline
 
 ### Interesting *NEW* Frameworks in Parallel Decoding
 
@@ -431,6 +432,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 
 - [ ] [Pie: Pooling CPU Memory for LLM Inference](https://arxiv.org/abs/2411.09317): use CPU memory to enlarge batchsize to improve throughput, by Ion Stoica
 - [ ] [NEO: Saving GPU Memory Crisis with CPU Offloading for Online LLM Inference](https://arxiv.org/abs/2411.01142): offload KV cache and attention to CPU for larger batchsize, similar to fastdecode, by Ion Stoica
+- [ ] [Task Scheduling for Efficient Inference of Large Language Models on Single Moderate GPU Systems](https://arxiv.org/abs/2411.15715): more likely inference on personal device
 
 #### Inference on personal device
 
@@ -538,6 +540,9 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Revisiting SLO and Goodput Metrics in LLM Serving](https://arxiv.org/abs/2410.14257): check metrics SLO and Goodput in LLM serving
 - [ ] [Hops: Fine-grained heterogeneous sensing, efficient and fair Deep Learning cluster scheduling system](https://dl.acm.org/doi/10.1145/3698038.3698515): schedule tasks in multi-tenant deep learning (DL) cluster, accepted by SoCC'24
 
+- [ ] ⭐ [Ensuring Fair LLM Serving Amid Diverse Applications](https://arxiv.org/abs/2411.15997): ensures fair LLM access across diverse applications, with a copilot trace analysis
+- [ ] [BlendServe: Optimizing Offline Inference for Auto-regressive Large Models with Resource-aware Batching](https://arxiv.org/abs/2411.16102):  exploits the relaxed latency requirements in offline batch inference to reorder and overlap requests with varied resource demands while ensuring high prefix sharing
+
 #### Aligning Systems
 
 - [ ] [PUZZLE: Efficiently Aligning Large Language Models through Light-Weight Context Switch](https://www.usenix.org/conference/atc24/presentation/lei)
@@ -621,6 +626,7 @@ Process differnet ML loads in a cluster.
 
 - [ ] [PAL: A Variability-Aware Policy for Scheduling ML Workloads in GPU Clusters](https://www.computer.org/csdl/proceedings-article/sc/2024/529100a373/21HUVogFs2s): serve multiple different loads in GPU cluster, accepted by SC'24
 - [ ] [PipeLLM: Fast and Confidential Large Language Model Services with Speculative Pipelined Encryption](https://arxiv.org/abs/2411.03357): why Encryption in LLM inference? by IPADS, accepted by ASPLOS'25
+- [ ] [Topology-aware Preemptive Scheduling for Co-located LLM Workloads](https://arxiv.org/abs/2411.11560): schedule different workloads
 
 ### RAG with LLM
 
@@ -670,6 +676,8 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [MoEsaic: Shared Mixture of Experts](https://dl.acm.org/doi/abs/10.1145/3698038.3698521): share Expert among different MoE instance, "MoE's modular architecture lets users compose their model from popular off-the-shelf experts" is a new scenario
 - [ ] [HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference](https://arxiv.org/abs/2411.01433): use quantization to decrease uncached MoE load overhead, on edge devices
 - [ ] [ExpertFlow: Optimized Expert Activation and Token Allocation for Efficient Mixture-of-Experts Inference](https://arxiv.org/abs/2410.17954): predication and offload based optimization
+
+- [ ] [MoE-Lightning: High-Throughput MoE Inference on Memory-constrained GPUs](https://arxiv.org/abs/2411.11217): use offload-pipeline to accelerate inference moe on single GPU
 
 #### MoE training
 
