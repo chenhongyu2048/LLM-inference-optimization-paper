@@ -433,6 +433,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [Pie: Pooling CPU Memory for LLM Inference](https://arxiv.org/abs/2411.09317): use CPU memory to enlarge batchsize to improve throughput, by Ion Stoica
 - [ ] [NEO: Saving GPU Memory Crisis with CPU Offloading for Online LLM Inference](https://arxiv.org/abs/2411.01142): offload KV cache and attention to CPU for larger batchsize, similar to fastdecode, by Ion Stoica
 - [ ] [Task Scheduling for Efficient Inference of Large Language Models on Single Moderate GPU Systems](https://arxiv.org/abs/2411.15715): more likely inference on personal device
+- [ ] [Efficient LLM Inference with I/O-Aware Partial KV Cache Recomputation](https://arxiv.org/abs/2411.17089): use recomputation and transfer to re-produce KV cache; can use their run-time and split parallelism
 
 #### Inference on personal device
 
@@ -780,6 +781,7 @@ It is usually related to CPU-GPU heterogeneity and GPU power consumption.
 - [ ] [GMLake: Efficient and Transparent GPU Memory Defragmentation for Large-scale DNN Training with Virtual Memory Stitching](https://dl.acm.org/doi/abs/10.1145/3620665.3640423): GPU memory pool, accepted by ASPLOS'24
 - [ ] [QuickLLaMA: Query-aware Inference Acceleration for Large Language Models](https://arxiv.org/abs/2406.07528): an inference-friendly LLaMA architecture
 - [ ] [HybridFlow: A Flexible and Efficient RLHF Framework](https://arxiv.org/abs/2409.19256v1): framework for RLHF
+- [ ] [Marconi: Prefix Caching for the Era of Hybrid LLMs](https://arxiv.org/abs/2411.19379): prefix cache for new model arch like combine attention with SSM
 
 #### Dataflow
 
