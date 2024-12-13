@@ -91,6 +91,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391): better than nothing
 - [ ] [Contemporary Model Compression on Large Language Models Inference](https://arxiv.org/abs/2409.01990): survey in model compression
 - [ ] ⭐ [Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b314/21HUWpZ2Xgk): bring insights for MLSys
+- [ ] [Resource-efficient Algorithms and Systems of Foundation Models: A Survey](https://dl.acm.org/doi/abs/10.1145/3706418)
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -104,6 +105,7 @@ Make useful benchmark or evaluation is helfpul.
 
 - [ ] [LLMCompass: Enabling Efficient Hardware Design for Large Language Model Inference](https://parallel.princeton.edu/papers/isca24_llmcompass.pdf): a performance evaluation framework, can be used to estimate the time cost
 - [ ] [Predicting LLM Inference Latency: A Roofline-Driven ML Method](https://neurips.cc/virtual/2024/103606): predict inference performance based on Roofline
+- [ ] [GUIDE: A Global Unified Inference Engine for Deploying Large Language Models in Heterogeneous Environments](https://arxiv.org/abs/2412.04788): a work for predict LLMSys performance
 
 ### Interesting *NEW* Frameworks in Parallel Decoding
 
@@ -240,6 +242,7 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] [MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention](https://arxiv.org/abs/2407.02490): inference framework based on sparse attention, by Microsoft
 - [ ] [ReLU Strikes Back: Exploiting Activation Sparsity in Large Language Models](https://arxiv.org/abs/2310.04564): use ReLU to imporve Sparsity, just like powerinfer
 - [ ] [CoreInfer: Accelerating Large Language Model Inference with Semantics-Inspired Adaptive Sparse Activation](https://arxiv.org/abs/2410.18311): algorithm optimization that can utilize sparsity to accelerate inference
+- [ ] [Star Attention: Efficient LLM Inference over Long Sequences](https://arxiv.org/abs/2411.17116): a two-phase block-sparse approximation
 
 ### Quantization 💡
 
@@ -279,6 +282,8 @@ Low-precision for memory and computing efficiency.
 - [ ] [Progressive Mixed-Precision Decoding for Efficient LLM Inference](https://arxiv.org/abs/2410.13461): gradual lowering of precision deeper in the generated sequence, together with a spectrum of precision-switching schedulers
 - [ ] [COMET: Towards Partical W4A4KV4 LLMs Serving](https://arxiv.org/abs/2410.12168): provide quantization algorithm, quantization kernel and SM schedule method
 - [ ] [MixQ: Taming Dynamic Outliers in Mixed-Precision Quantization by Online Prediction](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b161/21HUWiUMiqI): quantization with outliers, optimization on AWQ, accepted by SC'24
+- [ ] [Flash Communication: Reducing Tensor Parallelization Bottleneck for Fast Large Language Model Inference](https://arxiv.org/abs/2412.04964): low-bit compression to accelerate communication
+- [ ] [Unifying KV Cache Compression for Large Language Models with LeanKV](https://arxiv.org/abs/2412.03131): combine quantization and sparity to compress KV cache
 
 ### Batch Processing
 
@@ -325,6 +330,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [ ] [DeFT: Flash Tree-attention with IO-Awareness for Efficient Tree-search-based LLM Inference](https://arxiv.org/abs/2404.00242)
 - [ ] [Lean Attention: Hardware-Aware Scalable Attention Mechanism for the Decode-Phase of Transformers](https://arxiv.org/abs/2405.10480): modification in self-attention
 - [ ] [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://arxiv.org/abs/2407.08608)
+- [ ] [Flex Attention: A Programming Model for Generating Optimized Attention Kernels](https://arxiv.org/abs/2412.05496): auto-generated attention kernel
 
 #### Optimization focus on Auto-regressive Decoding
 
@@ -543,6 +549,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 
 - [ ] ⭐ [Ensuring Fair LLM Serving Amid Diverse Applications](https://arxiv.org/abs/2411.15997): ensures fair LLM access across diverse applications, with a copilot trace analysis
 - [ ] [BlendServe: Optimizing Offline Inference for Auto-regressive Large Models with Resource-aware Batching](https://arxiv.org/abs/2411.16102):  exploits the relaxed latency requirements in offline batch inference to reorder and overlap requests with varied resource demands while ensuring high prefix sharing
+- [ ] [BatchLLM: Optimizing Large Batched LLM Inference with Global Prefix Sharing and Throughput-oriented Token Batching](https://arxiv.org/abs/2412.03594#): similar to blendserve
 
 #### Aligning Systems
 
@@ -573,6 +580,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [ALISE: Accelerating Large Language Model Serving with Speculative Scheduling](https://arxiv.org/abs/2410.23537): prediction-based scheduling + memory management + quantization's hodgepodge
 - [ ] [The Effect of Scheduling and Preemption on the Efficiency of LLM Inference Serving](https://arxiv.org/abs/2411.07447): cost model in request scheduling
 - [ ] [Queue Management for SLO-Oriented Large Language Model Serving](https://dl.acm.org/doi/10.1145/3698038.3698523): schedule for request with differnt models and differnet SLO requirements
+- [ ] [FastSwitch: Optimizing Context Switching Efficiency in Fairness-aware Large Language Model Serving](https://arxiv.org/abs/2411.18424): fairness and request switch
 
 #### Shared Prefix Serving
 
@@ -679,6 +687,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [ExpertFlow: Optimized Expert Activation and Token Allocation for Efficient Mixture-of-Experts Inference](https://arxiv.org/abs/2410.17954): predication and offload based optimization
 
 - [ ] [MoE-Lightning: High-Throughput MoE Inference on Memory-constrained GPUs](https://arxiv.org/abs/2411.11217): use offload-pipeline to accelerate inference moe on single GPU
+- [ ] ⭐ [MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems](https://arxiv.org/abs/2412.07067): benchmarking for MoE systems
 
 #### MoE training
 
