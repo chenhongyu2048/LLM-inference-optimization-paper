@@ -92,6 +92,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] [Contemporary Model Compression on Large Language Models Inference](https://arxiv.org/abs/2409.01990): survey in model compression
 - [ ] ⭐ [Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b314/21HUWpZ2Xgk): bring insights for MLSys
 - [ ] [Resource-efficient Algorithms and Systems of Foundation Models: A Survey](https://dl.acm.org/doi/abs/10.1145/3706418)
+- [ ] ⭐ [A Survey on Inference Optimization Techniques for Mixture of Experts Models](https://arxiv.org/abs/2412.14219): asurvey on MoE models
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -243,6 +244,8 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] [ReLU Strikes Back: Exploiting Activation Sparsity in Large Language Models](https://arxiv.org/abs/2310.04564): use ReLU to imporve Sparsity, just like powerinfer
 - [ ] [CoreInfer: Accelerating Large Language Model Inference with Semantics-Inspired Adaptive Sparse Activation](https://arxiv.org/abs/2410.18311): algorithm optimization that can utilize sparsity to accelerate inference
 - [ ] [Star Attention: Efficient LLM Inference over Long Sequences](https://arxiv.org/abs/2411.17116): a two-phase block-sparse approximation
+
+- [ ] [Lexico: Extreme KV Cache Compression via Sparse Coding over Universal Dictionaries](https://arxiv.org/abs/2412.08890): use Sparse Coding over Universal Dictionaries to compress KV cache, it's novelty
 
 ### Quantization 💡
 
@@ -551,6 +554,10 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [BlendServe: Optimizing Offline Inference for Auto-regressive Large Models with Resource-aware Batching](https://arxiv.org/abs/2411.16102):  exploits the relaxed latency requirements in offline batch inference to reorder and overlap requests with varied resource demands while ensuring high prefix sharing
 - [ ] [BatchLLM: Optimizing Large Batched LLM Inference with Global Prefix Sharing and Throughput-oriented Token Batching](https://arxiv.org/abs/2412.03594#): similar to blendserve
 
+#### LLM as microservice
+
+- [ ] ⭐ [A System for Microserving of LLMs](https://arxiv.org/abs/2412.12488): seems a idea and industrial practice that makes sense
+
 #### Aligning Systems
 
 - [ ] [PUZZLE: Efficiently Aligning Large Language Models through Light-Weight Context Switch](https://www.usenix.org/conference/atc24/presentation/lei)
@@ -684,10 +691,15 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Read-ME: Refactorizing LLMs as Router-Decoupled Mixture of Experts with System Co-Design](https://arxiv.org/abs/2410.19123): pre-gating router decoupled from the MoE backbone that facilitates system-friendly pre-computing and lookahead scheduling, NIPS'24
 - [ ] [MoEsaic: Shared Mixture of Experts](https://dl.acm.org/doi/abs/10.1145/3698038.3698521): share Expert among different MoE instance, "MoE's modular architecture lets users compose their model from popular off-the-shelf experts" is a new scenario
 - [ ] [HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference](https://arxiv.org/abs/2411.01433): use quantization to decrease uncached MoE load overhead, on edge devices
-- [ ] [ExpertFlow: Optimized Expert Activation and Token Allocation for Efficient Mixture-of-Experts Inference](https://arxiv.org/abs/2410.17954): predication and offload based optimization
+- [ ] [ExpertFlow: Optimized Expert Activation and Token Allocation for Efficient Mixture-of-Experts Inference](https://arxiv.org/abs/2410.17954): prediction and offload based optimization
 
 - [ ] [MoE-Lightning: High-Throughput MoE Inference on Memory-constrained GPUs](https://arxiv.org/abs/2411.11217): use offload-pipeline to accelerate inference moe on single GPU
 - [ ] ⭐ [MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems](https://arxiv.org/abs/2412.07067): benchmarking for MoE systems
+
+
+- [ ] ⭐ [Lynx: Enabling Efficient MoE Inference through Dynamic Batch-Aware Expert Selection](https://arxiv.org/abs/2411.08982): damn! I had considered this before:( . key insight is that expert importance varies significantly across tokens and inference phases, utilize this to solve the all-activate problem
+- [ ] ⭐ [EPS-MoE: Expert Pipeline Scheduler for Cost-Efficient MoE Inference](https://arxiv.org/abs/2410.12247): Gemm implemention optimization and alltoall communication overlap
+- [ ] ⭐ [Optimizing Mixture-of-Experts Inference Time Combining Model Deployment and Communication Scheduling](https://arxiv.org/abs/2410.17043): optimize all2all order, co-locate experts from different models, 
 
 #### MoE training
 
@@ -704,6 +716,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [SmartMoE: Efficiently Training Sparsely-Activated Models through Combining Offline and Online Parallelization](https://www.usenix.org/conference/atc23/presentation/zhai): parallel strategy of MoE, accepted by ATC'23
 
 - [ ] [APTMoE: Affinity-Aware Pipeline Tuning for MoE Models on Bandwidth-Constrained GPU Nodes](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b436/21HUWvO6IIo): fine-tune MoE models with CPU and some algorithm insights, accepted by SC'24
+- [ ] [Prediction Is All MoE Needs: Expert Load Distribution Goes from Fluctuating to Stabilizing](https://arxiv.org/abs/2404.16914): prediction the expert workload to optimize training
 
 ### Inference with multimodal
 
