@@ -93,6 +93,7 @@ But my summary must not be informative enough, and I am looking forward to your 
 - [ ] ⭐ [Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b314/21HUWpZ2Xgk): bring insights for MLSys
 - [ ] [Resource-efficient Algorithms and Systems of Foundation Models: A Survey](https://dl.acm.org/doi/abs/10.1145/3706418)
 - [ ] ⭐ [A Survey on Inference Optimization Techniques for Mixture of Experts Models](https://arxiv.org/abs/2412.14219): asurvey on MoE models
+- [ ] [Deploying Foundation Model Powered Agent Services: A Survey](https://arxiv.org/abs/2412.13437): survey for AI agent service
 
 Make useful benchmark or evaluation is helfpul.  
 
@@ -187,6 +188,7 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [QSpec: Speculative Decoding with Complementary Quantization Schemes](https://arxiv.org/abs/2410.11305): spec decoding with quantization, a novel A+B
 - [ ] [Cerberus: Efficient Inference with Adaptive Parallel Decoding and Sequential Knowledge Enhancement](https://arxiv.org/abs/2410.13344): optimization ob Medusa
 - [ ] [The N-Grammys: Accelerating autoregressive inference with learning-free batched speculation](https://www.amazon.science/publications/the-n-grammys-accelerating-autoregressive-inference-with-learning-free-batched-speculation): use learning-free, negligible-cost draft strategies, namely N-grams obtained from the model weights and the context
+- [ ] [EdgeLLM: Fast On-device LLM Inference with Speculative Decoding](https://ieeexplore.ieee.org/abstract/document/10812936): seem a extended work of LLMCad
 
 #### different model collaboration  
 
@@ -287,6 +289,7 @@ Low-precision for memory and computing efficiency.
 - [ ] [MixQ: Taming Dynamic Outliers in Mixed-Precision Quantization by Online Prediction](https://www.computer.org/csdl/proceedings-article/sc/2024/529100b161/21HUWiUMiqI): quantization with outliers, optimization on AWQ, accepted by SC'24
 - [ ] [Flash Communication: Reducing Tensor Parallelization Bottleneck for Fast Large Language Model Inference](https://arxiv.org/abs/2412.04964): low-bit compression to accelerate communication
 - [ ] [Unifying KV Cache Compression for Large Language Models with LeanKV](https://arxiv.org/abs/2412.03131): combine quantization and sparity to compress KV cache
+- [ ] [MixLLM: LLM Quantization with Global Mixed-precision between Output-features and Highly-efficient System Design](https://arxiv.org/abs/2412.14590): mix quantization, effectively assigning the larger bit-width to output features that need it most to achieve good accuracy with low memory consumption
 
 ### Batch Processing
 
@@ -392,6 +395,8 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] ⭐ [VL-Cache: Sparsity and Modality-Aware KV Cache Compression for Vision-Language Model Inference Acceleration](https://arxiv.org/abs/2410.23317): the first work I see that optimize KV cache in vision models
 - [ ] [ArkVale: Efficient Generative LLM Inference with Recallable Key-Value Eviction](https://openreview.net/forum?id=4oAt5L4lYe): KV cache page evict and recall, accepted by NIPS'24
 - [ ] [SpeedLoader: An I/O efficient scheme for heterogeneous and distributed LLM operation](https://openreview.net/forum?id=Y2I0Fy4sm7): Optimization on Zero? redesign the data flow of heterogeneous hardware and sharded model training to minimize the excessive communication overhead, accepted by NIPS'24
+- [ ] ⭐ [KunServe: Elastic and Efficient Large Language Model Serving with Parameter-centric Memory Management](https://arxiv.org/abs/2412.18169): memory management for KV cache and parameter, seems a novel work considering the weights migration
+- [ ] [SYMPHONY: Improving Memory Management for LLM Inference Workloads](https://arxiv.org/abs/2412.16434): dynamically migrates K,V caches to enable finegrained scheduling of inference requests
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -403,6 +408,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Benchmarking and Dissecting the Nvidia Hopper GPU Architecture](https://arxiv.org/abs/2402.13499): help us understand GPUs
 - [ ] [SLO-aware GPU Frequency Scaling for Energy Efficient LLM Inference Serving](https://arxiv.org/abs/2408.05235): optimizing energy consuming based on lower GPU frequency
 - [ ] [Foreseer: Knowledge-Driven Acceleration of Memory-Bound Matrix Multiplications for Large Language Model Inference](https://dl.acm.org/doi/abs/10.1145/3688351.3689153): similar to cutlass, optimization on intel GPU
+- [ ] [Tackling the Dynamicity in a Production LLM Serving System with SOTA Optimizations via Hybrid Prefill/Decode/Verify Scheduling on Efficient Meta-kernels](https://arxiv.org/abs/2412.18106): for Ascend GPU (perhaps also work for NVIDIA?)
 
 #### CPUs or based on SSD
 
@@ -605,6 +611,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Enhancing LoRA Model Serving Capacity via Adaptive Operator Scheduling for Multi-Tenancy on GPU](https://ieeexplore.ieee.org/abstract/document/10721583): optimize SGMV kernels
 - [ ] [V-LoRA: An Efficient and Flexible System Boosts Vision Applications with LoRA LMM](https://arxiv.org/abs/2411.00915): LoRA for vision models, and optimize LoRA kernels
 - [ ] [Efficient Multi-task LLM Quantization and Serving for Multiple LoRA Adapters](https://openreview.net/forum?id=HfpV6u0kbX): facilitates the sharing of a single quantized model for multiple LoRA adapters, accepted by NIPS'24
+- [ ] [Comparative Analysis and Optimization of LoRA Adapter Co-serving for Large Language Models](https://dl.acm.org/doi/abs/10.1145/3704440.3704777): more like a survey for LoRA serving
 
 -------------------------------------  
 For LoRA but not serving  
@@ -654,6 +661,8 @@ Process differnet ML loads in a cluster.
 - [ ] [Accelerating Retrieval-Augmented Language Model Serving with Speculation](https://arxiv.org/abs/2401.14021): help understand RaLM
 - [ ] [NinjaLLM: Fast, Scalable and Cost-effective RAG using Amazon SageMaker and AWS Trainium and Inferentia2](https://arxiv.org/abs/2407.12057)
 - [ ] [Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting](https://arxiv.org/abs/2407.08223): RAG with spec decoding, different draft models with different RAG
+- [ ] [CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion](https://arxiv.org/abs/2405.16444): optimize KV cache reuse(prefix cache)
+- [ ] [RAGServe: Fast Quality-Aware RAG Systems with Configuration Adaptation](https://arxiv.org/abs/2412.10543): trade-off between latency and quantity
 
 ### Combine MoE with LLM inference
 
