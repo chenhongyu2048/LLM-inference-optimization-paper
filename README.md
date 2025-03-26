@@ -1,6 +1,6 @@
 # LLM-inference-optimization-paper
 
-# Summary of some awesome works for optimizing  LLM inference
+Summary of some awesome works for optimizing  LLM inference
 
 This summary will including three parts:
 
@@ -109,6 +109,12 @@ Make useful benchmark or evaluation is helfpul.
 - [ ] [LLMCompass: Enabling Efficient Hardware Design for Large Language Model Inference](https://parallel.princeton.edu/papers/isca24_llmcompass.pdf): a performance evaluation framework, can be used to estimate the time cost
 - [ ] [Predicting LLM Inference Latency: A Roofline-Driven ML Method](https://neurips.cc/virtual/2024/103606): predict inference performance based on Roofline
 - [ ] [GUIDE: A Global Unified Inference Engine for Deploying Large Language Models in Heterogeneous Environments](https://arxiv.org/abs/2412.04788): a work for predict LLMSys performance
+- [ ] [TokenSim: Enabling Hardware and Software Exploration for Large Language Model Inference Systems](https://arxiv.org/abs/2503.08415): simulator provide some performance analysis
+
+### Technical reports of the enterprise
+
+- [ ] [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948): deepseek: mla + moe
+- [ ] [Every FLOP Counts: Scaling a 300B Mixture-of-Experts LING LLM without Premium GPUs](https://arxiv.org/abs/2503.05139): moe training with lower-specification hardware
 
 ### Interesting *NEW* Frameworks in Parallel Decoding
 
@@ -195,6 +201,9 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [The N-Grammys: Accelerating autoregressive inference with learning-free batched speculation](https://www.amazon.science/publications/the-n-grammys-accelerating-autoregressive-inference-with-learning-free-batched-speculation): use learning-free, negligible-cost draft strategies, namely N-grams obtained from the model weights and the context
 - [ ] [EdgeLLM: Fast On-device LLM Inference with Speculative Decoding](https://ieeexplore.ieee.org/abstract/document/10812936): seem a extended work of LLMCad
 - [ ] [AdaServe: SLO-Customized LLM Serving with Fine-Grained Speculative Decodin](https://arxiv.org/abs/2501.12162): a speculation-and-selection scheme, that first constructs candidate token trees for each request and then dynamically selects tokens to meet individual SLO constraints
+- [ ] [SpecServe: Efficient and SLO-Aware Large Language Model Serving with Adaptive Speculative Decoding](https://arxiv.org/abs/2503.05096): dynamically adjusts speculative strategies according to real-time request loads and system configurations
+- [ ] [ML-SpecQD: Multi-Level Speculative Decoding with Quantized Drafts](https://arxiv.org/abs/2503.13565): combining multi-level speculative decoding with MXFP4 quantized drafts, simple but work
+- [ ] [SPIN: Accelerating Large Language Model Inference with Heterogeneous Speculative Models](https://arxiv.org/abs/2503.15921): using multiple heterogeneous SSMs with a learning-based algorithm for SSM selection, request decomposition method to minimize batching overhead during LLM verification, pipelining speculation and verification phases on GPU
 
 #### different model collaboration  
 
@@ -237,6 +246,12 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [Domino: Eliminating Communication in LLM Training via Generic Tensor Slicing and Overlapping](https://arxiv.org/abs/2409.15241): overlapping, provided by Deepspeed team
 - [ ] [PRESERVE: Prefetching Model Weights and KV-Cache in Distributed LLM Serving](https://arxiv.org/abs/2501.08192): overlap communication with model-weights/KV-cache prefetch
 - [ ] [Concerto: Automatic Communication Optimization and Scheduling for Large-Scale Deep Learning](https://dl.acm.org/doi/10.1145/3669940.3707223): use compilation to schedule overlap, accepted by ASPLOS'25
+
+#### Prefill-Decode disaggregation
+
+Ignore some of the earliest papers and focus on the latest work to optimize this.
+
+- [ ] ⭐ [Seesaw: High-throughput LLM Inference via Model Re-sharding](https://arxiv.org/abs/2503.06433): dynamic model re-sharding to facilitates the dynamic reconfiguration of parallelization strategies across stages, reduce the overhead caused by frequent stage transitions (Elastic Scheduling)
 
 ### Prune & Sparsity 💡
 
@@ -308,6 +323,7 @@ Low-precision for memory and computing efficiency.
 - [ ] [HACK: Homomorphic Acceleration via Compression of the Key-Value Cache for Disaggregated LLM Inference](https://arxiv.org/abs/2502.03589): quantization to decrease kvc transfer overhead in disaggregation and eliminate kv dequantization
 - [ ] [MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models](https://arxiv.org/abs/2408.11743): Mixed-precision Auto-Regressive LINear kernels, accepted by PPoPP'25
 - [ ] [MiLo: Efficient Quantized MoE Inference with Mixture of Low-Rank Compensators](https://mlsys.org/virtual/2025/poster/2987): augments highly quantized MoEs with a mixture of low-rank compensators, provide 3-bit tensorcore kernels, accepted by MLSYS'25
+- [ ] [PacQ: A SIMT Microarchitecture for Efficient Dataflow in Hyper-asymmetric GEMMs](https://arxiv.org/abs/2502.18627): accelerator design, but may be helpful
 
 ### Batch Processing
 
@@ -338,6 +354,7 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 - [ ] [BATON: Enhancing Batch-wise Inference Efficiency for Large Language Models via Dynamic Re-batching](https://arxiv.org/abs/2410.18701): optimization on ORCA, dynamic re-batching
 - [ ] [EcoServe: Maximizing Multi-Resource Utilization with SLO Guarantees in LLM Serving](https://arxiv.org/abs/2411.06364): A fusion monster with a variety of optimization techniques
 - [ ] ⭐ [AcceLLM: Accelerating LLM Inference using Redundancy for Load Balancing and Data Locality](https://arxiv.org/abs/2411.05555): what's Redundancy
+- [ ] [Optimizing LLM Inference Throughput via Memory-aware and SLA-constrained Dynamic Batching](https://arxiv.org/abs/2503.05248): formalize as an optimization problem and adjust the batch size based on this
 
 ### Computing Optimization
 
@@ -371,6 +388,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [ ] [MonoNN: Enabling a New Monolithic Optimization Space for Neural Network Inference Tasks on Modern GPU-Centric Architectures](https://www.usenix.org/conference/osdi24/presentation/zhuang): compilation optimization on compuataion graph
 - [ ] [POD-Attention: Unlocking Full Prefill-Decode Overlap for Faster LLM Inference](https://arxiv.org/abs/2410.18038): optimize attention kernel in mix-batching
 - [ ] [Focus: High-Performant and Customizable Attention Engine for LLM Serving](https://mlsys.org/virtual/2025/poster/2980): flexible attention engine, advised by Chen Tianqi and accepted by MLSYS'25
+- [ ] [ML-Triton, A Multi-Level Compilation and Language Extension to Triton GPU Programming](https://arxiv.org/abs/2503.14985): Multi-level Triton
 
 ### Memory Manage
 
@@ -424,6 +442,10 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Efficient and scalable huge embedding model training via distributed cache management](https://link.springer.com/article/10.1007/s00778-025-00908-w): staleness and skewed popularity distributions based cache
 - [ ] [BaKlaVa -- Budgeted Allocation of KV cache for Long-context Inference](https://arxiv.org/abs/2502.13176): different kv heads have different importance, then offload and compress
 - [ ] [Fast State Restoration in LLM Serving with HCache](https://arxiv.org/abs/2410.05004): cache for offloading kvc to CPU, accepted by EuroSys'25
+- [ ] [Mind the Memory Gap: Unveiling GPU Bottlenecks in Large-Batch LLM Inference](https://arxiv.org/abs/2503.08311): use model replication to improve serving throughput and GPU utilization?
+- [ ] [Characterizing the Behavior and Impact of KV Caching on Transformer Inferences under Concurrency](https://inria.hal.science/hal-04984000/): instrument vLLM to measure and analyze fine-grain metrics (token throughput, KV cache memory access patterns, load balancing of the forward passes), during different inference stages (prefill, decode, batching and KV cache eviction policies) in several scenarios
+- [ ] [Mitigating KV Cache Competition to Enhance User Experience in LLM Inference](https://arxiv.org/abs/2503.13773): mitigating KV Cache competition with several technology
+- [ ] [Towards More Economical Context-Augmented LLM Generation by Reusing Stored KV Cache](https://arxiv.org/abs/2503.14647): KV cache reusing is able to save cloud cost across a range of workloads with long context
 
 #### Prefix Sharing
 
@@ -434,6 +456,7 @@ note: some papers about prefix sharing is not in this section
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
 - [ ] [Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective](https://arxiv.org/abs/2410.04466): a helpful survey
+- [ ] [ADOR: A Design Exploration Framework for LLM Serving with Enhanced Latency and Throughput](https://arxiv.org/abs/2503.04253): balances throughput and latency under different hardware
 
 #### Underlying optimization for GPU
 
@@ -614,6 +637,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] ⭐ [Towards Swift Serverless LLM Cold Starts with ParaServe](https://arxiv.org/abs/2502.15524): pipeline parallelism and dynamic adjust parallelism strategy, and accelerate cold-start
 - [ ] [λScale: Enabling Fast Scaling for Serverless Large Language Model Inference](https://arxiv.org/abs/2502.09922): serverless inference system to achieve fast model scaling, by fast model multicast, inference execution during model transmission and dynamically constructs execution pipelines
 - [ ] [Medusa: Accelerating Serverless LLM Inference with Materialization](https://dl.acm.org/doi/10.1145/3669940.3707285): target at cold-start of LLM serverlesss, to solve the available KV cache blocks profiling and cuda graph capture problems, accepted by ASPLOS'25
+- [ ] [SMore: Enhancing GPU Utilization in Deep Learning Clusters by Serverless-based Co-location Scheduling](https://ieeexplore.ieee.org/abstract/document/10912752): serverless computing reveals an opportunity to optimize gpu utilization with fine-grained resource allocation
 
 #### Aligning Systems
 
@@ -648,6 +672,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [FastSwitch: Optimizing Context Switching Efficiency in Fairness-aware Large Language Model Serving](https://arxiv.org/abs/2411.18424): fairness and request switch
 - [ ] [HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location](https://arxiv.org/abs/2501.14808): request co-location to maximize serving throughput and prevent starvation, without compromising online serving latency
 - [ ] [Locality-aware Fair Scheduling in LLM Serving](https://arxiv.org/abs/2501.14312)
+- [ ] [Queueing, Predictions, and LLMs: Challenges and Open Problems](https://arxiv.org/abs/2503.07545): prediction-based queueing and serving
 
 #### Shared Prefix Serving
 
@@ -723,6 +748,7 @@ Process differnet ML loads in a cluster.
 - [ ] [CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion](https://arxiv.org/abs/2405.16444): optimize KV cache reuse(prefix cache)
 - [ ] [RAGServe: Fast Quality-Aware RAG Systems with Configuration Adaptation](https://arxiv.org/abs/2412.10543): trade-off between latency and quantity
 - [ ] [Cache-Craft: Managing Chunk-Caches for Efficient Retrieval-Augmented Generation](https://arxiv.org/abs/2502.15734): combine RAG with prefix cache
+- [ ] [RAGO: Systematic Performance Optimization for Retrieval-Augmented Generation Serving](https://arxiv.org/abs/2503.14649): analyse RAG algorithm then optimize system
 
 ### Combine MoE with LLM inference
 
@@ -765,14 +791,14 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [MoE-Lightning: High-Throughput MoE Inference on Memory-constrained GPUs](https://arxiv.org/abs/2411.11217): use offload-pipeline to accelerate inference moe on single GPU
 - [ ] ⭐ [MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems](https://arxiv.org/abs/2412.07067): benchmarking for MoE systems
 
-
 - [ ] ⭐ [Lynx: Enabling Efficient MoE Inference through Dynamic Batch-Aware Expert Selection](https://arxiv.org/abs/2411.08982): damn! I had considered this before:( . key insight is that expert importance varies significantly across tokens and inference phases, utilize this to solve the all-activate problem
 - [ ] ⭐ [EPS-MoE: Expert Pipeline Scheduler for Cost-Efficient MoE Inference](https://arxiv.org/abs/2410.12247): Gemm implemention optimization and alltoall communication overlap
 - [ ] ⭐ [Optimizing Mixture-of-Experts Inference Time Combining Model Deployment and Communication Scheduling](https://arxiv.org/abs/2410.17043): optimize all2all order, co-locate experts from different models
 - [ ] [MoETuner: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing](https://arxiv.org/abs/2502.06643): utilize the expert dependency to opmizate GPU load balance and alltoall latency
 - [ ] [fMoE: Fine-Grained Expert Offloading for Large Mixture-of-Experts Serving](https://arxiv.org/abs/2502.05370): fine-grained expert offload, prefetch and cache
-- [ ] [Comet: Fine-grained Computation-communication Overlapping for Mixture-of-Experts](https://arxiv.org/abs/2502.19811): fine-grained task schduling and computation-alltoall overlap
+- [ ] ⭐ [Comet: Fine-grained Computation-communication Overlapping for Mixture-of-Experts](https://arxiv.org/abs/2502.19811): fine-grained task schduling and computation-alltoall overlap
 - [ ] [MoE-Lightning: High-Throughput MoE Inference on Memory-constrained GPUs](https://dl.acm.org/doi/10.1145/3669940.3707267): offload MoE weights to CPU by layers, accepted by ASPLOS'25
+- [ ] [eMoE: Task-aware Memory Efficient Mixture-of-Experts-Based (MoE) Model Inference](https://arxiv.org/abs/2503.06823): predict to preload experts from cpu, use same expert for subsequent prompts and skip routing for some tasks
 
 #### MoE training
 
