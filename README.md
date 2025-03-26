@@ -251,7 +251,8 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 
 Ignore some of the earliest papers and focus on the latest work to optimize this.
 
-- [ ] ⭐ [Seesaw: High-throughput LLM Inference via Model Re-sharding](https://arxiv.org/abs/2503.06433): dynamic model re-sharding to facilitates the dynamic reconfiguration of parallelization strategies across stages, reduce the overhead caused by frequent stage transitions (Elastic Scheduling)
+- [ ] ⭐ [Seesaw: High-throughput LLM Inference via Model Re-sharding](https://arxiv.org/abs/2503.06433): dynamic model re-sharding to facilitates the dynamic reconfiguration of parallelization strategies across stages, reduce the overhead caused by frequent stage transitions (seems like Elastic Scheduling)
+- [ ] [DynamicAttention: Dynamic KV Cache for Disaggregate LLM Inference](https://ieeexplore.ieee.org/abstract/document/10890367): DynamicAttention, it allocates a continuous virtual GPU memory space at startup, but does not actually allocate physical GPU memory?
 
 ### Prune & Sparsity 💡
 
@@ -446,6 +447,8 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Characterizing the Behavior and Impact of KV Caching on Transformer Inferences under Concurrency](https://inria.hal.science/hal-04984000/): instrument vLLM to measure and analyze fine-grain metrics (token throughput, KV cache memory access patterns, load balancing of the forward passes), during different inference stages (prefill, decode, batching and KV cache eviction policies) in several scenarios
 - [ ] [Mitigating KV Cache Competition to Enhance User Experience in LLM Inference](https://arxiv.org/abs/2503.13773): mitigating KV Cache competition with several technology
 - [ ] [Towards More Economical Context-Augmented LLM Generation by Reusing Stored KV Cache](https://arxiv.org/abs/2503.14647): KV cache reusing is able to save cloud cost across a range of workloads with long context
+- [ ] [KVSort: Drastically Improving LLM Inference Performance via KV Cache Compression](https://sc24.supercomputing.org/proceedings/poster/poster_files/post189s2-file3.pdf): error-bounded lossy compression on sorted KV vectors
+- [ ] [FastCache: Optimizing Multimodal LLM Serving through Lightweight KV-Cache Compression Framework](https://arxiv.org/abs/2503.08461): dynamic batching and kv cache pool in MM kv cache compression, guided by Jidong ZHAI
 
 #### Prefix Sharing
 
@@ -712,6 +715,7 @@ For LoRA but not serving
 - [ ] [SplitLLM: Hierarchical Split Learning for Large Language Model over Wireless Network](https://arxiv.org/abs/2501.13318): split learning(?) train lora weights in wireless network environment, store lora in edge servers?
 - [ ] [Revolutionizing Large Model Fine-Tuning: The Role of LoRA in Parameter-Efficient Adaptation](https://www.techrxiv.org/doi/full/10.36227/techrxiv.174015835.57150536): a survey, can provide some reference
 - [ ] [HyC-LoRA: Memory Efficient LoRA Fine-tuning with \textbf{Hy}brid Activation \textbf{C}ompression](https://mlsys.org/virtual/2025/poster/2975): optimize fine-tune memory overhead by quantization, accepted by MLSYS'25
+- [ ] [ZO2: Scalable Zeroth-Order Fine-Tuning for Extremely Large Language Models with Limited GPU Memory](https://arxiv.org/abs/2503.12668): fine-tune
 
 #### Combining fine-tuning/training with inference
 
@@ -866,7 +870,8 @@ What is this? maybe multiple LLM?
 - [ ] [Teola: Towards End-to-End Optimization of LLM-based Applications](https://arxiv.org/abs/2407.00326): endd-to-end optimization
 - [ ] [Parrot: Efficient Serving of LLM-based Applications with Semantic Variable](https://arxiv.org/abs/2405.19888): accepted by OSDI'24
 - [ ] [Orion: Interference-aware, Fine-grained GPU Sharing for ML Applications](https://dl.acm.org/doi/10.1145/3627703.3629578): many LLM apps share GPU, accepted by EuroSys'24
-- [ ] [Autellix: An Efficient Serving Engine for LLM Agents as General Programs](https://arxiv.org/abs/2502.13965): multi-agent has something similar to LLM application, scheduling and preemption
+- [ ] [Why Do Multi-Agent LLM Systems Fail?](https://arxiv.org/abs/2503.13657): learn algorithm from it
+- [ ] ⭐ [Autellix: An Efficient Serving Engine for LLM Agents as General Programs](https://arxiv.org/abs/2502.13965): multi-agent has something similar to LLM application, scheduling and preemption
 - [ ] [Fast Inference for Augmented Large Language Models](https://arxiv.org/abs/2410.18248): seems a subclass of multi-agent
 
 ### Fault Tolerance
