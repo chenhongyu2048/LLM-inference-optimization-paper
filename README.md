@@ -206,6 +206,7 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [SpecServe: Efficient and SLO-Aware Large Language Model Serving with Adaptive Speculative Decoding](https://arxiv.org/abs/2503.05096): dynamically adjusts speculative strategies according to real-time request loads and system configurations
 - [ ] [ML-SpecQD: Multi-Level Speculative Decoding with Quantized Drafts](https://arxiv.org/abs/2503.13565): combining multi-level speculative decoding with MXFP4 quantized drafts, simple but work
 - [ ] [SPIN: Accelerating Large Language Model Inference with Heterogeneous Speculative Models](https://arxiv.org/abs/2503.15921): using multiple heterogeneous SSMs with a learning-based algorithm for SSM selection, request decomposition method to minimize batching overhead during LLM verification, pipelining speculation and verification phases on GPU
+- [ ] ⭐ [SpecReason: Fast and Accurate Inference-Time Compute via Speculative Reasoning](https://arxiv.org/abs/2504.07891): target at reason model and CoT, under guidence of Zhihao JIA; maybe refer to multi-agent?
 
 #### different model collaboration  
 
@@ -459,6 +460,7 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Accelerating LLM Serving for Multi-turn Dialogues with Efficient Resource Management](https://dl.acm.org/doi/abs/10.1145/3676641.3716245): multi-level KV cache management(an idea lack innovation) and request reorder, accepted by ASPLOS'25
 - [ ] [Aqua: Network-Accelerated Memory Offloading for LLMs in Scale-Up GPU Domains](https://dl.acm.org/doi/abs/10.1145/3676641.3715983): memory management framework for a sudden increase in the number of inference requests to a cloud-hosted LLM, accepted by ASPLOS'25
 - [ ] ⭐ [Jenga: Effective Memory Management for Serving LLM with Heterogeneity](https://arxiv.org/abs/2503.18292): optimization on PagedAttention, targeted at heterogeneous embeddings in LLMs
+- [ ] [Accelerating LLM Inference Throughput via Asynchronous KV Cache Prefetching](https://arxiv.org/abs/2504.06319): kv cache load/offload?
 
 #### Prefix Sharing
 
@@ -698,6 +700,9 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location](https://arxiv.org/abs/2501.14808): request co-location to maximize serving throughput and prevent starvation, without compromising online serving latency
 - [ ] [Locality-aware Fair Scheduling in LLM Serving](https://arxiv.org/abs/2501.14312)
 - [ ] [Queueing, Predictions, and LLMs: Challenges and Open Problems](https://arxiv.org/abs/2503.07545): prediction-based queueing and serving
+- [ ] [Throughput-Optimal Scheduling Algorithms for LLM Inference and AI Agents](https://arxiv.org/abs/2504.07347): throughput-optimal scheduling analyse
+- [ ] [Apt-Serve: Adaptive Request Scheduling on Hybrid Cache for Scalable LLM Inference Serving](https://arxiv.org/abs/2504.07494): a memory-efficient hidden cache? and schedule to use a biger batch
+- [ ] [LLMSched: Uncertainty-Aware Workload Scheduling for Compound LLM Applications](https://arxiv.org/abs/2504.03444): an uncertainty-aware scheduling framework for emerging compound LLM applications
 
 #### Shared Prefix Serving
 
