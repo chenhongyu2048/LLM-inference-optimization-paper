@@ -255,6 +255,8 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [Domino: Eliminating Communication in LLM Training via Generic Tensor Slicing and Overlapping](https://arxiv.org/abs/2409.15241): overlapping, provided by Deepspeed team
 - [ ] [PRESERVE: Prefetching Model Weights and KV-Cache in Distributed LLM Serving](https://arxiv.org/abs/2501.08192): overlap communication with model-weights/KV-cache prefetch
 - [ ] [Concerto: Automatic Communication Optimization and Scheduling for Large-Scale Deep Learning](https://dl.acm.org/doi/10.1145/3669940.3707223): use compilation to schedule overlap, accepted by ASPLOS'25
+- [ ] [TileLink: Generating Efficient Compute-Communication Overlapping Kernels using Tile-Centric Primitives](https://openreview.net/forum?id=ccjvBkTRRe): TileLink to efficiently generate overlapped kernels for LLMs using tile-centric primitives and mappings, accepted by MLSYS'25
+- [ ] [FlashOverlap: A Lightweight Design for Efficiently Overlapping Communication and Computation](https://arxiv.org/abs/2504.19519): a novel signaling mechanism to identify tile-wise data dependency without interrupting the computation process, and reorders data to contiguous addresses, enabling communication by simply calling NCCL APIs
 
 #### Prefill-Decode disaggregation
 
@@ -293,6 +295,7 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] [Efficient LLM Inference using Dynamic Input Pruning and Cache-Aware Masking](https://mlsys.org/virtual/2025/poster/2972): accepted by MLSYS'25
 - [ ] [SpInfer: Leveraging Low-Level Sparsity for Efficient Large Language Model Inference on GPUs](https://dl.acm.org/doi/10.1145/3689031.3717481): Tensor-Core-Aware Bitmap Encoding (TCA-BME) and sparse Gemm kernel, make unstructured pruning's theoretical advantages translate into practical performance gains, EuroSys'25
 - [ ] [Samoyeds: Accelerating MoE Models with Structured Sparsity Leveraging Sparse Tensor Cores](https://dl.acm.org/doi/10.1145/3689031.3717455): EuroSys'25
+- [ ] [LServe: Efficient Long-sequence LLM Serving with Unified Sparse Attention](https://openreview.net/forum?id=KQ4pJFFqT1): Efficient long-context LLM serving with unified block sparse attention, up to 3.3x faster decoding than TensorRT-LLM, accpeted by MLSYS'25
 
 ### Quantization 💡
 
@@ -476,13 +479,17 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [Aqua: Network-Accelerated Memory Offloading for LLMs in Scale-Up GPU Domains](https://dl.acm.org/doi/abs/10.1145/3676641.3715983): memory management framework for a sudden increase in the number of inference requests to a cloud-hosted LLM, accepted by ASPLOS'25
 - [ ] ⭐ [Jenga: Effective Memory Management for Serving LLM with Heterogeneity](https://arxiv.org/abs/2503.18292): optimization on PagedAttention, targeted at heterogeneous embeddings in LLMs
 - [ ] [Accelerating LLM Inference Throughput via Asynchronous KV Cache Prefetching](https://arxiv.org/abs/2504.06319): kv cache load/offload?
-- [ ] [Hardware-based Heterogeneous Memory Management for Large Language Model Inference](https://arxiv.org/abs/2504.14893):  an asymmetric memory architecture consisting of capacity-centric and bandwidth-centric memory with computation units attached to each memory device, more like a hardware paper
+- [ ] [Hardware-based Heterogeneous Memory Management for Large Language Model Inference](https://arxiv.org/abs/2504.14893): an asymmetric memory architecture consisting of capacity-centric and bandwidth-centric memory with computation units attached to each memory device, more like a hardware paper
+
+- [ ] [Rethinking Key-Value Cache Compression Techniques for Large Language Model Serving](https://openreview.net/forum?id=ou0AsNbXVG): Survey and Analyze Key-Value Cache Compression Techniques for Large Language Model Serving, accepted by MLSYS'25
+- [ ] [FastTree: Optimizing Attention Kernel and Runtime for Tree-Structured LLM Inference](https://openreview.net/forum?id=BwvHcHZ3kJ): FastTree, which introduces GPU kernels tailored for efficiently processing queries that share contexts through the radix tree
 
 #### Prefix Sharing
 
 note: some papers about prefix sharing is not in this section
 
 - [ ] [LLM Query Scheduling with Prefix Reuse and Latency Constraints](https://arxiv.org/abs/2502.04677): balancing prefix reuse and fairness in query scheduling
+- [ ] [Marconi: Prefix Caching for the Era of Hybrid LLMs](https://openreview.net/forum?id=RUaMUu7vMX): prefix caching target at State Space Models
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -544,7 +551,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [GPUs, CPUs, and... NICs: Rethinking the Network's Role in Serving Complex AI Pipelines](https://arxiv.org/abs/2502.15712): NIC can be important, especially in communication
 
 - [ ] [Pie: Pooling CPU Memory for LLM Inference](https://arxiv.org/abs/2411.09317): use CPU memory to enlarge batchsize to improve throughput, by Ion Stoica
-- [ ] [NEO: Saving GPU Memory Crisis with CPU Offloading for Online LLM Inference](https://arxiv.org/abs/2411.01142): offload KV cache and attention to CPU for larger batchsize, similar to fastdecode, by Ion Stoica
+- [ ] [NEO: Saving GPU Memory Crisis with CPU Offloading for Online LLM Inference](https://arxiv.org/abs/2411.01142): offload KV cache and attention to CPU for larger batchsize, similar to fastdecode, by Ion Stoica, accepted by MLSYS'25
 - [ ] [Task Scheduling for Efficient Inference of Large Language Models on Single Moderate GPU Systems](https://arxiv.org/abs/2411.15715): more likely inference on personal device
 - [ ] [Efficient LLM Inference with I/O-Aware Partial KV Cache Recomputation](https://arxiv.org/abs/2411.17089): use recomputation and transfer to re-produce KV cache; can use their run-time and split parallelism
 
@@ -683,6 +690,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 
 - [ ] ⭐ [ServeGen: Workload Characterization and Generation of Large Language Model Serving in Production](https://arxiv.org/abs/2505.09999): show the real production LLM workload
 - [ ] [Efficient LLM Serving on Hybrid Real-time and Best-effort Requests](https://arxiv.org/abs/2504.09590): collocate the Real-time and Best-effort Requests, propose request scheduling and KV cache sharing
+- [ ] [SOLA: Optimizing SLO Attainment for Large Language Model Serving with State-Aware Scheduling](https://openreview.net/forum?id=ubIvpetAd6): a state-aware scheduling that optimizes the SLO attainment in LLM serving
 
 #### LLM as microservice
 
@@ -914,6 +922,7 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [DiffusionPipe: Training Large Diffusion Models with Efficient Pipelines](https://arxiv.org/abs/2405.01248): accepted by MLSys'24
 - [ ] [SwiftDiffusion: Efficient Diffusion Model Serving with Add-on Modules](https://arxiv.org/abs/2407.02031): more papers in diffusion models
 - [ ] [PATCHEDSERVE: A Patch Management Framework for SLO-Optimized Hybrid Resolution Diffusion Serving](https://arxiv.org/abs/2501.09253): algorithm-based framework
+- [ ] [DiffServe: Efficiently Serving Text-to-Image Diffusion Models with Query-Aware Model Scaling](https://openreview.net/forum?id=1N3ShLfcTf): address the problem of serving text-to-image generation diffusion models in a query-aware resource-efficient manner by serving "easy" queries using a lightweight diffusion model without compromising image generation quality
 
 ### Compound Inference Systems
 
