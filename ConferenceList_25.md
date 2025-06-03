@@ -12,7 +12,7 @@ Sorted by their opening time.
 | [PPoPP](http://dblp.uni-trier.de/db/conf/ppopp/) | Mar02 &#124; opened | &#10004; |
 | [EuroSys](https://dblp.uni-trier.de/db/conf/eurosys/index.html) | Apr22 &#124; not open | &#10004; |
 | [ASPLOS](https://dl.acm.org/conference/asplos) | Apr27 &#124; not open | &#10004; |
-| [MLSys](https://mlsys.org/) | May13 &#124; not open | &#10004; |
+| [MLSys](https://mlsys.org/) | May13 &#124; opened | &#10004; |
 | [IPDPS](https://dblp.uni-trier.de/db/conf/ipps/index.html) | May27 &#124; not open | x |
 | [HPDC](https://dblp.uni-trier.de/db/conf/hpdc/index.html) | Jun03 &#124; not open | x |
 | [ISCA](https://iscaconf.org/isca2025) | Jun21 &#124; not open | x |
