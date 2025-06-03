@@ -785,6 +785,7 @@ For LoRA but not serving
 - [ ] [ZO2: Scalable Zeroth-Order Fine-Tuning for Extremely Large Language Models with Limited GPU Memory](https://arxiv.org/abs/2503.12668): fine-tune
 - [ ] [HSplitLoRA: A Heterogeneous Split Parameter-Efficient Fine-Tuning Framework for Large Language Models](https://arxiv.org/abs/2505.02795): split-learnng + LoRA, fine-tune on client device, set different rank for different weights
 - [ ] [Improving the Serving Performance of Multi-LoRA Large Language Models via Efficient LoRA and KV Cache Management](https://arxiv.org/abs/2505.03756): explore the dependencies between requests and LoRAs to reduce TTFT
+- [ ] [Beyond Zero Initialization: Investigating the Impact of Non-Zero Initialization on LoRA Fine-Tuning Dynamics](https://arxiv.org/abs/2505.23194): LoRA algorithm analyze
 
 #### Combining fine-tuning/training with inference
 
