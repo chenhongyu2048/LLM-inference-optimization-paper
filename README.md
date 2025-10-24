@@ -525,6 +525,7 @@ note: some papers about prefix sharing is not in this section
 - [ ] [Improving GPU Sharing Performance through Adaptive Bubbleless Spatial-Temporal Sharing](https://dl.acm.org/doi/abs/10.1145/3689031.3696070): Bless leverages precise computing resource management and fine-grained kernel scheduling to ensure stringent quota guarantees and reduce latency fairly for applications with varying GPU quotas, accepted by EuroSys'25
 - [ ] [Efficient Performance-Aware GPU Sharing with Compatibility and Isolation through Kernel Space Interception](https://www.usenix.org/conference/atc25/presentation/zhang-shulai): a kernel-space GPU-sharing scheme that ensures compatibility and isolation, accepted by ATC'25
 - [ ] ⭐ [LithOS: An Operating System for Efficient Machine Learning on GPUs](https://dl.acm.org/doi/10.1145/3731569.3764818): amazing work, also helps understand GPU system, accepted by SOSP'25
+- [ ] [Prism: Unleashing GPU Sharing for Cost-Efficient Multi-LLM Serving](https://arxiv.org/abs/2505.04021): tackles a key limitation of existing systems: the lack of cross-model memory coordination to unleashe the full potential of GPU sharing, under guidence of Ion Stoica
 
 #### CPUs or based on SSD
 
@@ -573,6 +574,7 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [Stratum: System-Hardware Co-Design with Tiered Monolithic 3D-Stackable DRAM for Efficient MoE Serving](https://dl.acm.org/doi/10.1145/3725843.3756043): Monolithic 3D-Stackable DRAM (Mono3D DRAM), near-memory processing (NMP), and GPU acceleration, accepted by MICRO'25
 - [ ] [Managing Scalable Direct Storage Accesses for GPUs with GoFS](https://dl.acm.org/doi/10.1145/3731569.3764857): a GPU-orchestrated file system (GoFS) for scaling the direct storage accesses for GPU programs, by fully offloading the storage management to the GPU without host-side control, accepted by SOSP'25
 - [ ] [KTransformers: Unleashing the Full Potential of CPU/GPU Hybrid Inference for MoE Models](https://dl.acm.org/doi/10.1145/3731569.3764843): compute some experts in MoE on CPU, accepted by SOSP'25
+- [ ] [Sandwich: Separating Prefill-Decode Compilation for Efficient CPU LLM Serving](https://arxiv.org/abs/2507.18454): a hardware-centric CPU-based LLM serving engine that uses different execution plans for the prefill and decode phases and optimizes them separately, under guidence of Chuan WU
 
 #### Inference on personal device
 
@@ -788,6 +790,7 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [x] [S-LoRA: Serving Thousands of Concurrent LoRA Adapters](https://arxiv.org/abs/2311.03285): beginninf of Serving for LoRA, under the guidence of Ion Stoica: accepted by MLSys'24
 - [ ] [Dynamic LoRA Serving System for Offline Context Learning](https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F23/projects/reports/project1011_paper_92116151989678177816.pdf): successor of S-LoRA
 - [x] [CaraServe: CPU-Assisted and Rank-Aware LoRA Serving for Generative LLM Inference](https://arxiv.org/abs/2401.11240): serving LoRA is becoming more and more important, accepted by ATC'25
+- [ ] [TOPPINGS: CPU-Assisted, Rank-Aware Adapter Serving for LLM Inference](https://home.cse.ust.hk/~weiwa/papers/toppings-atc25.pdf): CARAServer's ATC version
 - [x] [PUNICA: MULTI-TENANT LORA SERVING](https://arxiv.org/pdf/2310.18547.pdf): accepted by MLSys'24
 - [ ] [Petals: Collaborative Inference and Fine-tuning of Large Models](https://arxiv.org/abs/2209.01188)
 - [ ] [LoRA-Switch: Boosting the Efficiency of Dynamic LLM Adapters via System-Algorithm Co-design](https://arxiv.org/abs/2405.17741): maybe useful, kernel optimization
@@ -796,10 +799,17 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [V-LoRA: An Efficient and Flexible System Boosts Vision Applications with LoRA LMM](https://arxiv.org/abs/2411.00915): LoRA for vision models, and optimize LoRA kernels, accepted by EuroSys'25
 - [ ] [Efficient Multi-task LLM Quantization and Serving for Multiple LoRA Adapters](https://openreview.net/forum?id=HfpV6u0kbX): facilitates the sharing of a single quantized model for multiple LoRA adapters, accepted by NIPS'24
 - [ ] [Comparative Analysis and Optimization of LoRA Adapter Co-serving for Large Language Models](https://dl.acm.org/doi/abs/10.1145/3704440.3704777): more like a survey for LoRA serving
+- [ ] [Dynamic Operator Optimization for Efficient Multi-Tenant LoRA Model Serving](https://ojs.aaai.org/index.php/AAAI/article/view/34453): introducing Dynamic Operator Optimization (Dop), an advanced automated optimization technique designed to dynamically optimize the Segmented Gather Matrix-Vector Multiplication (SGMV) operator based on specific scenarios, accepted by AAAI'25
 - [ ] [DeltaZip: Efficient Serving of Multiple Full-Model-Tuned LLMs](https://arxiv.org/abs/2312.05215): compress model deltas to serves multiple full-parameter fine-tuned models(maybe not LoRA fine-tune?)
 - [ ] [ServerlessLoRA: Minimizing Latency and Cost in Serverless Inference for LoRA-Based LLMs](https://arxiv.org/abs/2505.14468): in fact similar to S-LoRA, on the background of serverless LLM+LoRA model
+- [ ] [Improving the Serving Performance of Multi-LoRA Large Language Models via Efficient LoRA and KV Cache Management](https://arxiv.org/abs/2505.03756): GPU memory management on both KV cache and LoRA weights
 - [ ] [Katz: Efficient Workflow Serving for Diffusion Models with Many Adapters](https://www.usenix.org/conference/atc25/presentation/li-suyi-katz): take ControlNet off the critical path with a ControlNet-as-a-Service design in T2I service, accepted by ATC'25
-- [ ] [Chameleon: Adaptive Caching and Scheduling for Many-Adapter LLM Inference Environments](https://dl.acm.org/doi/10.1145/3725843.3756083): cache LoRA adapters on GPU and LoRA scheduling, accepted by MICRO'25
+- [ ] [ExpertWeave: Efficiently Serving Expert-Specialized Fine-Tuned Adapters at Scale](https://arxiv.org/abs/2508.17624): serve multiple LoRAs for MoE models
+- [ ] [Chameleon: Adaptive Caching and Scheduling for Many-Adapter LLM Inference Environments](https://dl.acm.org/doi/10.1145/3725843.3756083): cache LoRA adapters on GPU and LoRA scheduling, accepted by MICRO'26
+- [ ] [Maximizing GPU Efficiency via Optimal Adapter Caching: An Analytical Approach for Multi-Tenant LLM Serving](https://arxiv.org/abs/2508.08343): an analytical, AI-driven pipeline that accurately determines the optimal allocation of adapters in single-node setups
+- [ ] [EdgeLoRA: An Efficient Multi-Tenant LLM Serving System on Edge Devices](https://dl.acm.org/doi/abs/10.1145/3711875.3729141): Deploying fine-tuned LLMs on multi-tenant edge devices, accepted by MobiSys'25
+- [ ] [Cannikin: No Lagger of SLO in Concurrent Multiple LoRA LLM Serving](https://ieeexplore.ieee.org/abstract/document/11082562): optimizes the minimum of the SLO attainments of all LoRA services in the serving system, denoted as lagger-SLO attainment, under guidence of Xin JIN, accepted by TPDS'25
+- [ ] [Rock: Serving Multimodal Models in Cloud with Heterogeneous-Aware Resource Orchestration for Thousands of LoRA Adapters](https://ieeexplore.ieee.org/abstract/document/11186463): serving thousands of LoRA adapters for multimodal models, accepted by CLUSTER'25
 
 -------------------------------------  
 For LoRA but not serving  
@@ -828,6 +838,9 @@ For LoRA but not serving
 - [ ] [Communication-Efficient MoE Fine-Tuning with Locality-Aware Expert Placement](https://ieeexplore.ieee.org/document/11183830): fine-tune on MoE models with locality awareness (not sure difference with training), accepted by ICDCS'25
 - [ ] [JENGA: Enhancing LLM Long-Context Fine-tuning with Contextual Token Sparsity](https://www.usenix.org/conference/atc25/presentation/wang-tuowei): utilize sparsity for fine-tuning, accepted by ATC'25
 - [ ] [mTuner: Accelerating Parameter-Efficient Fine-Tuning on Multi-GPU Servers with Elastic Tensor](https://www.usenix.org/conference/atc25/presentation/huang-kezhao): use elastic tensors to do optimizations such as improving temporal memory utilization, relaxing data dependence, and accumulating runtime tensors in a memory-adaptive way, accepted by ATC'25
+- [ ] [PLoRA: Efficient LoRA Hyperparameter Tuning for Large Models](https://arxiv.org/abs/2508.02932): automatically orchestrates concurrent LoRA fine-tuning jobs under given hardware and model constraints
+- [ ] [LoRAFusion: Efficient LoRA Fine-Tuning for LLMs](https://arxiv.org/abs/2510.00206): concurrently fine-tune multiple independent LoRA adapters that share the same base model on the same set of GPUs, optimization on both kernels and scheduling, accepted by EuroSys'26
+- [ ] [Symbiosis: Multi-Adapter Inference and Fine-Tuning](https://arxiv.org/abs/2507.03220): enabling the as-a-service deployment of the base model to do concurrently fine-tune and inference
 
 #### Combining fine-tuning/training with inference
 
@@ -1008,6 +1021,10 @@ What is this? maybe multiple LLM?
 - [ ] [Improving the End-to-End Efficiency of Offline Inference for Multi-LLM Applications Based on Sampling and Simulation](https://arxiv.org/abs/2503.16893): multi-LLM's end-to-end running
 - [ ] [Tempo: Application-aware LLM Serving with Mixed SLO Requirements](https://arxiv.org/abs/2504.20068): Meet SLO requirements for all services in the system and accelerate the overall process, can be used in multi-agent application
 - [ ] [Pie: A Programmable Serving System for Emerging LLM Applications](https://dl.acm.org/doi/10.1145/3731569.3764814): decomposes the traditional generation loop into fine-grained service handlers exposed via an API and delegates control of the generation process to user-provided programs, accepted by SOSP'25
+
+#### Multi-agent system
+
+- [ ] [Kairos: Low-latency Multi-Agent Serving with Shared LLMs and Excessive Loads in the Public Cloud](https://arxiv.org/abs/2508.06948): existing works have low serving performance for these multi-agent applications, mainly due to the ignorance of inter-agent latency and resource differences for request scheduling, this paper solve it
 
 ### Fault Tolerance
 
