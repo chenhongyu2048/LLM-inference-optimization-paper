@@ -153,6 +153,9 @@ Spend more time inferencing than pre-training
 - [ ] [Fast Best-of-N Decoding via Speculative Rejection](https://arxiv.org/abs/2410.20290): optimize alignment in inference, accepted by NIPS'24
 - [ ] [S*: Test Time Scaling for Code Generation](https://arxiv.org/abs/2502.14382): perhaps can do some acceleration on Test Time Scaling
 - [ ] [Thinking Short and Right Over Thinking Long: Serving LLM Reasoning Efficiently and Accurately](https://arxiv.org/abs/2505.13326): manage the CoT
+- [ ] [Kinetics: Rethinking Test-Time Scaling Laws](https://arxiv.org/abs/2506.05333): it is more efficient to scale model size up to a threshold before investing more compute in test-time scaling, and propose sparse attention, which lowers per-token cost and enables longer generations and more parallel samples within the same resource budget
+- [ ] [BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute](https://arxiv.org/abs/2506.22716): for small models, generating multiple responses and selecting the best can enhance quality while remaining cheaper than a single large-model response, does such idea really make sense for users?
+- [ ] [Are We Scaling the Right Thing? A System Perspective on Test-Time Scaling](https://arxiv.org/abs/2509.19645): a system-driven perspective on TTS, analyzing how reasoning models scale against practical metrics
 
 #### GPT-o1
 
@@ -211,6 +214,8 @@ Also named as Speculative Sampling, model collaboration.
 - [ ] [SPIN: Accelerating Large Language Model Inference with Heterogeneous Speculative Models](https://arxiv.org/abs/2503.15921): using multiple heterogeneous SSMs with a learning-based algorithm for SSM selection, request decomposition method to minimize batching overhead during LLM verification, pipelining speculation and verification phases on GPU
 - [ ] ⭐ [SpecReason: Fast and Accurate Inference-Time Compute via Speculative Reasoning](https://arxiv.org/abs/2504.07891): target at reason model and CoT, under guidence of Zhihao JIA; maybe refer to multi-agent?
 - [ ] [SpecRouter: Adaptive Routing for Multi-Level Speculative Decoding in Large Language Models](https://arxiv.org/abs/2505.07680): Multi-Level Speculative Decoding, under guidence of Jidong Zhai
+- [ ] [SLED: A Speculative LLM Decoding Framework for Efficient Edge Serving](https://arxiv.org/abs/2506.09397): deploy draft model on edge divices and shared edge server to verify tokens
+- [ ] [FastVLM: Self-Speculative Decoding for Fast Vision-Language Model Inference](https://arxiv.org/abs/2510.22641): speculation could be used by VLM
 
 #### different model collaboration  
 
@@ -246,6 +251,10 @@ Some knowledege about data parallel, model tensor parallel, and model pipeline p
 - [ ] [WLB-LLM: workload-balanced 4D parallelism for large language model training](https://dl.acm.org/doi/10.5555/3767901.3767944): solve the workload imbalance issue at the pipeline parallelism and context parallelism levels, accepted by OSDI'25
 - [ ] [Mercury: Unlocking Multi-GPU Operator Optimization for LLMs via Remote Memory Scheduling](https://dl.acm.org/doi/10.1145/3731569.3764798): utilize an abstraction that treats remote GPU memory as an explicitly managed extension of the memory hierarchy, expanding the available storage and communication resources beyond local HBM, accepted by SOSP'25
 
+- [ ] [TD-Pipe: Temporally-Disaggregated Pipeline Parallelism Architecture for High-Throughput LLM Inference](https://arxiv.org/abs/2506.10470): disaggregates the prefill and decode phases in the temporal dimension, so as to eliminate pipeline bubbles caused by the phase switching in pipeline parallelism in serving
+- [ ] [Serving LLM in Distributed GPU Cluster With Fine-Grain Pipeline Constraints](https://ieeexplore.ieee.org/abstract/document/11143904): dynamically adjusts time constraints based on workload patterns to balance pipeline stages
+- [ ] [FlexPipe: Adapting Dynamic LLM Serving Through Inflight Pipeline Refactoring in Fragmented Serverless Clusters](https://arxiv.org/abs/2510.11938): dynamically reconfigures pipeline architectures during runtime, accepted by EuroSys'26
+
 #### Communication Overlap
 
 - [ ] [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959): overlap comm with comp, similar to Liger
@@ -273,6 +282,12 @@ Ignore some of the earliest papers and focus on the latest work to optimize this
 - [ ] [DynaServe: Unified and Elastic Execution for Dynamic Disaggregated LLM Serving](https://arxiv.org/abs/2504.09285): arbitrarily splits each request at any token boundary into at most two cooperating segments, then use a two-level scheduling framework then balances micro-request load across unified GPU instances
 - [ ] [Hybe: GPU-NPU Hybrid System for Efficient LLM Inference with Million-Token Context Window](https://dl.acm.org/doi/10.1145/3695053.3731051): utilizes the preexisting GPU for the prefill stage and employs lightweight NPUs during the decode stage, utilizes NVIDIA H100 GPU with inference-optimized vLLM library and implement Hybe NPU in 4nm process with equal HBM specification, accepted by ISCA'25
 - [ ] [WindServe: Efficient Phase-Disaggregated LLM Serving with Stream-based Dynamic Scheduling](https://dl.acm.org/doi/10.1145/3695053.3730999): stream-based, fine-grained dynamic resource scheduling to enhance utilization and performance for disaggregated LLM serving, accepted by ISCA'25
+- [ ] [Tropical: Enhancing SLO Attainment in Disaggregated LLM Serving via SLO-Aware Multiplexing](https://ieeexplore.ieee.org/abstract/document/11132617): multiplexing prefill and decode on same hardware with an sevice-level objectives (SLO)-aware multiplexing strategy that balances the queuing time and the interference
+- [ ] [Nexus:Proactive Intra-GPU Disaggregation of Prefill and Decode in LLM Serving](https://arxiv.org/abs/2507.06608): dynamically partitions GPU resources across prefill and decode phases, while jointly considering compute capacity, memory footprint, and bandwidth contention, under guidence of Zhihao JIA
+- [ ] [Prefill-Decode Aggregation or Disaggregation? Unifying Both for Goodput-Optimized LLM Serving](https://arxiv.org/abs/2508.01989): dynamic choose GPUs' roles of  disaggregation-aggregation, and consider the SLO
+- [ ] [Taming the Chaos: Coordinated Autoscaling for Heterogeneous and Disaggregated LLM Inference](https://arxiv.org/abs/2508.19559): a P/D autoscaling framework, a topology-aware scheduler that adapts to heterogeneous hardware and network constraints with a novel metric-driven policy derived from the first large-scale empirical study of autoscaling signals in production
+- [ ] [xLLM Technical Report](https://arxiv.org/abs/2510.14686): a novel decoupled service-engine architecture on P/D disaggregation, and co-optimizes system and algorithm designs to fully saturate computing resources, from JD
+- [ ] [Adaptive Rescheduling in Prefill-Decode Disaggregated LLM Inference](https://arxiv.org/abs/2510.13668): dynamic prefill-decode resource scheduling
 
 ### Prune & Sparsity 💡
 
@@ -301,6 +316,7 @@ We mainly focus on Semi-structured and Structured pruning becasue they can accel
 - [ ] [SpInfer: Leveraging Low-Level Sparsity for Efficient Large Language Model Inference on GPUs](https://dl.acm.org/doi/10.1145/3689031.3717481): Tensor-Core-Aware Bitmap Encoding (TCA-BME) and sparse Gemm kernel, make unstructured pruning's theoretical advantages translate into practical performance gains, EuroSys'25
 - [ ] [Samoyeds: Accelerating MoE Models with Structured Sparsity Leveraging Sparse Tensor Cores](https://dl.acm.org/doi/10.1145/3689031.3717455): EuroSys'25
 - [ ] [LServe: Efficient Long-sequence LLM Serving with Unified Sparse Attention](https://openreview.net/forum?id=KQ4pJFFqT1): Efficient long-context LLM serving with unified block sparse attention, up to 3.3x faster decoding than TensorRT-LLM, accpeted by MLSYS'25
+- [ ] [SparseServe: Unlocking Parallelism for Dynamic Sparse Attention in Long-Context LLM Serving](https://arxiv.org/abs/2509.24626): for Dynamic sparse attention, solve the challenges: fragmented KV cache access, HBM cache contention, and high HBM demands of hybrid batching
 
 ### Quantization 💡
 
@@ -354,6 +370,10 @@ Low-precision for memory and computing efficiency.
 - [ ] [Tilus: A Virtual Machine for Arbitrary Low-Precision GPGPU Computation in LLM Serving](https://arxiv.org/abs/2504.12984): support Arbitrary Low-Precision computation with high performance
 - [ ] [Oaken: Fast and Efficient LLM Serving with Online-Offline Hybrid KV Cache Quantization](https://dl.acm.org/doi/10.1145/3695053.3731019): quantization on KV cache, accepted by ISCA'25
 - [ ] [QFactory: Accelerating Quantized Large Language Model Serving with Qtile Graphs](https://www.usenix.org/conference/atc25/presentation/zhang-qihao): an efficient compilation framework designed to generate high-performance quantized kernels, accepted by ATC'25
+- [ ] [DecDEC: A Systems Approach to Advancing Low-Bit LLM Quantization](https://www.usenix.org/conference/osdi25/presentation/park-yeonhong): stores the residual matrix—the difference between full-precision and quantized weights—in CPU, and dynamically fetches the residuals for only a small portion of the weights, aaccepted by OSDI'25
+- [ ] [Efficient and Workload-Aware LLM Serving via Runtime Layer Swapping and KV Cache Resizing](https://arxiv.org/abs/2506.02006): replace layers weights with different quantization type, and dynamic adjust KV cache capacity
+- [ ] ⭐ [Efficient Mixed-Precision Large Language Model Inference with TurboMind](https://arxiv.org/abs/2508.15601): a General Matrix Multiply (GEMM) pipeline that optimizes matrix operations through offline weight packing and online acceleration, and an attention pipeline that enables efficient attention computation with arbitrary Query, Key, and Value precision combinations
+- [ ] [LiquidGEMM: Hardware-Efficient W4A8 GEMM Kernel for High-Performance LLM Serving](https://arxiv.org/abs/2509.01229): accepted by SC'25
 
 ### Batch Processing
 
@@ -389,6 +409,7 @@ This blog [Dissecting Batching Effects in GPT Inference](https://le.qun.ch/en/bl
 #### Chunked prefill
 
 - [ ] [Bullet: Boosting GPU Utilization for LLM Serving via Dynamic Spatial-Temporal Orchestration](https://arxiv.org/abs/2504.19516): fine-grained chunked prefill with decode, but what is SM-masked stream?
+- [ ] [Efficient LLM Inference via Chunked Prefills](https://dl.acm.org/doi/abs/10.1145/3759441.3759444): analyse on chunked prefill
 
 ### Computing Optimization
 
@@ -423,6 +444,7 @@ This part include some impressive work optimizing LLM computing by observing the
 - [ ] [POD-Attention: Unlocking Full Prefill-Decode Overlap for Faster LLM Inference](https://arxiv.org/abs/2410.18038): optimize attention kernel in mix-batching
 - [ ] [Focus: High-Performant and Customizable Attention Engine for LLM Serving](https://mlsys.org/virtual/2025/poster/2980): flexible attention engine, advised by Chen Tianqi and accepted by MLSYS'25
 - [ ] [ML-Triton, A Multi-Level Compilation and Language Extension to Triton GPU Programming](https://arxiv.org/abs/2503.14985): Multi-level Triton
+- [ ] [TyphoonMLA: A Mixed Naive-Absorb MLA Kernel For Shared Prefix](https://arxiv.org/abs/2509.21081): MLA kernel for shared prefix in particular
 
 ### Memory Manage
 
@@ -495,6 +517,11 @@ This part is inspired by PagedAttention of vLLM. And there are many Top-Conferen
 - [ ] [MCaM: Efficient LLM Inference with Multi-tier KV Cache Management](https://ieeexplore.ieee.org/document/11183741/authors#authors): use DRAM to store history KV cache, accepted by ICDCS'25
 - [ ] [KVCache Cache in the Wild: Characterizing and Optimizing KVCache Cache at a Large Cloud Provider](https://www.usenix.org/conference/atc25/presentation/wang-jiahao): systematic characterization of the KV$ workload patterns from Aliyun, accepted by ATC'25
 - [ ] [DiffKV: Differentiated Memory Management for Large Language Models with Parallel KV Compaction](https://dl.acm.org/doi/10.1145/3731569.3764810): compress kv cache in three levels of differentiation in the KV cache: (1) the differing impact of keys and values on attention computation, (2) the varying importance of tokens, and (3) the diverse dynamic sparsity patterns across attention heads, accepted by SOSP'25
+- [ ] [eLLM: Elastic Memory Management Framework for Efficient LLM Serving](https://arxiv.org/abs/2506.15155): dynamic elastic KV cache pool, under guidence of Mingyi GUO
+- [ ] [Disk-Based Shared KV Cache Management for Fast Inference in Multi-Instance LLM RAG Systems](https://ieeexplore.ieee.org/abstract/document/11120463): store some prefix kv cache on Disk to reduce prefill overhead
+- [ ] [LLM Serving With Efficient KV-Cache Management Using Triggered Operations](https://cug.org/proceedings/cug2024_proceedings/includes/files/pap128s2-file1.pdf): lower overhead KV cache storage and retrieval with SmartNICs capable of triggered operations, bypassing the CPU and network stack and improving data-transfer latency
+- [ ] [Oneiros: KV Cache Optimization through Parameter Remapping for Multi-tenant LLM Serving](https://arxiv.org/abs/2507.11507): avoids KV cache swapping by remapping, and thereby repurposing, the memory allocated to model parameters for KV cache, exploiting the high CPU-GPU bandwidth offered by the modern hardware (such as GH hardware), accepted by SoCC'25
+- [ ] [FineServe: Precision-Aware KV Slab and Two-Level Scheduling for Heterogeneous Precision LLM Serving](https://arxiv.org/abs/2509.06261): with KV Slab, a precision-aware adaptive memory management technique dynamically allocating KV cache based on model quantization characteristics, significantly reducing GPU memory fragmentation
 
 #### Prefix Sharing
 
@@ -502,6 +529,8 @@ note: some papers about prefix sharing is not in this section
 
 - [ ] [LLM Query Scheduling with Prefix Reuse and Latency Constraints](https://arxiv.org/abs/2502.04677): balancing prefix reuse and fairness in query scheduling
 - [ ] [Marconi: Prefix Caching for the Era of Hybrid LLMs](https://openreview.net/forum?id=RUaMUu7vMX): prefix caching target at State Space Models
+- [ ] ⭐ [TokenLake: A Unified Segment-level Prefix Cache Pool for Fine-grained Elastic Long-Context LLM Serving](https://arxiv.org/abs/2508.17219): a unified segment-level prefix cache pool, TokenLake, which uses a declarative cache interface to expose requests' query tensors, prefix caches, and cache-aware operations to TokenLake for efficient pooling, under guidence of Xin JIN
+- [ ] [Strata: Hierarchical Context Caching for Long Context Language Model Serving](https://arxiv.org/abs/2508.18572): a hierarchical context caching framework designed for efficient long context LLM serving, introduces GPU-assisted I/O to combat KV cache fragmentation, employs cache-aware request scheduling to balance compute with I/O latency and overlapping unavoidable stalls
 
 ### Inference on hardware: GPUs, CPUs or based on SSD
 
@@ -518,6 +547,8 @@ note: some papers about prefix sharing is not in this section
 - [ ] [Tackling the Dynamicity in a Production LLM Serving System with SOTA Optimizations via Hybrid Prefill/Decode/Verify Scheduling on Efficient Meta-kernels](https://arxiv.org/abs/2412.18106): for Ascend GPU (perhaps also work for NVIDIA?)
 - [ ] [MEPipe: Democratizing LLM Training with Memory-Efficient Slice-Level Pipeline Scheduling on Cost-Effective Accelerators](https://dl.acm.org/doi/10.1145/3689031.3717469): maybe inference on RTX4090?
 - [ ] [PASK: Cold Start Mitigation for Inference with Proactive and Selective Kernel Loading on GPUs](https://xianweiz.github.io/doc/papers/pask_dac25.pdf): DAC's paper for hardware
+- [ ] [Performance Implications of Pipelining the Data Transfer in CPU-GPU Heterogeneous Systems](https://dl.acm.org/doi/full/10.1145/3746231): talk about CPU-GPU data transfer with pin memory, UVM and asyncMemcpy
+- [ ] [LLMShare: Optimizing LLM Inference Serving with Hardware Architecture Exploration](https://ieeexplore.ieee.org/abstract/document/11132534): a simulator that models the performance and cost across different hardware solutions and introduce a customized design space exploration framework to identify optimal setups efficiently, accepted by DAC'25
 
 #### GPU sharing
 
@@ -575,6 +606,8 @@ Making optimization for the calculating on CPU or SSD will have different method
 - [ ] [Managing Scalable Direct Storage Accesses for GPUs with GoFS](https://dl.acm.org/doi/10.1145/3731569.3764857): a GPU-orchestrated file system (GoFS) for scaling the direct storage accesses for GPU programs, by fully offloading the storage management to the GPU without host-side control, accepted by SOSP'25
 - [ ] [KTransformers: Unleashing the Full Potential of CPU/GPU Hybrid Inference for MoE Models](https://dl.acm.org/doi/10.1145/3731569.3764843): compute some experts in MoE on CPU, accepted by SOSP'25
 - [ ] [Sandwich: Separating Prefill-Decode Compilation for Efficient CPU LLM Serving](https://arxiv.org/abs/2507.18454): a hardware-centric CPU-based LLM serving engine that uses different execution plans for the prefill and decode phases and optimizes them separately, under guidence of Chuan WU
+- [ ] [SiPipe: Bridging the CPU-GPU Utilization Gap for Efficient Pipeline-Parallel LLM Inference](https://arxiv.org/abs/2506.22033): leveraging underutilized CPU resources to offload auxiliary computation and communication, with CPU sampling, a token-safe execution model, and structure-aware transmission
+- [ ] [Q-Infer: Towards Efficient GPU-CPU Collaborative LLM Inference via Sparsity-Aware Dynamic Scheduling](https://dl.acm.org/doi/abs/10.1145/3764589): utilize sparsity to conduct GPU-CPU collaborative inference
 
 #### Inference on personal device
 
@@ -595,6 +628,9 @@ Including edge systems now.
 - [ ] [An Adaptive and Scalable Framework for Resource-Efficient Deployment of Mixture of Experts in LLM-Based Intelligent IoT Networks](https://ieeexplore.ieee.org/abstract/document/10945759): deploy MoE on IoT, but the strategies are commonly used
 - [ ] [A Novel Hat-Shaped Device-Cloud Collaborative Inference Framework for Large Language Models](https://arxiv.org/abs/2503.18989): can learn the edge-cloud serving from this paper, based on speculation decode
 - [ ] [HERA: Hybrid Edge-cloud Resource Allocation for Cost-Efficient AI Agents](https://arxiv.org/abs/2504.00434): assign sub-tasks of LLM agent to local SLM and cloud-side LLM
+- [ ] [Agent.xpu: Efficient Scheduling of Agentic LLM Workloads on Heterogeneous SoC](https://arxiv.org/abs/2506.24045): for agentic LLM workloads on memory-unified heterogeneous SoCs, process loads "Reactive tasks, initiated by users, demand immediate, low-latency responses, while proactive tasks operate invisibly and prioritize throughput"
+- [ ] [Elastic On-Device LLM Service](https://xumengwei.github.io/files/MobiCom25-ElastiLM.pdf): elasticizes both the model and the prompt dimension of a full LLM (what's this? I'm not so familiar with on-device LLM inference)
+- [ ] [Characterizing Mobile SoC for Accelerating Heterogeneous LLM Inference](https://dl.acm.org/doi/abs/10.1145/3731569.3764808): heterogeneous parallel mechanisms to fully exploit both GPU and NPU computational power and memory bandwidth, fast synchronization mechanism between heterogeneous processors that leverages the unified memory architecture, accepted by SOSP'25
 
 #### Heterogeneous or decentralized environments
 
@@ -605,16 +641,25 @@ Including edge systems now.
 - [ ] [Metis: Fast Automatic Distributed Training on Heterogeneous GPUs](https://www.usenix.org/conference/atc24/presentation/um): accepted by ATC'24
 - [ ] [Helix: Distributed Serving of Large Language Models via Max-Flow on Heterogeneous GPUs](https://dl.acm.org/doi/abs/10.1145/3669940.3707215): we can get performance model for Heterogeneous GPUs cluster and learn the algorithm analyse
 - [ ] [Mélange: Cost Efficient Large Language Model Serving by Exploiting GPU Heterogeneity](https://arxiv.org/abs/2404.14527): making heterogeneity-aware GPU provisioning decisions for LLM serving
+- [ ] [MoLink: Distributed and Efficient Serving Framework for Large Models](https://arxiv.org/abs/2507.05043): deploy LLMs on consumer-level GPUs with network optimization
+- [ ] [AXLearn: Modular Large Model Training on Heterogeneous Infrastructure](https://arxiv.org/abs/2507.05411): train on Heterogenous hardware
+- [ ] [Deploy Efficient Large Language Model Distributed Inference Pipeline for Heterogeneous GPUs](https://ieeexplore.ieee.org/abstract/document/11143255): a heuristic algorithm and implement a system that automatically deploys an efficient inference pipeline on heterogeneous GPUs
+- [ ] [LLM-Mesh: Enabling Elastic Sharing for Serverless LLM Inference](https://arxiv.org/abs/2507.00507): a serverless inference scheme for small-to-mid-sized LLMs that enables elastic sharing across heterogeneous hardware
+- [ ] [Hetis: Serving LLMs in Heterogeneous GPU Clusters with Fine-grained and Dynamic Parallelism](https://arxiv.org/abs/2509.08309): it selectively parallelizes compute-intensive operations to reduce latency and dynamically distributes Attention computations to low-end GPUs at a head granularity, and an online load dispatching policy that continuously optimizes serving performance by carefully balancing network latency, computational load, and memory intensity
+- [ ] [SplitQuant: Resource-Efficient LLM Offline Serving on Heterogeneous GPUs via Phase-Aware Model Partition and Adaptive Quantization](https://ieeexplore.ieee.org/abstract/document/11186491): co-designing quantization and model partitioning strategies for heterogeneous environments
+- [ ] [Cronus: Efficient LLM inference on Heterogeneous GPU Clusters via Partially Disaggregated Prefill](https://arxiv.org/abs/2509.17357): partitions each prefill stage and executes its initial portion on the low-end GPU, while overlapping the remaining prefill and decode stages of earlier requests on the high-end GPU
 
 ### Communication Optimization
 
 - [ ] [HiCCL: A Hierarchical Collective Communication Library](https://ieeexplore.ieee.org/document/11078478): we can study some lower-level technologies, such as communication, accepted by IPDPS'25
 - [ ] [Unified Designs of Multi-Rail-Aware MPI Allreduce and Alltoall Operations Across Diverse GPU and Interconnect Systems](https://ieeexplore.ieee.org/document/11078528): optimization on allreduce/alltoall kernel but seems lack of innovation, accepted by IPDPS'25
 - [ ] ⭐ [Chimera: Communication Fusion for Hybrid Parallelism in Large Language Models](https://dl.acm.org/doi/10.1145/3695053.3731025): nalyze the communication processes of each LLM parallelism pattern, identify the communication redundancy in hybrid parallelism and eliminate redundancy by fusing adjacent communication operators during parallelism transformation, accepted by ISCA'25
-- [ ] [Enabling efficient GPU communication over multiple NICs with FuseLink](https://dl.acm.org/doi/10.5555/3767901.3767907): extends inter-server network by integrating high-speed intra-server connections, and leverages GPUs to efficiently relay traffic to idle NICs, accepted by OSDI'25
+- [x] [Enabling efficient GPU communication over multiple NICs with FuseLink](https://dl.acm.org/doi/10.5555/3767901.3767907): extends inter-server network by integrating high-speed intra-server connections, and leverages GPUs to efficiently relay traffic to idle NICs, accepted by OSDI'25
 - [ ] [SyCCL: Exploiting Symmetry for Efficient Collective Communication Scheduling](https://dl.acm.org/doi/10.1145/3718958.3750499): leverages collective and topology symmetries to decompose the original collective communication demand into smaller sub-demands within smaller topology subsets, accepted by SIGCOMM'25
 - [ ] [ODRP: On-Demand Remote Paging with Programmable RDMA](https://www.usenix.org/conference/nsdi25/presentation/wang-zixuan): smartly chains native RDMA data path primitives to offload all memory access and management operations onto the RDMA-capable NIC (RNIC), accepted by NSDI'25
 - [ ] [WIC: Hiding Producer-Consumer Synchronization Delays with Warp-Level Interrupt-based GPU Communications](https://www.usenix.org/conference/atc25/presentation/zhang-jiajian): early-started polling leads to the unnecessary occupation of computational resources, so propose Warp-level Interrupt-based Communication, accepted by ATC'25
+- [ ] [Characterizing Communication Patterns in Distributed Large Language Model Inference](https://arxiv.org/abs/2507.14392): characterize communication behavior across different parallelization configurations
+- [ ] [Scalable and Fast Inference Serving via Hybrid Communication Scheduling on Heterogeneous Networks](https://ieeexplore.ieee.org/abstract/document/11186468): a fast and scalable inference serving system by employing an offline planner for joint computation allocation and communication scheduling, along with an online scheduler for dynamic traffic management and load balancing
 
 ### Algorithm Optimization 💡
 
@@ -723,6 +768,13 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Efficient LLM Serving on Hybrid Real-time and Best-effort Requests](https://arxiv.org/abs/2504.09590): collocate the Real-time and Best-effort Requests, propose request scheduling and KV cache sharing
 - [ ] [SOLA: Optimizing SLO Attainment for Large Language Model Serving with State-Aware Scheduling](https://openreview.net/forum?id=ubIvpetAd6): a state-aware scheduling that optimizes the SLO attainment in LLM serving
 - [ ] [Weaver: Efficient Multi-LLM Serving with Attention Offloading](https://www.usenix.org/conference/atc25/presentation/gao): workload weaving, which offloads attention operators of hot models to running cold models, achieving high GPU memory utilization with low communication cost, accepted by ATC'25
+- [ ] [BestServe: Serving Strategies with Optimal Goodput in Collocation and Disaggregation Architectures](https://arxiv.org/abs/2506.05871): ranking serving strategies by estimating goodput under various operating scenarios
+- [ ] [Adaptive Request Scheduling for CodeLLM Serving with SLA Guarantees](https://arxiv.org/abs/2506.19677): denamic requests batching considering SLA
+- [ ] [BucketServe: Bucket-Based Dynamic Batching for Smart and Efficient LLM Inference Serving](https://arxiv.org/abs/2507.17120): grouping requests into size-homogeneous buckets based on sequence length
+- [ ] [Adaptively Robust LLM Inference Optimization under Prediction Uncertainty](https://arxiv.org/abs/2508.14544): based on output length predictor
+- [ ] [A System-level Abstraction and Service for Flourishing AI-powered Applications](https://dl.acm.org/doi/abs/10.1145/3725783.3764406): introduce a virtual capability layer with a unified API that efficiently powers various applications with AI technology, promoting a capability-centric approach to solve the inefficient resource management and unnecessary implementation details for developers
+- [ ] [Prompt-Aware Scheduling for Low-Latency LLM Serving](https://arxiv.org/abs/2510.03243): based on a trained output length predictor
+- [ ] [TokenFlow: Responsive LLM Text Streaming Serving under Request Burst via Preemptive Scheduling](https://arxiv.org/abs/2510.02758): preemptive request scheduling and proactive key-value (KV) cache management, accepted by EuroSys'26
 
 #### LLM as microservice
 
@@ -761,13 +813,16 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Serving Models, Fast and Slow:Optimizing Heterogeneous LLM Inferencing Workloads at Scale](https://arxiv.org/abs/2502.14617): resource allocation at cluster and data center scale
 - [ ] [BLITZSCALE: fast and live large model autoscaling with O(1) host caching](https://dl.acm.org/doi/10.5555/3767901.3767917): loading parameters through the compute network between GPUs, autoscaling in a fine-grained layer-level, accepted by OSDI'25
 - [ ] [Aegaeon: Effective GPU Pooling for Concurrent LLM Serving on the Market](https://dl.acm.org/doi/10.1145/3731569.3764815): reduces auto-scaling overhead by 97\% through component reuse, explicit memory management, and fine-grained KV cache synchronization
+- [ ] [Cloud Native System for LLM Inference Serving](https://arxiv.org/abs/2507.18007): use cloud native system to elastic scaling
+- [ ] [Unlock the Potential of Fine-grained LLM Serving via Dynamic Module Scaling](https://arxiv.org/abs/2507.18006): an elastic system that facilitates dynamic and fine-grained scaling through dynamically regulates module-level resource allocation and performance optimization
+- [ ] [Temporal-Aware GPU Resource Allocation for Distributed LLM Inference via Reinforcement Learning](https://arxiv.org/abs/2507.10259): a two-layer design: a macro-level scheduler leverages reinforcement learning and optimal transport to coordinate inter-region task distribution, while a micro-level allocator refines task-to-server assignments within each region to reduce latency and switching costs
 
 #### Request Scheduling
 
 - [ ] [Compass: A Decentralized Scheduler for Latency-Sensitive ML Workflows](https://arxiv.org/abs/2402.17652): scheduler for latency-sensitive request
 - [ ] [Llumnix: Dynamic Scheduling for Large Language Model Serving](https://arxiv.org/abs/2406.03243): scheduling in multi instances may by helpful for me now
 - [ ] [Arlo: Serving Transformer-based Language Models with Dynamic Input Lengths](https://henryhxu.github.io/share/xin-icpp24.pdf): solve Dynamic Input Lengths by multi-instance and request scheduling
-- [ ] [Intelligent Router for LLM Workloads: Improving Performance Through Workload-Aware Scheduling](https://arxiv.org/abs/2408.13510): scheduling based on a output length predictor
+- [ ] [Intelligent Router for LLMSandwich Workloads: Improving Performance Through Workload-Aware Scheduling](https://arxiv.org/abs/2408.13510): scheduling based on a output length predictor
 - [ ] [Is the GPU Half-Empty or Half-Full? Practical Scheduling Techniques for LLMs](https://arxiv.org/abs/2410.17840): request scheduling in cluster and on instance
 - [ ] [Fast Inference for Augmented Large Language Models](https://arxiv.org/abs/2410.18248): schedule for Augmented LLM
 - [ ] [ALISE: Accelerating Large Language Model Serving with Speculative Scheduling](https://arxiv.org/abs/2410.23537): prediction-based scheduling + memory management + quantization's hodgepodge
@@ -780,6 +835,11 @@ LLM server providers will focus on this part. Engineering practices are just as 
 - [ ] [Throughput-Optimal Scheduling Algorithms for LLM Inference and AI Agents](https://arxiv.org/abs/2504.07347): throughput-optimal scheduling analyse
 - [ ] [Apt-Serve: Adaptive Request Scheduling on Hybrid Cache for Scalable LLM Inference Serving](https://arxiv.org/abs/2504.07494): a memory-efficient hidden cache? and schedule to use a biger batch
 - [ ] [LLMSched: Uncertainty-Aware Workload Scheduling for Compound LLM Applications](https://arxiv.org/abs/2504.03444): an uncertainty-aware scheduling framework for emerging compound LLM applications, accepted by ICDCS'25
+- [ ] [SkyLB: A Locality-Aware Cross-Region Load Balancer for LLM Inference](https://arxiv.org/abs/2505.24095): schedule requests on instances on different regions to suite the regional diurnal patterns, under guidence of Ion Stoica
+- [ ] [Libra: Novel LLM Token Streaming via Region-Based Task Scheduling and Token Bundling](https://ieeexplore.ieee.org/abstract/document/11143346): introduce user regions to relieve the network issues, since users from the same region (e.g., universities and business zones) are likely to share similar behaviors to access LLM serving systems
+- [ ] [A Predictive and Synergistic Two-Layer Scheduling Framework for LLM Serving](https://arxiv.org/abs/2509.23384): use a structurally-informed online performance model that provides accurate, forward-looking per-step latency and capacity estimations to schedule requests in and among instances
+- [ ] [SLICE: SLO-Driven Scheduling for LLM Inference on Edge Computing Devices](https://arxiv.org/abs/2510.18544): an innovative scheduling solution designed for edge computing scenarios with differentiated SLO requirements, combined with a utility-maximizing request scheduling algorithm with a dynamic iterative control mechanism for generation rates
+- [ ] [FairBatching: Fairness-Aware Batch Formation for LLM Inference](https://arxiv.org/abs/2510.14392): an adaptive Prefill/Decode batch capacity determination mechanism, which dynamically adjusts the computational budget to improve the GPU utilization without triggering SLO violations, optimization on sarathi, under guidence of Haibo CHEN
 
 #### Shared Prefix Serving
 
@@ -848,6 +908,7 @@ For LoRA but not serving
 - [ ] [Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses](https://ieeexplore.ieee.org/document/10630927): place training and inference together, control the inference latency to the desired SLO, while maximizing the throughput of the training jobs co-located on the same GPUs, accepted by ICDCS'24
 - [ ] [Colocating ML Inference and Training with Fast GPU Memory Handover](https://www.usenix.org/conference/atc25/presentation/wang-jiali): handle the GPU memory useage in both inference and training, accepted by ATC'25
 - [ ] [Resource Multiplexing in Tuning and Serving Large Language Models](https://www.usenix.org/conference/atc25/presentation/he-yongjun): a new iteration-level multitasking scheduling mechanism, an Autograd engine that transforms a tuning task into a suspendable pipeline, and an inference engine capable of batching inference and tuning requests, accepted by ATC'25
+- [ ] [LeMix: Unified Scheduling for LLM Training and Inference on Multi-GPU Systems](https://arxiv.org/abs/2507.21276): co-locating and managing concurrent LLM serving and training workloads with offline profiling, execution prediction mechanisms, and runtime scheduling to dynamically adapt resource allocation
 
 #### Serving Long-Context
 
@@ -884,6 +945,7 @@ Process differnet ML loads in a cluster.
 - [ ] [RAGO: Systematic Performance Optimization for Retrieval-Augmented Generation Serving](https://arxiv.org/abs/2503.14649): analyse RAG algorithm then optimize system
 - [ ] [CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion](https://dl.acm.org/doi/10.1145/3689031.3696098): reuses the precomputed KV caches, regardless prefix or not, and selectively recomputes the KV values of a small subset of tokens to partially update each reused KV cache, accepted by EuroSys'25
 - [ ] [Shared Disk KV Cache Management for Efficient Multi-Instance Inference in RAG-Powered LLMs](https://arxiv.org/abs/2504.11765): KV cache for RAG knowledge which is stored on disk
+- [ ] [HedraRAG: Coordinating LLM Generation and Database Retrieval in Heterogeneous RAG Serving](https://arxiv.org/abs/2507.09138): HedraRAG, a runtime system built on a graph-based abstraction that exposes optimization opportunities across stage-level parallelism, intra-request similarity, and inter-request skewness, implement these optimizations by dynamic graph transformations and finally mapped onto hybrid CPU-GPU pipelines, accepted by SOSP'25
 
 ### Combine MoE with LLM inference
 
@@ -938,7 +1000,10 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Faster MoE LLM Inference for Extremely Large Models](https://arxiv.org/abs/2505.03531): less activated experts for faster inference
 - [ ] ⭐ [Toward Cost-Efficient Serving of Mixture-of-Experts with Asynchrony](https://www.arxiv.org/abs/2505.08944): By dynamically queuing tokens at each layer (referred to as μ-queuing), GPUs avoid waiting for straggling experts and instead continuously process whichever layer is ready
 
-- [ ] [Expert-as-a-Service: Towards Efficient, Scalable, and Robust Large-scale MoE Serving](https://arxiv.org/abs/2509.17863): fine-grained resource scaling and provides inherent fault tolerance by decoupling to EaaS, powered by a high-performance, CPU-free peer-to-peer communication library
+- [x] ⭐ [Expert-as-a-Service: Towards Efficient, Scalable, and Robust Large-scale MoE Serving](https://arxiv.org/abs/2509.17863): fine-grained resource scaling and provides inherent fault tolerance by decoupling to EaaS, powered by a high-performance, CPU-free peer-to-peer communication library
+- [] [BrownoutServe: SLO-Aware Inference Serving under Bursty Workloads for MoE-based LLMs](https://arxiv.org/abs/2507.17133): merge experts, adjust the processing of certain tokens, which means adjusting the algorithm to improve efficiency
+- [ ] [A3D-MoE: Acceleration of Large Language Models with Mixture of Experts via 3D Heterogeneous Integration](https://arxiv.org/abs/2507.19142): hardware-software co-design but the technical aspects seem a bit strange
+- [ ] [MoE-Prism: Disentangling Monolithic Experts for Elastic MoE Services via Model-System Co-Designs](https://arxiv.org/abs/2510.19366): deconstructs monolithic experts into fine-grained "sub-experts" and then schedule 
 
 #### MoE training
 
@@ -973,6 +1038,9 @@ Here are two repositories have some papers for MoE: [Papers: MoE/Ensemble](https
 - [ ] [Characterizing and Efficiently Accelerating Multimodal Generation Model Inference](https://arxiv.org/abs/2410.00215): some insights
 - [ ] [ModServe: Scalable and Resource-Efficient Large Multimodal Model Serving](https://arxiv.org/abs/2502.00937): provide comprehensive systems analysis of two prominent LMM architectures, decoder-only and cross-attention
 - [ ] [HydraInfer: Hybrid Disaggregated Scheduling for Multimodal Large Language Model Serving](https://arxiv.org/abs/2505.12658): a Hybrid Encode-Prefill-Decode (EPD) Disaggregation architecture
+- [ ] [ElasticMM: Efficient Multimodal LLMs Serving with Elastic Multimodal Parallelism](https://arxiv.org/abs/2507.10069): introduce Elastic Multimodal Parallelism (EMP), a new serving paradigm that elastically adapts to resource heterogeneity across request types and inference stages, under guidence of Yang YOU
+- [ ] [RServe: Overlapping Encoding and Prefill for Efficient LMM Inference](https://arxiv.org/abs/2509.24381): orchestrates intra- and inter-request pipelines for LLM inference
+- [ ] [Nova: Real-Time Agentic Vision-Language Model Serving with Adaptive Cross-Stage Parallelization](https://arxiv.org/abs/2509.21301): for VLM serving
 
 #### Training in Multimodal
 
@@ -1008,23 +1076,39 @@ What is this? maybe multiple LLM?
 - [ ] [CoServe: Efficient Collaboration-of-Experts (CoE) Model Inference with Limited Memory](https://arxiv.org/abs/2503.02354): a new scenario Collaboration-of-Experts instead of mixture-of-experts, provide some new oppotunities, acceped by ASPLOS'25
 - [ ] ⭐ [SeaLLM: Service-Aware and Latency-Optimized Resource Sharing for Large Language Model Inference](https://arxiv.org/abs/2504.15720): enables service-aware and latency-optimized LLM sharing on same device
 - [ ] [HybridServe: Efficient Serving of Large AI Models with Confidence-Based Cascade Routing](https://arxiv.org/abs/2505.12566): use multiple small model to achieve the accuracy of serving solely with giant DNNs(?)
+- [ ] [Quality-of-Service Aware LLM Routing for Edge Computing with Multiple Experts](https://ieeexplore.ieee.org/document/11086391?denied=): algorithm to route user requests from mobile and IoT devices to an appropriate LLM service (i.e., edge LLM expert) to ensure acceptable quality-of-service (QoS)
+- [ ] [Efficient Routing of Inference Requests across LLM Instances in Cloud-Edge Computing](https://arxiv.org/abs/2507.15553): a novel routing algorithm based on the Non-dominated Sorting Genetic Algorithm II (NSGA-II) to distribute inference requests across heterogeneous LLM instances in a cloud-edge computing environment
+
+### Embodied AI agent
+
+- [ ] [Boosting Embodied AI Agents through Perception-Generation Disaggregation and Asynchronous Pipeline Execution](https://arxiv.org/abs/2509.09560): disaggregates the perception and generation and provides controlled pipeline parallelism for them, and establishes a public context for perception and generation to share
+
+### Reasoning LLM
+
+- [ ] [Reasoning Language Model Inference Serving Unveiled: An Empirical Study](https://arxiv.org/abs/2510.18672): model quantization methods and speculative decoding can improve service system efficiency with small compromise to RLLM accuracy, while prefix caching, KV cache quantization may even degrade accuracy or serving performance for small RLLM
 
 ### LLM Application
 
 - [ ] [Teola: Towards End-to-End Optimization of LLM-based Applications](https://arxiv.org/abs/2407.00326): endd-to-end optimization
 - [ ] [Parrot: Efficient Serving of LLM-based Applications with Semantic Variable](https://arxiv.org/abs/2405.19888): accepted by OSDI'24
 - [ ] [Orion: Interference-aware, Fine-grained GPU Sharing for ML Applications](https://dl.acm.org/doi/10.1145/3627703.3629578): many LLM apps share GPU, accepted by EuroSys'24
-- [ ] [Why Do Multi-Agent LLM Systems Fail?](https://arxiv.org/abs/2503.13657): learn algorithm from it
-- [ ] ⭐ [Autellix: An Efficient Serving Engine for LLM Agents as General Programs](https://arxiv.org/abs/2502.13965): multi-agent has something similar to LLM application, scheduling and preemption
 - [ ] [Fast Inference for Augmented Large Language Models](https://arxiv.org/abs/2410.18248): seems a subclass of multi-agent
 - [ ] [Towards End-to-End Optimization of LLM-based Applications with Ayo](https://dl.acm.org/doi/abs/10.1145/3676641.3716278):  utilizes task primitives as the basic units and represents each query's workflow as a primitive-level dataflow graph, enables optimizations in parallelization, pipelining across primitives of different modules, and enhances scheduling to improve application-level performance
 - [ ] [Improving the End-to-End Efficiency of Offline Inference for Multi-LLM Applications Based on Sampling and Simulation](https://arxiv.org/abs/2503.16893): multi-LLM's end-to-end running
 - [ ] [Tempo: Application-aware LLM Serving with Mixed SLO Requirements](https://arxiv.org/abs/2504.20068): Meet SLO requirements for all services in the system and accelerate the overall process, can be used in multi-agent application
 - [ ] [Pie: A Programmable Serving System for Emerging LLM Applications](https://dl.acm.org/doi/10.1145/3731569.3764814): decomposes the traditional generation loop into fine-grained service handlers exposed via an API and delegates control of the generation process to user-provided programs, accepted by SOSP'25
+- [ ] [Efficient Serving of LLM Applications with Probabilistic Demand Modeling](https://arxiv.org/abs/2506.14851): the resource demands of LLM applications can be modeled in a general and accurate manner with Probabilistic Demand Graph (PDGraph), and applies the Gittins policy to determine the scheduling order that can minimize the average application completion time
+- [ ] [Justitia: Fair and Efficient Scheduling for LLM Applications](https://arxiv.org/abs/2510.17015): schedule a series of LLM inferences (LLM applications) on shared GPUs
 
 #### Multi-agent system
 
+- [ ] [The Cost of Dynamic Reasoning: Demystifying AI Agents and Test-Time Scaling from an AI Infrastructure Perspective](https://arxiv.org/abs/2506.04301): a survey for agents serving
+- [ ] [Why Do Multi-Agent LLM Systems Fail?](https://arxiv.org/abs/2503.13657): learn algorithm from it
+- [ ] ⭐ [Autellix: An Efficient Serving Engine for LLM Agents as General Programs](https://arxiv.org/abs/2502.13965): multi-agent has something similar to LLM application, scheduling and preemption
 - [ ] [Kairos: Low-latency Multi-Agent Serving with Shared LLMs and Excessive Loads in the Public Cloud](https://arxiv.org/abs/2508.06948): existing works have low serving performance for these multi-agent applications, mainly due to the ignorance of inter-agent latency and resource differences for request scheduling, this paper solve it
+- [ ] [KVFlow: Efficient Prefix Caching for Accelerating LLM-Based Multi-Agent Workflows](https://arxiv.org/abs/2507.07400): a workflow-aware KV cache management framework tailored for agentic workloads instead of simple LRU policy, and a CPU-GPU prefetch machanism
+- [ ] ⭐ [Batch Query Processing and Optimization for Agentic Workflows](https://arxiv.org/abs/2509.02121): represents each workflow as a structured query plan DAG and constructs a consolidated graph for batched queries that exposes shared computation
+- [ ] [What Limits Agentic Systems Efficiency?](https://arxiv.org/abs/2510.16276): based on that web environment latency can contribute as much as 53.7% to the overall latency in a web-based agentic system
 
 ### Fault Tolerance
 
@@ -1039,12 +1123,16 @@ It is usually related to CPU-GPU heterogeneity and GPU power consumption.
 
 - [ ] [DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency](https://arxiv.org/abs/2408.00741)
 - [ ] [Offline Energy-Optimal LLM Serving: Workload-Based Energy Models for LLM Inference on Heterogeneous Systems](https://arxiv.org/abs/2407.04014)
+- [ ] [AGFT: An Adaptive GPU Frequency Tuner for Real-Time LLM Inference Optimization](https://arxiv.org/abs/2508.01744): employs online reinforcement learning to autonomously learn an optimal frequency tuning policy
+- [ ] [GreenLLM: SLO-Aware Dynamic Frequency Scaling for Energy-Efficient LLM Serving](https://arxiv.org/abs/2508.16449): minimizes GPU energy by explicitly separating prefill and decode control
+- [ ] [VoltanaLLM: Feedback-Driven Frequency Control and State-Space Routing for Energy-Efficient LLM Serving](https://arxiv.org/abs/2509.04827): tune GPU frequency
 
 ### Early Exits
 
 - [ ] [Apparate: Rethinking Early Exits to Tame Latency-Throughput Tensions in ML Serving](https://arxiv.org/abs/2312.05385): early exits, accepted by SOSP'24
 - [ ] [Improving DNN Inference Throughput Using Practical, Per-Input Compute Adaptation](https://gts3.org/assets/papers/2024/iyer:e3.pdf): early exits and some system optimization, accepted by SOSP'24
 - [ ] [SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting](https://dl.acm.org/doi/10.1145/3695053.3730996): using speculative models to reduce the search space of early exiting predictor, accepted by ISCA'25
+- [ ] [Accelerating Large Language Model Inference via Early-Exiting Algorithms](https://arxiv.org/abs/2509.05915): can help learns early-exits
 
 ### RLHF
 
@@ -1054,6 +1142,7 @@ It is usually related to CPU-GPU heterogeneity and GPU power consumption.
 - [ ] [Systems Opportunities for LLM Fine-Tuning using Reinforcement Learning](https://dl.acm.org/doi/abs/10.1145/3721146.3721944): optimization for LLM Fine-Tuning using Reinforcement Learning
 - [ ] [ReaL: Efficient RLHF Training of Large Language Models with Parameter Reallocation](https://openreview.net/forum?id=yLU1zRf95d): accepted by MLSYS'25
 - [ ] [Optimizing RLHF Training for Large Language Models with Stage Fusion](https://www.usenix.org/conference/nsdi25/presentation/zhong): breaks the traditional view of RLHF workflow as a composition of individual tasks, splitting each task into finer-grained subtasks, and performing stage fusion to improve GPU utilization, accepted by NSDI'25
+- [ ] [Trinity-RFT: A General-Purpose and Unified Framework for Reinforcement Fine-Tuning of Large Language Models](https://arxiv.org/abs/2505.17826): use RL to fine-tune LLM, could be a potential baseline framework
 
 ### Some Interesting Idea
 
